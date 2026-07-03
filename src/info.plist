@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.cdoug.gmail-search</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>D7B5E8A9-1234-5678-ABCD-EF0123456789</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2345678-9ABC-DEF0-1234-56789ABCDEF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A1234567-89AB-CDEF-0123-456789ABCDEF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2345678-9ABC-DEF0-1234-56789ABCDEF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Christopher Douglas</string>
+	<key>description</key>
+	<string>Quick access to Gmail search from Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Gmail Search Tools</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching Gmail...</string>
+				<key>script</key>
+				<string>/usr/bin/python3 script/main.py "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search Gmail messages</string>
+				<key>title</key>
+				<string>Gmail Search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D7B5E8A9-1234-5678-ABCD-EF0123456789</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>{var:unread_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching Unread Gmail...</string>
+				<key>script</key>
+				<string>/usr/bin/python3 script/main.py --unread "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search unread Gmail messages</string>
+				<key>title</key>
+				<string>Gmail Unread Search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A1234567-89AB-CDEF-0123-456789ABCDEF</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<true/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>B2345678-9ABC-DEF0-1234-56789ABCDEF0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Gmail Search Tools
+
+Quick access to Gmail search from Alfred.
+
+## Keywords
+
+- **gms** — Search Gmail messages (customisable)
+- **gmu** — Search unread Gmail messages (customisable)
+
+## Usage
+
+Type `gms` followed by your search query to search across all Gmail messages.
+Type `gmu` followed by your search query to search only unread messages.
+
+Both keywords present a list of search options:
+
+### gms options
+- Search Gmail: all messages
+- Search Unread: unread messages only
+- Search Starred: starred messages
+- Search Sent: sent messages
+- Search Drafts: draft messages
+- Search Important: important messages
+- Search Spam: spam messages
+- Search Trash: trash messages
+
+### gmu options
+- Search Unread Gmail: all unread messages
+- Search Unread in Inbox: unread inbox messages
+- Search Unread Important: unread important messages
+- Search Unread Starred: unread starred messages
+
+## Configuration
+
+You can customise the keywords in Alfred's workflow preferences:
+- **keyword** — main Gmail search keyword (default: `gms`)
+- **unread_keyword** — unread search keyword (default: `gmu`)
+- **gmail_account** — Gmail account index (default: `0`, use `1` for a second account)
+
+This workflow is under the MIT License.</string>
+	<key>uidata</key>
+	<dict>
+		<key>D7B5E8A9-1234-5678-ABCD-EF0123456789</key>
+		<dict>
+			<key>xpos</key>
+			<real>165</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>A1234567-89AB-CDEF-0123-456789ABCDEF</key>
+		<dict>
+			<key>xpos</key>
+			<real>165</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
+		<key>B2345678-9ABC-DEF0-1234-56789ABCDEF0</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>note</key>
+			<string>Open the Gmail search URL in the browser</string>
+			<key>xpos</key>
+			<real>395</real>
+			<key>ypos</key>
+			<real>95</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gms</string>
+				<key>placeholder</key>
+				<string>Customize the main search keyword</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Main Gmail search keyword</string>
+			<key>label</key>
+			<string>Search Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gmu</string>
+				<key>placeholder</key>
+				<string>Customize the unread search keyword</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Unread Gmail search keyword</string>
+			<key>label</key>
+			<string>Unread Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>unread_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>0</string>
+				<key>placeholder</key>
+				<string>Gmail account index (0 for primary)</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Gmail account index (0 = primary, 1 = second account, etc.)</string>
+			<key>label</key>
+			<string>Gmail Account</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmail_account</string>
+		</dict>
+	</array>
+	<key>variables</key>
+	<dict>
+		<key>gmail_account</key>
+		<string>0</string>
+		<key>keyword</key>
+		<string>gms</string>
+		<key>unread_keyword</key>
+		<string>gmu</string>
+	</dict>
+	<key>version</key>
+	<string>0.1.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/cdouglasnet/Gmail-Search-Tools</string>
+</dict>
+</plist>

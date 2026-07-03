@@ -1,0 +1,19 @@
+{
+  "name": "alfred-gmail-search",
+  "version": "0.1.0",
+  "description": "Alfred workflow for quick access to Gmail search",
+  "scripts": {
+    "test": ".venv/bin/python3 -m pytest tests/",
+    "build": "gulp build",
+    "dev": "gulp dev",
+    "lint": ".venv/bin/python3 -m pylint src/script/*.py",
+    "install-python-deps": ".venv/bin/python3 -m pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "del": "^6.1.1",
+    "eslint": "^8.57.0",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.1.0",
+    "xml2js": "^0.6.2"
+  }
+}

@@ -1,0 +1,227 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: write
+  packages: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        node-version: [18, 20]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Create virtual environment
+      run: |
+        python -m venv .venv
+        source .venv/bin/activate
+        echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
+        echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
+
+    - name: Install Python dependencies
+      run: |
+        source .venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Install Node.js dependencies
+      run: |
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
+
+    - name: Run Python tests
+      run: |
+        source .venv/bin/activate
+        python -m pytest tests/ -v
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Set up Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Create virtual environment
+      run: |
+        python -m venv .venv
+        source .venv/bin/activate
+        echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
+        echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
+
+    - name: Install Python dependencies
+      run: |
+        source .venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Install Node.js dependencies
+      run: |
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
+
+    - name: Build Alfred workflow
+      run: |
+        source .venv/bin/activate
+        npm run build
+
+    - name: Upload workflow artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: alfred-gmail-search-workflow-${{ github.ref_name }}
+        path: dist/alfred-gmail-search.alfredworkflow
+        if-no-files-found: error
+
+    - name: Read workflow version for stable release
+      if: github.ref == 'refs/heads/main'
+      id: stable_tag
+      run: |
+        VERSION=$(python - <<'PY'
+        import plistlib
+        with open('src/info.plist', 'rb') as f:
+            data = plistlib.load(f)
+        print(data.get('version', '').strip())
+        PY
+        )
+        if [ -z "$VERSION" ]; then
+          echo "Could not read version from src/info.plist"
+          exit 1
+        fi
+        TAG="v${VERSION}"
+        echo "tag=${TAG}" >> $GITHUB_OUTPUT
+        echo "version=${VERSION}" >> $GITHUB_OUTPUT
+        echo "Generated stable tag: ${TAG}"
+
+    - name: Generate unique tag for beta release
+      if: github.ref == 'refs/heads/dev'
+      id: beta_tag
+      run: |
+        TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+        TAG="v${{ github.run_number }}-beta-${TIMESTAMP}"
+        echo "tag=${TAG}" >> $GITHUB_OUTPUT
+        echo "Generated beta tag: ${TAG}"
+
+    - name: Create stable release (main branch)
+      if: github.ref == 'refs/heads/main'
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ steps.stable_tag.outputs.tag }}
+        name: Release ${{ steps.stable_tag.outputs.tag }}
+        draft: false
+        prerelease: false
+        make_latest: true
+        files: |
+          dist/alfred-gmail-search.alfredworkflow
+        body: |
+          ## Gmail Search Tools - Release ${{ steps.stable_tag.outputs.tag }}
+
+          ### Installation
+          1. Download the `alfred-gmail-search.alfredworkflow` file
+          2. Double-click to install in Alfred
+          3. Use `gms` to search Gmail, `gmu` to search unread messages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create beta release (dev branch)
+      if: github.ref == 'refs/heads/dev'
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: ${{ steps.beta_tag.outputs.tag }}
+        name: Beta Release ${{ steps.beta_tag.outputs.tag }}
+        draft: false
+        prerelease: true
+        make_latest: false
+        files: |
+          dist/alfred-gmail-search.alfredworkflow
+        body: |
+          ## Gmail Search Tools - Beta ${{ steps.beta_tag.outputs.tag }}
+
+          ⚠️ This is a **beta release** built from the development branch.
+
+          ### Installation
+          1. Download the `alfred-gmail-search.alfredworkflow` file
+          2. Double-click to install in Alfred
+          3. Use `gms` to search Gmail, `gmu` to search unread messages
+
+          ### Keywords
+          - `gms` — search all Gmail messages
+          - `gmu` — search unread Gmail messages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  code-quality:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Create virtual environment
+      run: |
+        python -m venv .venv
+        source .venv/bin/activate
+        echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
+        echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH
+
+    - name: Install Python dependencies
+      run: |
+        source .venv/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt flake8 black isort
+
+    - name: Run Python code formatting check
+      run: |
+        source .venv/bin/activate
+        black --check src/script/ tests/ || echo "Code formatting issues found (consider running 'black src/script/ tests/')"
+
+    - name: Run Python import sorting check
+      run: |
+        source .venv/bin/activate
+        isort --check-only src/script/ tests/ || echo "Import sorting issues found (consider running 'isort src/script/ tests/')"
+
+    - name: Run Python linting
+      run: |
+        source .venv/bin/activate
+        flake8 src/script/ tests/ --max-line-length=88 --extend-ignore=E203,W503 || echo "Linting issues found"
