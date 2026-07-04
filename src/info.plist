@@ -1122,31 +1122,51 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>1</integer>
-				<key>fixedorder</key>
-				<false/>
-				<key>items</key>
-				<string>[{"title":"Search Options","subtitle":"↵ Copy, ⌘ Auto, ⌥ Auto Clip, ⌃ Other, ⇧⌘ Back"},{"title":"From","arg":"from:","subtitle":"Ex. from:bob"},{"title":"To","arg":"to:","subtitle":"Ex. to:bob"},{"title":"CC","arg":"cc:","subtitle":"Ex. cc:bob"},{"title":"BCC","arg":"bcc:","subtitle":"Ex. bcc:bob"},{"title":"Subject","arg":"subject:","subtitle":"Ex. subject:what about bob"},{"title":"OR","arg":"OR","subtitle":"Ex. from:bob OR from:bam"},{"title":"Exclude","arg":"-","subtitle":"Ex. bam -rock"},{"title":"AROUND","arg":"AROUND","subtitle":"Ex. flight AROUND 10 airport"},{"title":"Label","arg":"label:","subtitle":"Ex. label:builders"},{"title":"Attachments","arg":"has:attachment","subtitle":"Ex. has:attachment"},{"title":"Drive Link","arg":"has:drive","subtitle":"Ex. has:drive"},{"title":"Document","arg":"has:document","subtitle":"Ex. has:document"},{"title":"Spreadsheet","arg":"has:spreadsheet","subtitle":"Ex. has:spreadsheet"},{"title":"Presentation","arg":"has:presentation","subtitle":"Ex. has:presentation"},{"title":"YouTube","arg":"has:youtube","subtitle":"Ex. has:youtube"},{"title":"List","arg":"list:","subtitle":"Ex. list:info@example.org"},{"title":"Filename","arg":"filename:","subtitle":"Ex. filename:wishlist.txt"},{"title":"Exact Word or Phrase","arg":"\"\"","subtitle":"Ex. \"bob the builder\""},{"title":"Group Search Terms","arg":"()","subtitle":"Ex. (bob builder)"},{"title":"Anywhere (include Spam &amp; Trash)","arg":"in:anywhere","subtitle":"Ex. in:anywhere"},{"title":"Important","arg":"is:important","subtitle":"Ex. is:important"},{"title":"After","arg":"after:","subtitle":"Ex. after:08\/28\/2024"},{"title":"Before","arg":"before:","subtitle":"Ex. before:08\/28\/2004"},{"title":"Older","arg":"older:","subtitle":"Ex. older:08\/28\/2004"},{"title":"Newer","arg":"newer:","subtitle":"Ex. newer:08\/28\/2004"},{"title":"Older Than (d=Day m=Mnth y=Yr)","arg":"older_than:","subtitle":"Ex. older_than:2d"},{"title":"Chat","arg":"is:chat","subtitle":"Ex. is:chat"},{"title":"Delivered To","arg":"deliveredto:@gmail.com","subtitle":"Ex. deliveredto:username@gmail.com"},{"title":"Primary Category","arg":"category:primary","subtitle":"Ex. category:primary"},{"title":"Social Category","arg":"category:social","subtitle":"Ex. category:social"},{"title":"Promotions Category","arg":"category:promotions","subtitle":"Ex. category:promotions"},{"title":"Updates Category","arg":"category:updates","subtitle":"Ex. category:updates"},{"title":"Forums Category","arg":"category:forums","subtitle":"category:forums"},{"title":"Reservations Category","arg":"category:reservations","subtitle":"Ex. category:reservations"},{"title":"Purchases Category","arg":"category:purchases","subtitle":"Ex. category:purchases"},{"title":"Size (Larger)","arg":"size:","subtitle":"Ex. size:1000000 (bytes \/ K \/ M)"},{"title":"Larger Size","arg":"larger:","subtitle":"Ex. larger:10M"},{"title":"Smaller Size","arg":"smaller:","subtitle":"Ex. smaller:1M"},{"title":"Exact Word Match","arg":"+","subtitle":"Ex. +unicorn"},{"title":"User Label (Has Any User Label)","arg":"has:userlabels","subtitle":"Ex. has:userlabels"},{"title":"No User Labels","arg":"has:nouserlabels","subtitle":"Ex. has:nouserlabels"},{"title":"Un-Read","arg":"unread"},{"imagefile":"f14e77e0e9cd66bcea6195b7693ba50a93cdb51f.png","title":"{var:goBack}","arg":"back","subtitle":"Start Over"}]</string>
-				<key>matchmode</key>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>gmo</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
 				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python3 script/menu_filter.py --mode gmo "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
 				<string>Gmail Search Operators</string>
 				<key>title</key>
 				<string>Gmail Search Operators</string>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>CB5DC198-AA30-4246-9F11-22C5CCC465EC</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1522,7 +1542,7 @@ Good Luck Finding it!</string>
 		<key>4771CEFB-D315-4808-8935-2B1F26EBB028</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>6</integer>
 			<key>xpos</key>
 			<real>1255</real>
 			<key>ypos</key>
@@ -1531,7 +1551,7 @@ Good Luck Finding it!</string>
 		<key>48992664-A9E2-42A1-BBA9-EDDA8A7F6DFD</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>6</integer>
 			<key>xpos</key>
 			<real>505</real>
 			<key>ypos</key>
@@ -1695,7 +1715,7 @@ Good Luck Finding it!</string>
 		<key>CF5AE334-2496-4798-973B-6770762E97C2</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>10</integer>
+			<integer>5</integer>
 			<key>xpos</key>
 			<real>480</real>
 			<key>ypos</key>

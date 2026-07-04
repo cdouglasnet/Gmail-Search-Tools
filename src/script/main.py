@@ -91,6 +91,7 @@ def build_search_items(query, unread_mode=False):
 
         item = {
             "uid": f"gmail-{prefix.replace(' ', '-') or 'all'}-{query}",
+            "skipknowledge": True,
             "title": title,
             "subtitle": subtitle,
             "arg": url,

@@ -1,17 +1,29 @@
 # Gmail Search Tools
 
+[![Production Release](https://img.shields.io/github/actions/workflow/status/cdouglasnet/Gmail-Search-Tools/ci.yml?branch=main&label=Production%20Release)](https://github.com/cdouglasnet/Gmail-Search-Tools/actions/workflows/ci.yml?query=branch%3Amain)
+[![Beta Release](https://img.shields.io/github/actions/workflow/status/cdouglasnet/Gmail-Search-Tools/ci.yml?branch=dev&label=Beta%20Release)](https://github.com/cdouglasnet/Gmail-Search-Tools/actions/workflows/ci.yml?query=branch%3Adev)
+[![Version](https://img.shields.io/github/v/release/cdouglasnet/Gmail-Search-Tools?label=Version)](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](requirements.txt)
+[![Alfred](https://img.shields.io/badge/Alfred-5%2B-5C1F87)](https://www.alfredapp.com/)
+[![License](https://img.shields.io/github/license/cdouglasnet/Gmail-Search-Tools?label=License)](LICENSE)
+
 Alfred workflow for quick access to Gmail search.
+
+![Alt text](icon.png)
 
 ## Keywords
 
 - **`gms`** — Search Gmail messages (customisable)
 - **`gmu`** — Search unread Gmail messages (customisable)
+- **`gmo`** — Gmail Search Operators
 
 ## Usage
 
 Type `gms` followed by your search query to search across Gmail messages with multiple filter options.
 
 Type `gmu` followed by your search query to search only unread messages.
+
+Type `gmo` to browse Gmail search operators and quick actions.
 
 ### `gms` search options
 - **Search Gmail** — search all messages
