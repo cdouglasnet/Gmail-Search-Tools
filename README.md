@@ -13,9 +13,9 @@ Alfred workflow for quick access to Gmail search.
 
 ## Keywords
 
-- **`gms`** — Search Gmail messages (customisable)
-- **`gmu`** — Search unread Gmail messages (customisable)
-- **`gmo`** — Gmail Search Operators
+- **`gms`** — Search Gmail messages (customizable)
+- **`gmu`** — Search unread Gmail messages (customizable)
+- **`gmo`** — Gmail Search Operators (customizable)
 
 ## Usage
 
@@ -43,13 +43,16 @@ Type `gmo` to browse Gmail search operators and quick actions.
 
 ## Configuration
 
-Customise the keywords and Gmail account in Alfred's workflow preferences:
+Customize keywords and Gmail account in Alfred's workflow preferences:
 
 | Variable | Default | Description |
 |---|---|---|
-| `keyword` | `gms` | Main Gmail search keyword |
-| `unread_keyword` | `gmu` | Unread Gmail search keyword |
-| `gmail_account` | `0` | Gmail account index (0 = primary, 1 = second account) |
+| `gms_key` | `gms` | Main Gmail search keyword |
+| `gmu_key` | `gmu` | Unread Gmail search keyword |
+| `gmo_key` | `gmo` | Gmail Search Operators keyword |
+| `gmss_key` | - | Secondary Gmail search keyword (optional) |
+| `gmuu_key` | - | Secondary unread Gmail search keyword (optional) |
+| `userNumber` | `0` | Gmail account index (0 = primary, 1 = second account, etc.) |
 
 ## Installation
 

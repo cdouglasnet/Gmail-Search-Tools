@@ -769,7 +769,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
-				<string>gmu</string>
+				<string>{var:gmu_key}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -818,7 +818,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
-				<string>gms</string>
+				<string>{var:gms_key}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1135,7 +1135,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
-				<string>gmo</string>
+				<string>{var:gmo_key}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1805,6 +1805,111 @@ Good Luck Finding it!</string>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gms</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Filterable Options</string>
+			<key>label</key>
+			<string>Gmail Search Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gms_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gmss</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Search with Args - Not Filterable</string>
+			<key>label</key>
+			<string>Gmail Search with Arg</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmss_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gmu</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Filterable Options</string>
+			<key>label</key>
+			<string>Gmail UnRead Search</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmu_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gmuu</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Search with Args - Not Filterable</string>
+			<key>label</key>
+			<string>Gmail UnRead Search with Arg</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmuu_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gmo</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Filterable Options</string>
+			<key>label</key>
+			<string>Gmail Search Refrence</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmo_key</string>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
