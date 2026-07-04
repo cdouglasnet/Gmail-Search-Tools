@@ -2,6 +2,11 @@
   "name": "alfred-gmail-search",
   "version": "0.1.0",
   "description": "Alfred workflow for quick access to Gmail search",
+  "config": {
+    "workflow_source": "src",
+    "dist_name": "alfred-gmail-search",
+    "workflow_file": "alfred-gmail-search.alfredworkflow"
+  },
   "scripts": {
     "test": ".venv/bin/python3 -m pytest tests/",
     "build": "gulp build",

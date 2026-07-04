@@ -59,8 +59,11 @@ npm install
 # Run tests
 npm test
 
-# Build the workflow
+# Build the workflow (uses `tmp/` by default)
 npm run build
+
+# Build from `src/` instead
+npm run build:src
 ```
 
 The built workflow file will be at `dist/alfred-gmail-search.alfredworkflow`.

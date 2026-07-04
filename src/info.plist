@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>net.cdoug.gmail-search</string>
+	<string>net.cdoug.gmail-search-tools</string>
 	<key>category</key>
-	<string>Productivity</string>
+	<string>CDoug</string>
 	<key>connections</key>
 	<dict>
-		<key>D7B5E8A9-1234-5678-ABCD-EF0123456789</key>
+		<key>06F59E2A-A7E1-462E-8FD0-14F36B7A460E</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B2345678-9ABC-DEF0-1234-56789ABCDEF0</string>
+				<string>211400F9-855C-4695-AD89-44226CB55C27</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,15 +21,403 @@
 				<false/>
 			</dict>
 		</array>
-		<key>A1234567-89AB-CDEF-0123-456789ABCDEF</key>
+		<key>09BAD089-B5F8-40D6-AE7E-B0FE3FD56313</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B2345678-9ABC-DEF0-1234-56789ABCDEF0</string>
+				<string>428220BB-482C-475B-9CD3-2B74A3D9E0F2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>0AE017FD-5BE5-4AF3-AFBD-31502A214421</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F06904E-253D-447B-8F15-283B58599718</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>988BC641-80A7-4F29-8462-94836A76CD8A</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7B02806-C5FC-4464-B8BA-613FF13BBACE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>70BDE505-581F-418A-9056-646C50C90885</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>95E979E6-ECDB-416D-A6AE-D88FC5236C4B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3AF0D805-468B-4B6F-8026-CB6E8D8F2CFE</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4771CEFB-D315-4808-8935-2B1F26EBB028</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>491BF767-92BB-42F4-81FF-754778E29B7D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>752759BB-F9C2-43DA-81CA-B75FF01F0349</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EAABC324-2EFE-42AA-A72C-36A56B82D598</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8EB74B4-CF6F-473A-ADFA-FC1F74CF2F7A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1E9EC99B-06E8-4A96-A09C-706F855EE39A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D8AFCD7E-C431-485A-B50C-2CF49C2722CB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>988BC641-80A7-4F29-8462-94836A76CD8A</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6519B0A-0EAD-4D3F-A7C3-69B1268E06DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>70BDE505-581F-418A-9056-646C50C90885</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>78AAE0D1-EF88-4D0C-A782-F3CB28AD2B21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3AF0D805-468B-4B6F-8026-CB6E8D8F2CFE</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>48992664-A9E2-42A1-BBA9-EDDA8A7F6DFD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>491BF767-92BB-42F4-81FF-754778E29B7D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CF5AE334-2496-4798-973B-6770762E97C2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EAABC324-2EFE-42AA-A72C-36A56B82D598</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>1F665CA9-15D6-4A3D-A9DC-B3D9E21EB986</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AE017FD-5BE5-4AF3-AFBD-31502A214421</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2F93D263-F7DC-4C31-B36E-2C040E984813</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>88B5117C-021E-4E95-8335-54C3D528151C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>428220BB-482C-475B-9CD3-2B74A3D9E0F2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1E9EC99B-06E8-4A96-A09C-706F855EE39A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>59BCD3FD-9F1B-4097-8772-3D60C2E9E040</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>54296731-D10D-4008-AC08-70822A9CA6DE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6FAA7372-C5AF-46A4-A1CE-05EA864FCEF9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8E8A0EE-A706-4AB1-94B5-22C3B71DD254</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>75996F8A-BFFD-486D-9F4B-1F213AF1A50F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>54296731-D10D-4008-AC08-70822A9CA6DE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>88B5117C-021E-4E95-8335-54C3D528151C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1F665CA9-15D6-4A3D-A9DC-B3D9E21EB986</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>909BCBCF-878B-4851-85BB-CACDDCB5ADDA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B8E8A0EE-A706-4AB1-94B5-22C3B71DD254</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2C3D4E5-F6A7-8901-BCDE-F12345678901</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B8E8A0EE-A706-4AB1-94B5-22C3B71DD254</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E74530D5-2329-4149-B2AC-84DEC8A1A152</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CB5DC198-AA30-4246-9F11-22C5CCC465EC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>747010B5-0EB7-4008-A555-E5229219CC12</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>FC9FB6F4-C8A6-44F6-A395-1BF988FAC5AD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>656A4807-DF38-4427-88A1-A4946F13B4A8</string>
+				<key>modifiers</key>
+				<integer>1179648</integer>
+				<key>modifiersubtext</key>
+				<string>menu</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D8EB74B4-CF6F-473A-ADFA-FC1F74CF2F7A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4C2887A-B7B0-428D-9DFC-BEF7B109E741</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D8EF56D6-CEDE-4112-A473-0EB4CDC94206</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB5DC198-AA30-4246-9F11-22C5CCC465EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E0E18AF9-3811-4F3B-BDBF-53FEAF1A3CFF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>09BAD089-B5F8-40D6-AE7E-B0FE3FD56313</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E74530D5-2329-4149-B2AC-84DEC8A1A152</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E94597EB-2B74-40C2-9829-E617DB627391</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E94597EB-2B74-40C2-9829-E617DB627391</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59BCD3FD-9F1B-4097-8772-3D60C2E9E040</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>_button1</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>75996F8A-BFFD-486D-9F4B-1F213AF1A50F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>_button2</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -38,13 +426,333 @@
 	<key>createdby</key>
 	<string>Christopher Douglas</string>
 	<key>description</key>
-	<string>Quick access to Gmail search from Alfred</string>
+	<string>Power Search Your Gmail</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Gmail Search Tools</string>
+	<string>Gmail Search Cheat Sheet</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_unread</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D8AFCD7E-C431-485A-B50C-2CF49C2722CB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_name</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>5F06904E-253D-447B-8F15-283B58599718</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_price</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>A7B02806-C5FC-4464-B8BA-613FF13BBACE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_price</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>E6519B0A-0EAD-4D3F-A7C3-69B1268E06DF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>unread</string>
+						<key>outputlabel</key>
+						<string>unread</string>
+						<key>uid</key>
+						<string>988BC641-80A7-4F29-8462-94836A76CD8A</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>price</string>
+						<key>outputlabel</key>
+						<string>price</string>
+						<key>uid</key>
+						<string>70BDE505-581F-418A-9056-646C50C90885</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>sqft</string>
+						<key>outputlabel</key>
+						<string>sqft</string>
+						<key>uid</key>
+						<string>3AF0D805-468B-4B6F-8026-CB6E8D8F2CFE</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>settings</string>
+						<key>outputlabel</key>
+						<string>settings</string>
+						<key>uid</key>
+						<string>491BF767-92BB-42F4-81FF-754778E29B7D</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>search</string>
+						<key>outputlabel</key>
+						<string>search</string>
+						<key>uid</key>
+						<string>EAABC324-2EFE-42AA-A72C-36A56B82D598</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>open URL</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>1E9EC99B-06E8-4A96-A09C-706F855EE39A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>name</string>
+						<key>outputlabel</key>
+						<string>name</string>
+						<key>uid</key>
+						<string>988BC641-80A7-4F29-8462-94836A76CD8A</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>price</string>
+						<key>outputlabel</key>
+						<string>price</string>
+						<key>uid</key>
+						<string>70BDE505-581F-418A-9056-646C50C90885</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>sqft</string>
+						<key>outputlabel</key>
+						<string>sqft</string>
+						<key>uid</key>
+						<string>3AF0D805-468B-4B6F-8026-CB6E8D8F2CFE</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>settings</string>
+						<key>outputlabel</key>
+						<string>settings</string>
+						<key>uid</key>
+						<string>491BF767-92BB-42F4-81FF-754778E29B7D</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>back</string>
+						<key>outputlabel</key>
+						<string>back</string>
+						<key>uid</key>
+						<string>EAABC324-2EFE-42AA-A72C-36A56B82D598</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>open URL</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>0AE017FD-5BE5-4AF3-AFBD-31502A214421</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_calc</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>95E979E6-ECDB-416D-A6AE-D88FC5236C4B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_calc</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>78AAE0D1-EF88-4D0C-A782-F3CB28AD2B21</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>_menu</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>E0E18AF9-3811-4F3B-BDBF-53FEAF1A3CFF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>_unread</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>2F93D263-F7DC-4C31-B36E-2C040E984813</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -61,7 +769,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
-				<string>{var:keyword}</string>
+				<string>gmu</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -71,17 +779,17 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Searching Gmail...</string>
+				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python3 script/main.py "{query}"</string>
+				<string>/usr/bin/python3 script/menu_filter.py --mode gmu "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search Gmail messages</string>
+				<string>{var:name}</string>
 				<key>title</key>
-				<string>Gmail Search</string>
+				<string>{var:goTitle} Quick Search Links {var:actionPrefix}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -90,7 +798,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>D7B5E8A9-1234-5678-ABCD-EF0123456789</string>
+			<string>88B5117C-021E-4E95-8335-54C3D528151C</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -110,7 +818,7 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>keyword</key>
-				<string>{var:unread_keyword}</string>
+				<string>gms</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -120,17 +828,17 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Searching Unread Gmail...</string>
+				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python3 script/main.py --unread "{query}"</string>
+				<string>/usr/bin/python3 script/menu_filter.py --mode gms "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Search unread Gmail messages</string>
+				<string>{var:name}</string>
 				<key>title</key>
-				<string>Gmail Unread Search</string>
+				<string>{var:goTitle} Quick Search Links {var:actionPrefix}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -139,7 +847,388 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>A1234567-89AB-CDEF-0123-456789ABCDEF</string>
+			<string>09BAD089-B5F8-40D6-AE7E-B0FE3FD56313</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_settings</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>4771CEFB-D315-4808-8935-2B1F26EBB028</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_settings</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>48992664-A9E2-42A1-BBA9-EDDA8A7F6DFD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>route</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>428220BB-482C-475B-9CD3-2B74A3D9E0F2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>route</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>1F665CA9-15D6-4A3D-A9DC-B3D9E21EB986</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_menu</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>752759BB-F9C2-43DA-81CA-B75FF01F0349</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_search</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>CF5AE334-2496-4798-973B-6770762E97C2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>url</key>
+					<string>{var:route}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.current.url</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>D4C2887A-B7B0-428D-9DFC-BEF7B109E741</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>all_windows</key>
+					<false/>
+					<key>match_string</key>
+					<string>https://mail.google.com/mail/u/{var:userNumber}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.matching.activate</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>D8EB74B4-CF6F-473A-ADFA-FC1F74CF2F7A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>all_windows</key>
+					<false/>
+					<key>match_string</key>
+					<string>https://mail.google.com/mail/u/{var:userNumber}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.matching.activate</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>url</key>
+					<string>{var:route}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.current.url</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>B2C3D4E5-F6A7-8901-BCDE-F12345678901</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>747010B5-0EB7-4008-A555-E5229219CC12</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var workflowID = 'net.cdoug.gmail-search-tools';
+  var alfred = Application("com.runningwithcrayons.Alfred");
+  alfred.revealWorkflow(workflowID, { configuration: true });
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>211400F9-855C-4695-AD89-44226CB55C27</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>_search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D8EF56D6-CEDE-4112-A473-0EB4CDC94206</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>_settings</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>06F59E2A-A7E1-462E-8FD0-14F36B7A460E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"title":"Search Options","subtitle":"↵ Copy, ⌘ Auto, ⌥ Auto Clip, ⌃ Other, ⇧⌘ Back"},{"title":"From","arg":"from:","subtitle":"Ex. from:bob"},{"title":"To","arg":"to:","subtitle":"Ex. to:bob"},{"title":"CC","arg":"cc:","subtitle":"Ex. cc:bob"},{"title":"BCC","arg":"bcc:","subtitle":"Ex. bcc:bob"},{"title":"Subject","arg":"subject:","subtitle":"Ex. subject:what about bob"},{"title":"OR","arg":"OR","subtitle":"Ex. from:bob OR from:bam"},{"title":"Exclude","arg":"-","subtitle":"Ex. bam -rock"},{"title":"AROUND","arg":"AROUND","subtitle":"Ex. flight AROUND 10 airport"},{"title":"Label","arg":"label:","subtitle":"Ex. label:builders"},{"title":"Attachments","arg":"has:attachment","subtitle":"Ex. has:attachment"},{"title":"Drive Link","arg":"has:drive","subtitle":"Ex. has:drive"},{"title":"Document","arg":"has:document","subtitle":"Ex. has:document"},{"title":"Spreadsheet","arg":"has:spreadsheet","subtitle":"Ex. has:spreadsheet"},{"title":"Presentation","arg":"has:presentation","subtitle":"Ex. has:presentation"},{"title":"YouTube","arg":"has:youtube","subtitle":"Ex. has:youtube"},{"title":"List","arg":"list:","subtitle":"Ex. list:info@example.org"},{"title":"Filename","arg":"filename:","subtitle":"Ex. filename:wishlist.txt"},{"title":"Exact Word or Phrase","arg":"\"\"","subtitle":"Ex. \"bob the builder\""},{"title":"Group Search Terms","arg":"()","subtitle":"Ex. (bob builder)"},{"title":"Anywhere (include Spam &amp; Trash)","arg":"in:anywhere","subtitle":"Ex. in:anywhere"},{"title":"Important","arg":"is:important","subtitle":"Ex. is:important"},{"title":"After","arg":"after:","subtitle":"Ex. after:08\/28\/2024"},{"title":"Before","arg":"before:","subtitle":"Ex. before:08\/28\/2004"},{"title":"Older","arg":"older:","subtitle":"Ex. older:08\/28\/2004"},{"title":"Newer","arg":"newer:","subtitle":"Ex. newer:08\/28\/2004"},{"title":"Older Than (d=Day m=Mnth y=Yr)","arg":"older_than:","subtitle":"Ex. older_than:2d"},{"title":"Chat","arg":"is:chat","subtitle":"Ex. is:chat"},{"title":"Delivered To","arg":"deliveredto:@gmail.com","subtitle":"Ex. deliveredto:username@gmail.com"},{"title":"Primary Category","arg":"category:primary","subtitle":"Ex. category:primary"},{"title":"Social Category","arg":"category:social","subtitle":"Ex. category:social"},{"title":"Promotions Category","arg":"category:promotions","subtitle":"Ex. category:promotions"},{"title":"Updates Category","arg":"category:updates","subtitle":"Ex. category:updates"},{"title":"Forums Category","arg":"category:forums","subtitle":"category:forums"},{"title":"Reservations Category","arg":"category:reservations","subtitle":"Ex. category:reservations"},{"title":"Purchases Category","arg":"category:purchases","subtitle":"Ex. category:purchases"},{"title":"Size (Larger)","arg":"size:","subtitle":"Ex. size:1000000 (bytes \/ K \/ M)"},{"title":"Larger Size","arg":"larger:","subtitle":"Ex. larger:10M"},{"title":"Smaller Size","arg":"smaller:","subtitle":"Ex. smaller:1M"},{"title":"Exact Word Match","arg":"+","subtitle":"Ex. +unicorn"},{"title":"User Label (Has Any User Label)","arg":"has:userlabels","subtitle":"Ex. has:userlabels"},{"title":"No User Labels","arg":"has:nouserlabels","subtitle":"Ex. has:nouserlabels"},{"title":"Un-Read","arg":"unread"},{"imagefile":"f14e77e0e9cd66bcea6195b7693ba50a93cdb51f.png","title":"{var:goBack}","arg":"back","subtitle":"Start Over"}]</string>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Gmail Search Operators</string>
+				<key>title</key>
+				<string>Gmail Search Operators</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>CB5DC198-AA30-4246-9F11-22C5CCC465EC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alignment</key>
+				<integer>0</integer>
+				<key>backgroundcolor</key>
+				<string></string>
+				<key>fadespeed</key>
+				<integer>0</integer>
+				<key>fillmode</key>
+				<integer>0</integer>
+				<key>font</key>
+				<string></string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>largetypetext</key>
+				<string>{query}</string>
+				<key>textcolor</key>
+				<string></string>
+				<key>wrapat</key>
+				<integer>50</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>FC9FB6F4-C8A6-44F6-A395-1BF988FAC5AD</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>_menu</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>656A4807-DF38-4427-88A1-A4946F13B4A8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>https://www.alfredforum.com/topic/17318-google-drive-—-list-file-stream-contents-from-google-drive/</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>59BCD3FD-9F1B-4097-8772-3D60C2E9E040</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E74530D5-2329-4149-B2AC-84DEC8A1A152</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -149,7 +1238,7 @@
 				<key>browser</key>
 				<string></string>
 				<key>skipqueryencode</key>
-				<true/>
+				<false/>
 				<key>skipvarencode</key>
 				<false/>
 				<key>spaces</key>
@@ -160,78 +1249,538 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>B2345678-9ABC-DEF0-1234-56789ABCDEF0</string>
+			<string>54296731-D10D-4008-AC08-70822A9CA6DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>echo '### Workflow version'
+/usr/libexec/PlistBuddy -c 'Print :version' info.plist
+
+echo
+echo '### Alfred version'
+/usr/bin/osascript -e 'tell application id "com.runningwithcrayons.Alfred" to return version'
+
+echo
+echo '### macOS version'
+/usr/bin/sw_vers -productVersion
+
+echo
+echo '### Architecture'
+/usr/bin/arch
+echo
+
+echo
+echo '### Preferences'
+
+if [[ -f 'prefs.plist' ]]; then
+  /usr/libexec/PlistBuddy -c 'Print' prefs.plist
+else
+  echo 'Default'
+fi
+
+echo
+echo '### Full Disk Access'
+
+if [[ "$(sqlite3 '/Library/Application Support/com.apple.TCC/TCC.db' 'SELECT EXISTS (SELECT 1 FROM access WHERE auth_value AND service = "kTCCServiceSystemPolicyAllFiles" AND client = "com.runningwithcrayons.Alfred")')" -eq 1 ]]; then
+  echo 'Granted'
+else
+  echo 'NOT granted'
+fi
+
+echo
+echo '### Cache dir'
+
+readonly cache_files="$(ls -1 "${alfred_workflow_cache}")"
+
+if [[ -n "${cache_files}" ]]; then
+  echo "${cache_files}"
+else
+  echo 'Files NOT present'
+fi
+
+echo
+echo '### Cache file'
+
+if [[ -f "${alfred_workflow_cache}/cache.db" ]]; then
+  stat "${alfred_workflow_cache}/cache.db"
+else
+  echo 'Does NOT exist'
+fi
+
+echo
+echo '### Temporary cache'
+
+if [[ -f "${alfred_workflow_cache}/tmp.db" ]]; then
+  stat "${alfred_workflow_cache}/tmp.db"
+else
+  echo 'Does NOT exist'
+fi
+
+echo
+echo '### Build progress'
+
+if ps A | grep --quiet '[r]uby.*Alfred.*rebuild_cache'; then
+  echo 'Running'
+else
+  echo 'NOT running'
+fi
+
+echo
+echo '### Launchd job'
+
+if launchctl list | grep -q "${alfred_workflow_bundleid}"; then
+  echo -n 'Loaded: '
+  launchctl list | grep "${alfred_workflow_bundleid}"
+else
+  echo 'NOT loaded'
+fi
+
+if [[ -f "${HOME}/Library/LaunchAgents/${alfred_workflow_bundleid}.plist" ]]; then
+  echo 'Installed'
+else
+  echo 'NOT installed'
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B8E8A0EE-A706-4AB1-94B5-22C3B71DD254</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>!gmsdiagnostic</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Result will be copied to the clipboard</string>
+				<key>text</key>
+				<string>Diagnose Google Search Issues</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6FAA7372-C5AF-46A4-A1CE-05EA864FCEF9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>button1</key>
+				<string>Open Alfred Forum</string>
+				<key>button2</key>
+				<string>Open GitHub Issues</string>
+				<key>button3</key>
+				<string>Close Dialog</string>
+				<key>description</key>
+				<string>A diagnostic has been copied to your clipboard. Please include it when describing the issue.</string>
+				<key>title</key>
+				<string>Report a Problem</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.dialog</string>
+			<key>uid</key>
+			<string>E94597EB-2B74-40C2-9829-E617DB627391</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>https://github.com/alfredapp/google-drive-workflow/issues/</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>75996F8A-BFFD-486D-9F4B-1F213AF1A50F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>diagnostic</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>909BCBCF-878B-4851-85BB-CACDDCB5ADDA</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string># Gmail Search Tools
+	<string>GMail Search Cheat Sheet is designed to help you find that one message you know is hiding in your mail somewhere buried among the other 300,000 emails you have.
 
-Quick access to Gmail search from Alfred.
-
-## Keywords
-
-- **gms** — Search Gmail messages (customisable)
-- **gmu** — Search unread Gmail messages (customisable)
-
-## Usage
-
-Type `gms` followed by your search query to search across all Gmail messages.
-Type `gmu` followed by your search query to search only unread messages.
-
-Both keywords present a list of search options:
-
-### gms options
-- Search Gmail: all messages
-- Search Unread: unread messages only
-- Search Starred: starred messages
-- Search Sent: sent messages
-- Search Drafts: draft messages
-- Search Important: important messages
-- Search Spam: spam messages
-- Search Trash: trash messages
-
-### gmu options
-- Search Unread Gmail: all unread messages
-- Search Unread in Inbox: unread inbox messages
-- Search Unread Important: unread important messages
-- Search Unread Starred: unread starred messages
-
-## Configuration
-
-You can customise the keywords in Alfred's workflow preferences:
-- **keyword** — main Gmail search keyword (default: `gms`)
-- **unread_keyword** — unread search keyword (default: `gmu`)
-- **gmail_account** — Gmail account index (default: `0`, use `1` for a second account)
-
-This workflow is under the MIT License.</string>
+Good Luck Finding it!</string>
 	<key>uidata</key>
 	<dict>
-		<key>D7B5E8A9-1234-5678-ABCD-EF0123456789</key>
+		<key>06F59E2A-A7E1-462E-8FD0-14F36B7A460E</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>xpos</key>
-			<real>165</real>
+			<real>780</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>425</real>
 		</dict>
-		<key>A1234567-89AB-CDEF-0123-456789ABCDEF</key>
+		<key>09BAD089-B5F8-40D6-AE7E-B0FE3FD56313</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
 			<key>xpos</key>
-			<real>165</real>
+			<real>185</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>90</real>
 		</dict>
-		<key>B2345678-9ABC-DEF0-1234-56789ABCDEF0</key>
+		<key>0AE017FD-5BE5-4AF3-AFBD-31502A214421</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>1125</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>1E9EC99B-06E8-4A96-A09C-706F855EE39A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<real>375</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>1F665CA9-15D6-4A3D-A9DC-B3D9E21EB986</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>1070</real>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>211400F9-855C-4695-AD89-44226CB55C27</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
+			<key>note</key>
+			<string>Open Configuration</string>
+			<key>xpos</key>
+			<real>1000</real>
+			<key>ypos</key>
+			<real>425</real>
+		</dict>
+		<key>2F93D263-F7DC-4C31-B36E-2C040E984813</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>780</real>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>428220BB-482C-475B-9CD3-2B74A3D9E0F2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<real>320</real>
+			<key>ypos</key>
+			<real>120</real>
+		</dict>
+		<key>4771CEFB-D315-4808-8935-2B1F26EBB028</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>1255</real>
+			<key>ypos</key>
+			<real>105</real>
+		</dict>
+		<key>48992664-A9E2-42A1-BBA9-EDDA8A7F6DFD</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>505</real>
+			<key>ypos</key>
+			<real>105</real>
+		</dict>
+		<key>54296731-D10D-4008-AC08-70822A9CA6DE</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>1170</real>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>59BCD3FD-9F1B-4097-8772-3D60C2E9E040</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>995</real>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>5F06904E-253D-447B-8F15-283B58599718</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>5</integer>
-			<key>note</key>
-			<string>Open the Gmail search URL in the browser</string>
 			<key>xpos</key>
-			<real>395</real>
+			<real>1340</real>
 			<key>ypos</key>
-			<real>95</real>
+			<real>15</real>
+		</dict>
+		<key>656A4807-DF38-4427-88A1-A4946F13B4A8</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>480</real>
+			<key>ypos</key>
+			<real>645</real>
+		</dict>
+		<key>6FAA7372-C5AF-46A4-A1CE-05EA864FCEF9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>747010B5-0EB7-4008-A555-E5229219CC12</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>480</real>
+			<key>ypos</key>
+			<real>425</real>
+		</dict>
+		<key>752759BB-F9C2-43DA-81CA-B75FF01F0349</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<real>1230</real>
+			<key>ypos</key>
+			<real>135</real>
+		</dict>
+		<key>75996F8A-BFFD-486D-9F4B-1F213AF1A50F</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>995</real>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
+		<key>78AAE0D1-EF88-4D0C-A782-F3CB28AD2B21</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<real>530</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>88B5117C-021E-4E95-8335-54C3D528151C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>935</real>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>909BCBCF-878B-4851-85BB-CACDDCB5ADDA</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>920</real>
+		</dict>
+		<key>95E979E6-ECDB-416D-A6AE-D88FC5236C4B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<real>1280</real>
+			<key>ypos</key>
+			<real>75</real>
+		</dict>
+		<key>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>480</real>
+			<key>ypos</key>
+			<real>245</real>
+		</dict>
+		<key>A7B02806-C5FC-4464-B8BA-613FF13BBACE</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1315</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
+		<key>B2C3D4E5-F6A7-8901-BCDE-F12345678901</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>625</real>
+			<key>ypos</key>
+			<real>245</real>
+		</dict>
+		<key>B8E8A0EE-A706-4AB1-94B5-22C3B71DD254</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>note</key>
+			<string>Diagnose Workflow</string>
+			<key>xpos</key>
+			<real>425</real>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>CB5DC198-AA30-4246-9F11-22C5CCC465EC</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>200</real>
+			<key>ypos</key>
+			<real>425</real>
+		</dict>
+		<key>CF5AE334-2496-4798-973B-6770762E97C2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<real>480</real>
+			<key>ypos</key>
+			<real>135</real>
+		</dict>
+		<key>D4C2887A-B7B0-428D-9DFC-BEF7B109E741</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>1375</real>
+			<key>ypos</key>
+			<real>245</real>
+		</dict>
+		<key>D8AFCD7E-C431-485A-B50C-2CF49C2722CB</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>590</real>
+			<key>ypos</key>
+			<real>15</real>
+		</dict>
+		<key>D8EB74B4-CF6F-473A-ADFA-FC1F74CF2F7A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>1230</real>
+			<key>ypos</key>
+			<real>245</real>
+		</dict>
+		<key>D8EF56D6-CEDE-4112-A473-0EB4CDC94206</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>425</real>
+		</dict>
+		<key>E0E18AF9-3811-4F3B-BDBF-53FEAF1A3CFF</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>10</integer>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>E6519B0A-0EAD-4D3F-A7C3-69B1268E06DF</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>565</real>
+			<key>ypos</key>
+			<real>45</real>
+		</dict>
+		<key>E74530D5-2329-4149-B2AC-84DEC8A1A152</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>655</real>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>E94597EB-2B74-40C2-9829-E617DB627391</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>825</real>
+			<key>ypos</key>
+			<real>795</real>
+		</dict>
+		<key>FC9FB6F4-C8A6-44F6-A395-1BF988FAC5AD</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
+			<key>xpos</key>
+			<real>480</real>
+			<key>ypos</key>
+			<real>535</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -240,78 +1789,103 @@ This workflow is under the MIT License.</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>gms</string>
-				<key>placeholder</key>
-				<string>Customize the main search keyword</string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Main Gmail search keyword</string>
-			<key>label</key>
-			<string>Search Keyword</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>keyword</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>gmu</string>
-				<key>placeholder</key>
-				<string>Customize the unread search keyword</string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Unread Gmail search keyword</string>
-			<key>label</key>
-			<string>Unread Keyword</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>unread_keyword</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
 				<string>0</string>
-				<key>placeholder</key>
-				<string>Gmail account index (0 for primary)</string>
-				<key>required</key>
-				<false/>
-				<key>trim</key>
-				<true/>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>acct0@gmail.com</string>
+						<string>0</string>
+					</array>
+					<array>
+						<string>acct1@gmail.com</string>
+						<string>1</string>
+					</array>
+					<array>
+						<string>acct2@gmail.com</string>
+						<string>2</string>
+					</array>
+					<array>
+						<string>acct3@gmail.com</string>
+						<string>3</string>
+					</array>
+					<array>
+						<string>acct4@gmail.com</string>
+						<string>4</string>
+					</array>
+					<array>
+						<string>acct5@gmail.com</string>
+						<string>5</string>
+					</array>
+					<array>
+						<string>acct6@gmail.com</string>
+						<string>6</string>
+					</array>
+					<array>
+						<string>acct7@gmail.com</string>
+						<string>7</string>
+					</array>
+					<array>
+						<string>acct8@gmail.com</string>
+						<string>8</string>
+					</array>
+					<array>
+						<string>acct9@gmail.com</string>
+						<string>9</string>
+					</array>
+				</array>
 			</dict>
 			<key>description</key>
-			<string>Gmail account index (0 = primary, 1 = second account, etc.)</string>
+			<string>The Default Inbox To Search (change names to your actual @gmail accounts in config builder) look for the number in the url: https://mail.google.com/mail/u/1/#inbox -&gt; #1 | https://mail.google.com/mail/u/2/#inbox -&gt; #2</string>
 			<key>label</key>
-			<string>Gmail Account</string>
+			<string>Default Account</string>
 			<key>type</key>
-			<string>textfield</string>
+			<string>popupbutton</string>
 			<key>variable</key>
-			<string>gmail_account</string>
+			<string>userNumber</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>8</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Small</string>
+						<string>8</string>
+					</array>
+					<array>
+						<string>Medium</string>
+						<string>7</string>
+					</array>
+					<array>
+						<string>Large</string>
+						<string>6</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Change the cell size within the grid</string>
+			<key>label</key>
+			<string>Change Icon Size</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>gridCols</string>
 		</dict>
 	</array>
 	<key>variables</key>
 	<dict>
-		<key>gmail_account</key>
-		<string>0</string>
-		<key>keyword</key>
-		<string>gms</string>
-		<key>unread_keyword</key>
-		<string>gmu</string>
+		<key>actionPrefix</key>
+		<string>→</string>
+		<key>emailLabel1</key>
+		<string>acct1@rmwp.com</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>0.1.0</string>
+	<string>0.0.0.1</string>
 	<key>webaddress</key>
-	<string>https://github.com/cdouglasnet/Gmail-Search-Tools</string>
+	<string>https://cdoug.design</string>
 </dict>
 </plist>
