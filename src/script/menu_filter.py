@@ -6,7 +6,7 @@ import os
 from urllib.parse import quote_plus
 
 GMAIL_BASE_URL = "https://mail.google.com/mail/u/{account}/#search/{query}"
-ICONS = {
+STATIC_ICONS = {
     "gms-unread-menu": "unread.png",
     "gms-red-bang": "red-bang.png",
     "gms-yellow-bang": "yellow-bang.png",
@@ -26,7 +26,35 @@ ICONS = {
     "gmu-settings": "settings.png",
     "gmu-back": "back.png",
     "gmo-back": "back.png",
+    "gmsettings-config": "settings.png",
+    "gmsettings-diagnostic": "settings.png",
+    "gmsettings-forum": "link.png",
+    "gmsettings-github": "link.png",
+    "gmsettings-back": "back.png",
 }
+
+# Currency icon mapping
+CURRENCY_ICONS = {
+    "dollar": "green-dollar.png",
+    "pound": "green-pound.png",
+    "euro": "green-euro.png",
+    "yen": "green-yen.png",
+}
+
+
+def get_currency_icon():
+    """Get the current currency icon based on environment variable"""
+    currency = os.environ.get("currency", "dollar")
+    return CURRENCY_ICONS.get(currency, CURRENCY_ICONS["dollar"])
+
+
+def get_icon_for_uid(uid):
+    """Get icon file for a uid, including currency-based icons"""
+    if uid in STATIC_ICONS:
+        return STATIC_ICONS[uid]
+    if uid in ("gmu-promotions", "gmu-reservations", "gmu-purchases"):
+        return get_currency_icon()
+    return None
 
 # Gmail can have multiple accounts logged in at a time. The account number is used to differentiate the accounts.
 def account_number():
@@ -45,7 +73,7 @@ def item(uid, title, subtitle, arg=None, valid=True):
     }
     if arg is not None:
         result["arg"] = arg
-    icon_file = ICONS.get(uid)
+    icon_file = get_icon_for_uid(uid)
     if icon_file:
         result["icon"] = {"path": icon_file}
     return result
@@ -109,8 +137,112 @@ def gms_items(query):
     ]
     return items
 
+def gmss_items(query):
+    q = query.strip()
+    items = [
+        item("gms-search-reference", "GMail Search Refrence", "Learn Power Searches", "search"),
+        item("gms-unread-menu", "Un-Read Mail", "Unread quick links", "unread"),
+        item(
+            "gms-search",
+            f'Search Gmail: "{q}"' if q else "Search Gmail",
+            "Search all Gmail messages",
+            gmail_url(q),
+        ),
+        item(
+            "gms-search-unread",
+            f'Search Unread: "{q}"' if q else "Search Unread",
+            "Search unread Gmail messages",
+            gmail_url(f"is:unread {q}".strip()),
+        ),
+        item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_url("has:red-bang")),
+        item(
+            "gms-yellow-bang",
+            "Yellow Bang",
+            "Show mail with yellow-bang star",
+            gmail_url("has:yellow-bang"),
+        ),
+        item(
+            "gms-purple-question",
+            "Purple Question",
+            "Show mail with purple-question star",
+            gmail_url("has:purple-question"),
+        ),
+        item(
+            "gms-blue-info",
+            "Blue Info",
+            "Show mail with blue-info star",
+            gmail_url("has:blue-info"),
+        ),
+        item("gms-blue-star", "Blue Star", "Show mail with blue-star", gmail_url("has:blue-star")),
+        item(
+            "gms-orange-guillemet",
+            "Orange Guillemet",
+            "Show mail with orange-guillemet",
+            gmail_url("has:orange-guillemet"),
+        ),
+        item("gms-yellow-star", "Yellow Star", "Show mail with yellow-star", gmail_url("has:yellow-star")),
+        item("gms-orange-star", "Orange Star", "Show mail with orange-star", gmail_url("has:orange-star")),
+        item("gms-red-star", "Red Star", "Show mail with red-star", gmail_url("has:red-star")),
+        item("gms-purple-star", "Purple Star", "Show mail with purple-star", gmail_url("has:purple-star")),
+        item("gms-green-star", "Green Star", "Show mail with green-star", gmail_url("has:green-star")),
+        item(
+            "gms-green-check",
+            "Green Checkmark",
+            "Show mail with green-check",
+            gmail_url("has:green-check"),
+        ),
+        item("gms-settings", "Settings", "Open workflow configuration", "settings"),
+    ]
+    return items
+
 
 def gmu_items(query):
+    q = query.strip()
+    items = [
+        item("gmu-main", "Un-Read Mail", "Unread quick links", "name"),
+        item(
+            "gmu-search-unread",
+            f'Search Unread Gmail: "{q}"' if q else "Search Unread Gmail",
+            "Search all unread Gmail messages",
+            gmail_url(f"is:unread {q}".strip()),
+        ),
+        item(
+            "gmu-primary",
+            "Primary Unread",
+            "Unread in Primary",
+            gmail_url("category:primary label:unread"),
+        ),
+        item(
+            "gmu-updates",
+            "Updates UnRead",
+            "Unread in Updates",
+            gmail_url("category:updates label:unread"),
+        ),
+        item(
+            "gmu-promotions",
+            "Promotions UnRead",
+            "Unread in Promotions",
+            gmail_url("category:promotions label:unread"),
+        ),
+        item(
+            "gmu-forums",
+            "Forums UnRead",
+            "Unread in Forums",
+            gmail_url("category:forums label:unread"),
+        ),
+        item(
+            "gmu-reservations",
+            "Reservations",
+            "Reservations category",
+            gmail_url("category:reservations"),
+        ),
+        item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases")),
+        item("gmu-settings", "Settings", "Open workflow configuration", "settings"),
+        item("gmu-back", "Start Over", "Return to the main menu", "back"),
+    ]
+    return items
+
+def gmuu_items(query):
     q = query.strip()
     items = [
         item("gmu-main", "Un-Read Mail", "Unread quick links", "name"),
@@ -252,17 +384,57 @@ def gmo_items():
     return items
 
 
+def gmsettings_items():
+    return [
+        item(
+            "gmsettings-config",
+            "Config",
+            "Open workflow configuration in Alfred",
+            "config",
+        ),
+        item(
+            "gmsettings-diagnostic",
+            "Diagnostic",
+            "Run workflow diagnostic",
+            "diagnostic",
+        ),
+        item(
+            "gmsettings-forum",
+            "Forum",
+            "Open Alfred Forum page",
+            "forum",
+        ),
+        item(
+            "gmsettings-github",
+            "GitHub",
+            "Open GitHub project page",
+            "github",
+        ),
+        item("gmsettings-back", "Start Over", "Return to the main menu", "back"),
+    ]
+
+
 def main():
     parser = argparse.ArgumentParser(description="Gmail menu script filter")
-    parser.add_argument("--mode", choices=["gms", "gmu", "gmo"], required=True)
+    parser.add_argument(
+        "--mode",
+        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmsettings"],
+        required=True,
+    )
     parser.add_argument("query", nargs="*")
     args = parser.parse_args()
 
     query = " ".join(args.query).strip()
     if args.mode == "gmu":
         items = gmu_items(query)
+    elif args.mode == "gmuu":
+        items = gmuu_items(query)
+    elif args.mode == "gmss":
+        items = gmss_items(query)
     elif args.mode == "gmo":
         items = gmo_items()
+    elif args.mode == "gmsettings":
+        items = gmsettings_items()
     else:
         items = gms_items(query)
     print(json.dumps({"items": items}, ensure_ascii=False))

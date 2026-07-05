@@ -16,6 +16,7 @@ Alfred workflow for quick access to Gmail search.
 - **`gms`** — Search Gmail messages (customizable)
 - **`gmu`** — Search unread Gmail messages (customizable)
 - **`gmo`** — Gmail Search Operators (customizable)
+- **`gmsettings`** — Workflow settings/actions menu (customizable)
 
 ## Usage
 
@@ -24,6 +25,8 @@ Type `gms` followed by your search query to search across Gmail messages with mu
 Type `gmu` followed by your search query to search only unread messages.
 
 Type `gmo` to browse Gmail search operators and quick actions.
+
+Type `gmsettings` to open the workflow settings/actions menu (Config, Diagnostic, Forum, GitHub).
 
 ### `gms` search options
 - **Search Gmail** — search all messages
@@ -50,9 +53,14 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 | `gms_key` | `gms` | Main Gmail search keyword |
 | `gmu_key` | `gmu` | Unread Gmail search keyword |
 | `gmo_key` | `gmo` | Gmail Search Operators keyword |
+| `gmsettings_key` | `gmsettings` | Settings/actions menu keyword |
 | `gmss_key` | - | Secondary Gmail search keyword (optional) |
 | `gmuu_key` | - | Secondary unread Gmail search keyword (optional) |
 | `userNumber` | `0` | Gmail account index (0 = primary, 1 = second account, etc.) |
+
+## TODO
+
+- Update the Forum menu URL in `src/info.plist` to the dedicated Gmail Search Tools forum thread once it is posted.
 
 ## Installation
 

@@ -33,6 +33,19 @@ class TestMenuFilter(unittest.TestCase):
         data = json.loads(output)
         self.assertGreater(len(data["items"]), 0)
 
+    def test_gmsettings_mode_returns_expected_items(self):
+        output = self._run_main_capture(["menu_filter.py", "--mode", "gmsettings"])
+        data = json.loads(output)
+        titles = [item["title"] for item in data["items"]]
+        self.assertEqual(titles, ["Config", "Diagnostic", "Forum", "GitHub", "Start Over"])
+
+    def test_gmsettings_links_use_link_icon(self):
+        output = self._run_main_capture(["menu_filter.py", "--mode", "gmsettings"])
+        data = json.loads(output)
+        items_by_title = {item["title"]: item for item in data["items"]}
+        self.assertEqual(items_by_title["Forum"]["icon"]["path"], "link.png")
+        self.assertEqual(items_by_title["GitHub"]["icon"]["path"], "link.png")
+
 
 if __name__ == "__main__":
     unittest.main()
