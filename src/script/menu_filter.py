@@ -26,6 +26,7 @@ STATIC_ICONS = {
     "gmu-settings": "settings.png",
     "gmu-back": "back.png",
     "gmo-back": "back.png",
+    "gmo-settings": "settings.png",
     "gmsettings-config": "settings.png",
     "gmsettings-diagnostic": "settings.png",
     "gmsettings-forum": "link.png",
@@ -379,6 +380,7 @@ def gmo_items():
         ),
         item("gmo-no-user-labels", "No User Labels", "Ex. has:nouserlabels", "has:nouserlabels"),
         item("gmo-unread", "Un-Read", "", "unread"),
+        item("gmo-settings", "Settings", "Open workflow configuration", "settings"),
         item("gmo-back", "Start Over", "Return to the main menu", "back"),
     ]
     return items
