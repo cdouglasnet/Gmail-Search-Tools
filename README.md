@@ -11,18 +11,25 @@ Alfred workflow for quick access to Gmail search.
 
 ![Alt text](icon.png)
 
-## Keywords
+## Keywords (customizable)
 
-- **`gms`** — Search Gmail messages (customizable)
-- **`gmu`** — Search unread Gmail messages (customizable)
-- **`gmo`** — Gmail Search Operators (customizable)
-- **`gmsettings`** — Workflow settings/actions menu (customizable)
+- **`gms`** — Search Gmail Messages, Stars (Filterable) 🔍
+- **`gmss`** — Search Gmail messages with argument ⭐️
+- **`gmu`** — Search unread Gmail messages (Filterable) 📬
+- **`gmuu`** — Search unread Gmail messages with argument 📩
+- **`gmo`** — Gmail Search Operators (Filterable) 🧰
+- **`gmoo`** — Gmail Search Operators with argument ⚙️
+- **`gmsettings`** — Workflow settings/actions menu 🛠️
 
 ## Usage
 
-Type `gms` followed by your search query to search across Gmail messages with multiple filter options.
+`gms` followed by your search query to search across Gmail messages with multiple filter options.
 
-Type `gmu` followed by your search query to search only unread messages.
+`gmss` followed by your search query to search across Gmail messages with multiple filter options.
+
+`gmu` followed by your search query to search only unread messages.
+
+`gmuu` followed by your search query to search only unread messages.
 
 Type `gmo` to browse Gmail search operators and quick actions.
 
@@ -48,19 +55,20 @@ Type `gmsettings` to open the workflow settings/actions menu (Config, Diagnostic
 
 Customize keywords and Gmail account in Alfred's workflow preferences:
 
-| Variable | Default | Description |
-|---|---|---|
-| `gms_key` | `gms` | Main Gmail search keyword |
-| `gmu_key` | `gmu` | Unread Gmail search keyword |
-| `gmo_key` | `gmo` | Gmail Search Operators keyword |
-| `gmsettings_key` | `gmsettings` | Settings/actions menu keyword |
-| `gmss_key` | - | Secondary Gmail search keyword (optional) |
-| `gmuu_key` | - | Secondary unread Gmail search keyword (optional) |
-| `userNumber` | `0` | Gmail account index (0 = primary, 1 = second account, etc.) |
+| Variable         | Default      | Description                                         |
+|------------------|--------------|-----------------------------------------------------|
+| `gms_key`        | `gms`        | Main Gmail search keyword                           |
+| `gmu_key`        | `gmu`        | Unread Gmail search keyword                         |
+| `gmo_key`        | `gmo`        | Gmail Search Operators keyword                      |
+| `gmss_key`       | `gmss`       | Search Keyword (With Argument)                      |
+| `gmuu_key`       | `gmuu`       | Un-Read keyword (With Argument)                     |
+| `gmoo_key`       | `gmoo`       | Gmail Operators (With Argument)                     |
+| `gmsettings_key` | `gmsettings` | Settings/actions menu keyword                       |
+| `userNumber`     | `0`          | Gmail account index (0 = primary, 1 = second account, etc.) |
 
 ## TODO
 
-- Update the Forum menu URL in `src/info.plist` to the dedicated Gmail Search Tools forum thread once it is posted.
+- Update the Alfred Forum URL in `src/info.plist` to the dedicated Gmail Search Tools forum thread once it is posted.
 
 ## Installation
 
