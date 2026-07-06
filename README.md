@@ -7,15 +7,15 @@
 [![Alfred](https://img.shields.io/badge/Alfred-5%2B-5C1F87)](https://www.alfredapp.com/)
 [![License](https://img.shields.io/github/license/cdouglasnet/Gmail-Search-Tools?label=License)](LICENSE)
 
-Alfred workflow for quick access to Gmail search.
+Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, and more.
 
 ![Alt text](icon.png)
 
-## Keywords (customizable)
+## Keywords - (Customizable in Configuration)
 
-- **`gms`** — Search Gmail Messages, Stars (Filterable) 🔍
-- **`gmss`** — Search Gmail messages with argument ⭐️
-- **`gmu`** — Search unread Gmail messages (Filterable) 📬
+- **`gms`** — Gmail Search Messages, Stars (Filterable) 🔍
+- **`gmss`** — Gmail Search Messages with argument ⭐️
+- **`gmu`** — Gmail Un-Read Messages (Filterable) 📬
 - **`gmuu`** — Search unread Gmail messages with argument 📩
 - **`gmo`** — Gmail Search Operators (Filterable) 🧰
 - **`gmoo`** — Gmail Search Operators with argument ⚙️
@@ -23,17 +23,13 @@ Alfred workflow for quick access to Gmail search.
 
 ## Usage
 
-`gms` followed by your search query to search across Gmail messages with multiple filter options.
-
-`gmss` followed by your search query to search across Gmail messages with multiple filter options.
-
-`gmu` followed by your search query to search only unread messages.
-
-`gmuu` followed by your search query to search only unread messages.
-
-Type `gmo` to browse Gmail search operators and quick actions.
-
-Type `gmsettings` to open the workflow settings/actions menu (Config, Diagnostic, Forum, GitHub).
+- `gms`<kbd>↩</kbd> Filterable List ➡️ default search. ie. URL + has:red-bang
+- `gmss` `{query}`<kbd>↩</kbd> Search + query ➡️ ie. URL + has:red-bang + mySearchTerm(s)
+- `gmu`<kbd>↩</kbd> Filterable List ➡️ default search Un-Read Messages. ie. URL + is:unread
+- `gmuu` `{query}`<kbd>↩</kbd> Un-Read + query ➡️ ie. URL + is:unread + mySearchTerm(s)
+- `gmo`<kbd>↩</kbd> Filterable List Search Operators ➡️ ie. URL + has:attachment
+- `gmoo` `{query}`<kbd>↩</kbd> Search Operators + query ➡️ ie. URL + has:attachment + mySearchTerm(s)
+- `gmsettings`<kbd>↩</kbd> Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
 
 ### `gms` search options
 - **Search Gmail** — search all messages
