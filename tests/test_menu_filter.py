@@ -33,6 +33,20 @@ class TestMenuFilter(unittest.TestCase):
         data = json.loads(output)
         self.assertGreater(len(data["items"]), 0)
 
+    def test_gmoo_mode_returns_search_operators(self):
+        output = self._run_main_capture(["menu_filter.py", "--mode", "gmoo"])
+        data = json.loads(output)
+        titles = [item["title"] for item in data["items"]]
+        self.assertIn("Search Options", titles)
+        self.assertIn("From:", titles)
+
+    def test_gmoo_mode_wires_query_into_items(self):
+        output = self._run_main_capture(["menu_filter.py", "--mode", "gmoo", "invoice"])
+        data = json.loads(output)
+        titles = [item["title"] for item in data["items"]]
+        self.assertIn('From: "invoice"', titles)
+        self.assertIn('Subject: "invoice"', titles)
+
     def test_gmsettings_mode_returns_expected_items(self):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmsettings"])
         data = json.loads(output)

@@ -25,6 +25,13 @@ STATIC_ICONS = {
     "gmu-search-unread": "unread.png",
     "gmu-settings": "settings.png",
     "gmu-back": "back.png",
+    "gmo-from": "mailfrom.png",
+    "gmo-to": "mailto.png",
+    "gmo-cc": "mailcc.png",
+    "gmo-bcc": "mailbcc.png",
+    "gmo-drive-link": "gdrive.png",
+    "gmo-youtube": "video.png",
+    "gmo-unread": "unread.png",
     "gmo-back": "back.png",
     "gmo-settings": "settings.png",
     "gmsettings-config": "settings.png",
@@ -50,7 +57,7 @@ def get_currency_icon():
 
 
 def get_icon_for_uid(uid):
-    """Get icon file for a uid, including currency-based icons"""
+    """Get icon file for an uid, including currency-based icons"""
     if uid in STATIC_ICONS:
         return STATIC_ICONS[uid]
     if uid in ("gmu-promotions", "gmu-reservations", "gmu-purchases"):
@@ -79,7 +86,7 @@ def item(uid, title, subtitle, arg=None, valid=True):
         result["icon"] = {"path": icon_file}
     return result
 
-
+# Gmail Search Filterable List
 def gms_items(query):
     q = query.strip()
     items = [
@@ -94,7 +101,7 @@ def gms_items(query):
         item(
             "gms-search-unread",
             f'Search Unread: "{q}"' if q else "Search Unread",
-            "Search unread Gmail messages",
+            "Search Un-Read Gmail Messages",
             gmail_url(f"is:unread {q}".strip()),
         ),
         item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_url("has:red-bang")),
@@ -138,11 +145,12 @@ def gms_items(query):
     ]
     return items
 
+# Gmail Search with Qurey
 def gmss_items(query):
     q = query.strip()
     items = [
         item("gms-search-reference", "GMail Search Refrence", "Learn Power Searches", "search"),
-        item("gms-unread-menu", "Un-Read Mail", "Unread quick links", "unread"),
+        item("gms-unread-menu", "Un-Read Mail", "Un-Read Quick Links Menu", "unread"),
         item(
             "gms-search",
             f'Search Gmail: "{q}"' if q else "Search Gmail",
@@ -196,11 +204,10 @@ def gmss_items(query):
     ]
     return items
 
-
+# Un-Read Mail Filterable List
 def gmu_items(query):
     q = query.strip()
     items = [
-        item("gmu-main", "Un-Read Mail", "Unread quick links", "name"),
         item(
             "gmu-search-unread",
             f'Search Unread Gmail: "{q}"' if q else "Search Unread Gmail",
@@ -243,10 +250,10 @@ def gmu_items(query):
     ]
     return items
 
+# Un-Read Mail Search With Query
 def gmuu_items(query):
     q = query.strip()
     items = [
-        item("gmu-main", "Un-Read Mail", "Unread quick links", "name"),
         item(
             "gmu-search-unread",
             f'Search Unread Gmail: "{q}"' if q else "Search Unread Gmail",
@@ -289,7 +296,7 @@ def gmuu_items(query):
     ]
     return items
 
-
+# Search Operators Filterable List
 def gmo_items():
     items = [
         item(
@@ -298,88 +305,185 @@ def gmo_items():
             "↵ Copy, ⌘ Auto, ⌥ Auto Clip, ⌃ Other, ⇧⌘ Back",
             valid=False,
         ),
-        item("gmo-from", "From", "Ex. from:bob", "from:"),
-        item("gmo-to", "To", "Ex. to:bob", "to:"),
-        item("gmo-cc", "CC", "Ex. cc:bob", "cc:"),
-        item("gmo-bcc", "BCC", "Ex. bcc:bob", "bcc:"),
-        item("gmo-subject", "Subject", "Ex. subject:what about bob", "subject:"),
+        item("gmo-from", "From", "Ex. from:bob", gmail_url("from:")),
+        item("gmo-to", "To", "Ex. to:bob", gmail_url("to:")),
+        item("gmo-cc", "CC", "Ex. cc:bob", gmail_url("cc:")),
+        item("gmo-bcc", "BCC", "Ex. bcc:bob", gmail_url("bcc:")),
+        item("gmo-subject", "Subject", "Ex. subject:what about bob", gmail_url("subject:")),
         item("gmo-or", "OR", "Ex. from:bob OR from:bam", "OR"),
-        item("gmo-exclude", "Exclude", "Ex. bam -rock", "-"),
+        item("gmo-exclude", "Exclude", "Ex. bam -rock", gmail_url("-")),
         item("gmo-around", "AROUND", "Ex. flight AROUND 10 airport", "AROUND"),
-        item("gmo-label", "Label", "Ex. label:builders", "label:"),
-        item("gmo-attachments", "Attachments", "Ex. has:attachment", "has:attachment"),
-        item("gmo-drive-link", "Drive Link", "Ex. has:drive", "has:drive"),
-        item("gmo-document", "Document", "Ex. has:document", "has:document"),
-        item("gmo-spreadsheet", "Spreadsheet", "Ex. has:spreadsheet", "has:spreadsheet"),
-        item("gmo-presentation", "Presentation", "Ex. has:presentation", "has:presentation"),
-        item("gmo-youtube", "YouTube", "Ex. has:youtube", "has:youtube"),
-        item("gmo-list", "List", "Ex. list:info@example.org", "list:"),
-        item("gmo-filename", "Filename", "Ex. filename:wishlist.txt", "filename:"),
+        item("gmo-label", "Label", "Ex. label:builders", gmail_url("label:")),
+        item("gmo-attachments", "Attachments", "Ex. has:attachment", gmail_url("has:attachment")),
+        item("gmo-drive-link", "Drive Link", "Ex. has:drive", gmail_url("has:drive")),
+        item("gmo-document", "Document", "Ex. has:document", gmail_url("has:document")),
+        item("gmo-spreadsheet", "Spreadsheet", "Ex. has:spreadsheet", gmail_url("has:spreadsheet")),
+        item("gmo-presentation", "Presentation", "Ex. has:presentation", gmail_url("has:presentation")),
+        item("gmo-youtube", "YouTube", "Ex. has:youtube", gmail_url("has:youtube")),
+        item("gmo-list", "List", "Ex. list:info@example.org", gmail_url("list:")),
+        item("gmo-filename", "Filename", "Ex. filename:wishlist.txt", gmail_url("filename:")),
         item(
             "gmo-exact-word-or-phrase",
             "Exact Word or Phrase",
             'Ex. "bob the builder"',
-            '""',
+            gmail_url("\"\""),
         ),
-        item("gmo-group-search-terms", "Group Search Terms", "Ex. (bob builder)", "()"),
+        item("gmo-group-search-terms", "Group Search Terms", "Ex. (bob builder)", gmail_url("()")), # Needs Submenu
         item(
             "gmo-anywhere",
             "Anywhere (include Spam & Trash)",
             "Ex. in:anywhere",
-            "in:anywhere",
+            gmail_url("in:anywhere")
         ),
-        item("gmo-important", "Important", "Ex. is:important", "is:important"),
-        item("gmo-after", "After", "Ex. after:08/28/2024", "after:"),
-        item("gmo-before", "Before", "Ex. before:08/28/2004", "before:"),
-        item("gmo-older", "Older", "Ex. older:08/28/2004", "older:"),
-        item("gmo-newer", "Newer", "Ex. newer:08/28/2004", "newer:"),
+        item("gmo-important", "Important", "Ex. is:important", gmail_url("is:important")),
+        item("gmo-after", "After", "Ex. after:08/28/2024", gmail_url("after:")),
+        item("gmo-before", "Before", "Ex. before:08/28/2004", gmail_url("before:")),
+        item("gmo-older", "Older", "Ex. older:08/28/2004", gmail_url("older:")),
+        item("gmo-newer", "Newer", "Ex. newer:08/28/2004", gmail_url("newer:")),
         item(
             "gmo-older-than",
             "Older Than (d=Day m=Mnth y=Yr)",
             "Ex. older_than:2d",
-            "older_than:",
+            gmail_url("older_than:")
         ),
-        item("gmo-chat", "Chat", "Ex. is:chat", "is:chat"),
+        item("gmo-chat", "Chat", "Ex. is:chat", gmail_url("is:chat")),
         item(
             "gmo-delivered-to",
             "Delivered To",
             "Ex. deliveredto:username@gmail.com",
-            "deliveredto:@gmail.com",
+            gmail_url("deliveredto:@gmail.com")
         ),
-        item("gmo-primary-category", "Primary Category", "Ex. category:primary", "category:primary"),
-        item("gmo-social-category", "Social Category", "Ex. category:social", "category:social"),
+        item("gmo-primary-category", "Primary Category", "Ex. category:primary", gmail_url("category:primary")),
+        item("gmo-social-category", "Social Category", "Ex. category:social", gmail_url("category:social")),
         item(
             "gmo-promotions-category",
             "Promotions Category",
             "Ex. category:promotions",
-            "category:promotions",
+            gmail_url("category:promotions")
         ),
-        item("gmo-updates-category", "Updates Category", "Ex. category:updates", "category:updates"),
-        item("gmo-forums-category", "Forums Category", "category:forums", "category:forums"),
+        item("gmo-updates-category", "Updates Category", "Ex. category:updates", gmail_url("category:updates")),
+        item("gmo-forums-category", "Forums Category", "category:forums", gmail_url("category:forums")),
         item(
             "gmo-reservations-category",
             "Reservations Category",
             "Ex. category:reservations",
-            "category:reservations",
+            gmail_url("category:reservations")
         ),
         item(
             "gmo-purchases-category",
             "Purchases Category",
             "Ex. category:purchases",
-            "category:purchases",
+            gmail_url("category:purchases")
         ),
-        item("gmo-size-larger", "Size (Larger)", "Ex. size:1000000 (bytes / K / M)", "size:"),
-        item("gmo-larger-size", "Larger Size", "Ex. larger:10M", "larger:"),
-        item("gmo-smaller-size", "Smaller Size", "Ex. smaller:1M", "smaller:"),
-        item("gmo-exact-word-match", "Exact Word Match", "Ex. +unicorn", "+"),
+        item("gmo-size-larger", "Size (Larger)", "Ex. size:1000000 (bytes / K / M)", gmail_url("size:")),
+        item("gmo-larger-size", "Larger Size", "Ex. larger:10M", gmail_url("larger:")),
+        item("gmo-smaller-size", "Smaller Size", "Ex. smaller:1M", gmail_url("smaller:")),
+        item("gmo-exact-word-match", "Exact Word Match", "Ex. +unicorn", gmail_url("+")),
         item(
             "gmo-user-label",
             "User Label (Has Any User Label)",
             "Ex. has:userlabels",
-            "has:userlabels",
+            gmail_url("has:userlabels")
         ),
-        item("gmo-no-user-labels", "No User Labels", "Ex. has:nouserlabels", "has:nouserlabels"),
-        item("gmo-unread", "Un-Read", "", "unread"),
+        item("gmo-no-user-labels", "No User Labels", "Ex. has:nouserlabels", gmail_url("has:nouserlabels")),
+        item("gmo-unread", "Un-Read", "Un-Read quick link menu", "unread"),
+        item("gmo-settings", "Settings", "Open workflow configuration", "settings"),
+        item("gmo-back", "Start Over", "Return to the main menu", "back"),
+    ]
+    return items
+
+# Search Operators with Argument
+def gmoo_items(query):
+    q = query.strip()
+    items = [
+        item(
+            "gmo-search-options",
+            "Search Options",
+            "↵ Copy, ⌘ Auto, ⌥ Auto Clip, ⌃ Other, ⇧⌘ Back",
+            valid=False,
+        ),
+        item("gmo-from", f'From: "{q}"' if q else "From:", "Ex. from:bob", gmail_url(f"from: {q}".strip())),
+        item("gmo-to", f'To: "{q}"' if q else "To:", "Ex. to:bob", gmail_url(f"to: {q}".strip())),
+        item("gmo-cc", f'CC: "{q}"' if q else "CC", "Ex. cc:bob", gmail_url(f"cc: {q}".strip())),
+        item("gmo-bcc", f'BCC: "{q}"' if q else "BCC", "Ex. bcc:bob", gmail_url(f"bcc: {q}".strip())),
+        item("gmo-subject", f'Subject: "{q}"' if q else "Subject", "Ex. subject:what about bob", gmail_url(f"subject: {q}".strip())),
+        item("gmo-or", f'OR: "{q}"' if q else "OR", "Ex. from:bob OR from:bam", gmail_url(f"OR {q}".strip()) if q else "OR"),
+        item("gmo-exclude", f'Exclude: "{q}"' if q else "Exclude", "Ex. bam -rock", gmail_url(f"-{q}".strip()) if q else "-"),
+        item("gmo-around", f'AROUND: "{q}"' if q else "AROUND", "Ex. flight AROUND 10 airport", gmail_url(f"{q} AROUND 10".strip()) if q else "AROUND"),
+        item("gmo-label", f'Label: "{q}"' if q else "Label", "Ex. label:builders", gmail_url(f"label: {q}".strip())),
+        item("gmo-attachments", f'Attachments: "{q}"' if q else "Attachments", "Ex. has:attachment", gmail_url(f"has:attachment {q}".strip())),
+        item("gmo-drive-link", f'Drive Link: "{q}"' if q else "Drive Link", "Ex. has:drive", gmail_url(f"has:drive {q}".strip())),
+        item("gmo-document", f'Document: "{q}"' if q else "Document", "Ex. has:document", gmail_url(f"has:document {q}".strip())),
+        item("gmo-spreadsheet", f'Spreadsheet: "{q}"' if q else "Spreadsheet", "Ex. has:spreadsheet", gmail_url(f"has:spreadsheet {q}".strip())),
+        item("gmo-presentation", f'Presentation: "{q}"' if q else "Presentation", "Ex. has:presentation", gmail_url(f"has:presentation {q}".strip())),
+        item("gmo-youtube", f'YouTube: "{q}"' if q else "YouTube", "Ex. has:youtube", gmail_url(f"has:youtube {q}".strip())),
+        item("gmo-list", f'List: "{q}"' if q else "List", "Ex. list:info@example.org", gmail_url(f"list: {q}".strip())),
+        item("gmo-filename", f'Filename: "{q}"' if q else "Filename", "Ex. filename:wishlist.txt", gmail_url(f"filename: {q}".strip())),
+        item(
+            "gmo-exact-word-or-phrase",
+            f'Exact Word or Phrase: "{q}"' if q else "Exact Word or Phrase",
+            'Ex. "bob the builder"',
+            gmail_url(f'"{q}"') if q else '""',
+        ),
+        item("gmo-group-search-terms", f'Group Search Terms: "{q}"' if q else "Group Search Terms", "Ex. (bob builder)", gmail_url(f"({q})") if q else "()"),
+        item(
+            "gmo-anywhere",
+            f'Anywhere (include Spam & Trash): "{q}"' if q else "Anywhere (include Spam & Trash)",
+            "Ex. in:anywhere",
+            gmail_url(f"in:anywhere {q}".strip()) if q else "in:anywhere",
+        ),
+        item("gmo-important", f'Important: "{q}"' if q else "Important", "Ex. is:important", gmail_url(f"is:important {q}".strip())),
+        item("gmo-after", f'After: "{q}"' if q else "After", "Ex. after:08/28/2024", gmail_url(f"after: {q}".strip())),
+        item("gmo-before", f'Before: "{q}"' if q else "Before", "Ex. before:08/28/2004", gmail_url(f"before: {q}".strip())),
+        item("gmo-older", f'Older: "{q}"' if q else "Older", "Ex. older:08/28/2004", gmail_url(f"older: {q}".strip())),
+        item("gmo-newer", f'Newer: "{q}"' if q else "Newer", "Ex. newer:08/28/2004", gmail_url(f"newer: {q}".strip())),
+        item(
+            "gmo-older-than",
+            f'Older Than (d=Day m=Mnth y=Yr): "{q}"' if q else "Older Than (d=Day m=Mnth y=Yr)",
+            "Ex. older_than:2d",
+            gmail_url(f"older_than: {q}".strip()),
+        ),
+        item("gmo-chat", f'Chat: "{q}"' if q else "Chat", "Ex. is:chat", gmail_url(f"is:chat {q}".strip())),
+        item(
+            "gmo-delivered-to",
+            f'Delivered To: "{q}"' if q else "Delivered To",
+            "Ex. deliveredto:username@gmail.com",
+            gmail_url(f"deliveredto:@gmail.com {q}".strip()),
+        ),
+        item("gmo-primary-category", f'Primary Category: "{q}"' if q else "Primary Category", "Ex. category:primary", gmail_url(f"category:primary {q}".strip())),
+        item("gmo-social-category", f'Social Category: "{q}"' if q else "Social Category", "Ex. category:social", gmail_url(f"category:social {q}".strip())),
+        item(
+            "gmo-promotions-category",
+            f'Promotions Category: "{q}"' if q else "Promotions Category",
+            "Ex. category:promotions",
+            gmail_url(f"category:promotions {q}".strip()),
+        ),
+        item("gmo-updates-category", f'Updates Category: "{q}"' if q else "Updates Category", "Ex. category:updates", gmail_url(f"category:updates {q}".strip())),
+        item("gmo-forums-category", f'Forums Category: "{q}"' if q else "Forums Category", "Ex. category:forums", gmail_url(f"category:forums {q}".strip())),
+        item(
+            "gmo-reservations-category",
+            f'Reservations Category: "{q}"' if q else "Reservations Category",
+            "Ex. category:reservations",
+            gmail_url(f"category:reservations {q}".strip()),
+        ),
+        item(
+            "gmo-purchases-category",
+            f'Purchases Category: "{q}"' if q else "Purchases Category",
+            "Ex. category:purchases",
+            gmail_url(f"category:purchases {q}".strip()),
+        ),
+        item("gmo-size-larger", f'Size (Larger): "{q}"' if q else "Size (Larger)", "Ex. size:1000000 (bytes / K / M)", gmail_url(f"size: {q}".strip())),
+        item("gmo-larger-size", f'Larger Size: "{q}"' if q else "Larger Size", "Ex. larger:10M", gmail_url(f"larger: {q}".strip())),
+        item("gmo-smaller-size", f'Smaller Size: "{q}"' if q else "Smaller Size", "Ex. smaller:1M", gmail_url(f"smaller: {q}".strip())),
+        item("gmo-exact-word-match", f'Exact Word Match: "{q}"' if q else "Exact Word Match", "Ex. +unicorn", gmail_url(f"+{q}".strip()) if q else "+"),
+        item(
+            "gmo-user-label",
+            f'User Label (Has Any User Label): "{q}"' if q else "User Label (Has Any User Label)",
+            "Ex. has:userlabels",
+            gmail_url(f"has:userlabels {q}".strip()),
+        ),
+        item("gmo-no-user-labels", f'No User Labels: "{q}"' if q else "No User Labels", "Ex. has:nouserlabels", gmail_url(f"has:nouserlabels {q}".strip())),
+        item("gmo-unread", f'Un-Read: "{q}"' if q else "Un-Read", "Un-Read quick link menu", gmail_url(f"is:unread {q}".strip())),
         item("gmo-settings", "Settings", "Open workflow configuration", "settings"),
         item("gmo-back", "Start Over", "Return to the main menu", "back"),
     ]
@@ -420,7 +524,7 @@ def main():
     parser = argparse.ArgumentParser(description="Gmail menu script filter")
     parser.add_argument(
         "--mode",
-        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmsettings"],
+        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gmsettings"],
         required=True,
     )
     parser.add_argument("query", nargs="*")
@@ -435,6 +539,8 @@ def main():
         items = gmss_items(query)
     elif args.mode == "gmo":
         items = gmo_items()
+    elif args.mode == "gmoo":
+        items = gmoo_items(query)
     elif args.mode == "gmsettings":
         items = gmsettings_items()
     else:
