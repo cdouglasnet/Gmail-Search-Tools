@@ -60,7 +60,7 @@ Build output:
 - 🚫 Do not introduce secrets or account-specific data into source, tests, plist defaults, or logs.
 - 🌐 Keep Gmail URL generation constrained to `https://mail.google.com/...` patterns.
 - ⚠️ Treat Alfred/environment inputs (`query`, workflow variables) as untrusted input.
-- 🔗 Preserve URL-encoding (`quote_plus`) when constructing Gmail search queries.
+- 🔗 Preserve URL encoding (`quote_plus`) when constructing Gmail search queries.
 - 🐚 Avoid shelling out from Python unless strictly required; current scripts are pure Python JSON emitters.
 - 📝 Logging writes to `cache/workflow.log`; avoid logging sensitive query content in production contexts.
 
@@ -101,7 +101,7 @@ There are two account variable names in use (`userNumber` and `gmail_account`). 
 
 ## ✨ Best practices for future changes
 
-- 🎯 Keep workflow behavior deterministic and side-effect light (return items, don’t mutate external state).
+- 🎯 Keep workflow behavior deterministic and side effect light (return items, don’t mutate external state).
 - 🧪 Update tests in `tests/` whenever changing search item labels, ordering, or URL generation.
 - 📝 If changing keywords or script arguments, update both `src/info.plist` and docs.
 - 🔄 Preserve backward compatibility for Alfred variable names unless a migration path is added.

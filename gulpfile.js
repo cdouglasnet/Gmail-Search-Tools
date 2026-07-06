@@ -2,20 +2,21 @@ const gulp = require('gulp');
 const fs = require('fs');
 const gulpZip = require('gulp-zip');
 const del = require('del');
-const { exec } = require('child_process');
+const { execFile } = require('child_process');
+const { resolvePythonBin } = require('./scripts/run-python');
 
 const WORKFLOW_SOURCE = process.env.npm_config_workflow_source || process.env.WORKFLOW_SOURCE || 'src';
 const DIST_NAME = process.env.npm_config_dist_name || process.env.DIST_NAME || 'alfred-gmail-search';
 const DIST_DIR = `dist/${DIST_NAME}`;
 const WORKFLOW_FILE = process.env.npm_config_workflow_file || process.env.WORKFLOW_FILE || `${DIST_NAME}.alfredworkflow`;
-const PYTHON_BIN = '.venv/bin/python3';
+const PYTHON_BIN = resolvePythonBin();
 
 // Clean build directory
 gulp.task('clean', () => del(['dist/**', 'cache/**']));
 
 // Run Python tests
 gulp.task('test', (done) => {
-    exec(`${PYTHON_BIN} -m pytest tests/ -v`, (err, stdout, stderr) => {
+    execFile(PYTHON_BIN, ['-m', 'pytest', 'tests/', '-v'], (err, stdout, stderr) => {
         console.log(stdout);
         console.error(stderr);
         done(err);

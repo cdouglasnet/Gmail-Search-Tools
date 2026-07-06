@@ -8,11 +8,11 @@
     "workflow_file": "alfred-gmail-search.alfredworkflow"
   },
   "scripts": {
-    "test": ".venv/bin/python3 -m pytest tests/",
+    "test": "node scripts/run-python.js -m pytest tests/",
     "build": "gulp build",
     "dev": "gulp dev",
-    "lint": ".venv/bin/python3 -m pylint src/script/*.py",
-    "install-python-deps": ".venv/bin/python3 -m pip install -r requirements.txt"
+    "lint": "node scripts/run-python.js -m pylint src/script/*.py",
+    "install-python-deps": "python3 -m venv .venv && .venv/bin/python3 -m pip install -r requirements.txt"
   },
   "devDependencies": {
     "del": "^6.1.1",
