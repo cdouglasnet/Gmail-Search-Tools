@@ -22,6 +22,10 @@ STATIC_ICONS = {
     "gms-green-star": "green-star.png",
     "gms-settings": "settings.png",
     "gmu-main": "unread.png",
+    "gmu-promotions": "green-money.png",
+    "gmu-purchases": "green-money.png",
+    "gmu-social": "social.png",
+    "gmu-forums": "forums.png",
     "gmu-search-unread": "unread.png",
     "gmu-settings": "settings.png",
     "gmu-back": "back.png",
@@ -36,8 +40,15 @@ STATIC_ICONS = {
     "gmo-spreadsheet": "spreadsheet.png",
     "gmo-presentation": "presentation.png",
     "gmo-youtube": "video.png",
+    "gmo-filename": "filename.png",
     "gmo-user-label": "labels-any.png",
     "gmo-no-user-labels": "labels-none.png",
+    "gmo-after": "date.png",
+    "gmo-before": "date.png",
+    "gmo-older": "date.png",
+    "gmo-newer": "date.png",
+    "gmo-older-than": "date.png",
+    "gmo-chat": "chat.png",
     "gmo-unread": "unread.png",
     "gmo-back": "back.png",
     "gmo-settings": "settings.png",
@@ -67,7 +78,7 @@ def get_icon_for_uid(uid):
     """Get icon file for an uid, including currency-based icons"""
     if uid in STATIC_ICONS:
         return STATIC_ICONS[uid]
-    if uid in ("gmu-promotions", "gmu-reservations", "gmu-purchases"):
+    if uid in ("gmu-promotions", "gmu-purchases", "gmo-promotions-category", "gmo-purchases-category"):
         return get_currency_icon()
     return None
 
