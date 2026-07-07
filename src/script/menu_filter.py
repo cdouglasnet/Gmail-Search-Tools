@@ -6,6 +6,7 @@ import os
 from urllib.parse import quote_plus
 
 GMAIL_BASE_URL = "https://mail.google.com/mail/u/{account}/#search/{query}"
+GMAIL_BASE_URL2 = "https://mail.google.com/mail/u/{account}/#search/{zarg}+{query}"
 STATIC_ICONS = {
     "gms-unread-menu": "unread.png",
     "gms-any-star": "any-star.png",
@@ -89,16 +90,28 @@ def get_icon_for_uid(uid):
 def account_number():
     return os.environ.get("userNumber") or os.environ.get("gmail_account") or "0"
 
+def zarg_info():
+    return os.environ.get("zarg") or ""
 
 def gmail_url(query):
     return GMAIL_BASE_URL.format(account=account_number(), query=quote_plus(query))
 
+def gmail_url2(query, zarg):
+    return GMAIL_BASE_URL2.format(account=account_number(), query=quote_plus(query), zarg=quote_plus(zarg))
+
+def gmail_arg(query):
+    return query
+
+# Set Alfred Variable zarg to quote_plus(query)
+def set_zarg(query):
+    return f"setvar zarg \"{quote_plus(query)}\""
 
 def item(uid, title, subtitle, arg=None, valid=True):
     result = {
         "title": title,
         "subtitle": subtitle,
         "valid": valid,
+        "uid": uid,
     }
     if arg is not None:
         result["arg"] = arg
@@ -118,49 +131,46 @@ def gms_items(query):
             "Search all Gmail messages",
             gmail_url(q),
         ),
-        item(
-            "gms-search-unread",
-            f'Search Unread: "{q}"' if q else "Search Unread",
-            "Search Un-Read Gmail Messages",
-            gmail_url(f"is:unread {q}".strip()),
-        ),
-        item("gms-any-star", "Any Star", "Show mail with Any Star", gmail_url("is:starred")),
-        item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_url("has:red-bang")),
+        item("gms-search-unread","Search Unread","Search Un-Read Gmail Messages",gmail_arg("is:unread")),
+        item("gms-any-star", "Test-Any", "Show mail with Any Star", gmail_arg("is:starred")),
+        item("gms-any-star", "Any Star", "Show mail with Any Star", gmail_arg("is:starred")),
+        item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_arg("has:red-bang")),
         item(
             "gms-yellow-bang",
             "Yellow Bang",
             "Show mail with yellow-bang star",
-            gmail_url("has:yellow-bang"),
+            gmail_arg("has:yellow-bang"),
         ),
         item(
             "gms-purple-question",
             "Purple Question",
             "Show mail with purple-question star",
-            gmail_url("has:purple-question"),
+            gmail_arg("has:purple-question"),
+
         ),
         item(
             "gms-blue-info",
             "Blue Info",
             "Show mail with blue-info star",
-            gmail_url("has:blue-info"),
+            gmail_arg("has:blue-info"),
         ),
-        item("gms-blue-star", "Blue Star", "Show mail with blue-star", gmail_url("has:blue-star")),
+        item("gms-blue-star", "Blue Star", "Show mail with blue-star", gmail_arg("has:blue-star")),
         item(
             "gms-orange-guillemet",
             "Orange Guillemet",
             "Show mail with orange-guillemet",
-            gmail_url("has:orange-guillemet"),
+            gmail_arg("has:orange-guillemet"),
         ),
-        item("gms-yellow-star", "Yellow Star", "Show mail with yellow-star", gmail_url("has:yellow-star")),
-        item("gms-orange-star", "Orange Star", "Show mail with orange-star", gmail_url("has:orange-star")),
-        item("gms-red-star", "Red Star", "Show mail with red-star", gmail_url("has:red-star")),
-        item("gms-purple-star", "Purple Star", "Show mail with purple-star", gmail_url("has:purple-star")),
-        item("gms-green-star", "Green Star", "Show mail with green-star", gmail_url("has:green-star")),
+        item("gms-yellow-star", "Yellow Star", "Show mail with yellow-star", gmail_arg("has:yellow-star")),
+        item("gms-orange-star", "Orange Star", "Show mail with orange-star", gmail_arg("has:orange-star")),
+        item("gms-red-star", "Red Star", "Show mail with red-star", gmail_arg("has:red-star")),
+        item("gms-purple-star", "Purple Star", "Show mail with purple-star", gmail_arg("has:purple-star")),
+        item("gms-green-star", "Green Star", "Show mail with green-star", gmail_arg("has:green-star")),
         item(
             "gms-green-check",
             "Green Checkmark",
             "Show mail with green-check",
-            gmail_url("has:green-check"),
+            gmail_arg("has:green-check"),
         ),
         item("gms-search-reference", "Gmail Search Operators", "Learn Power Searches", "search"),
         item("gms-unread-menu", "Un-Read Mail", "Unread quick links", "unread"),
@@ -233,12 +243,7 @@ def gmu_items(query):
     q = query.strip()
     items = [
         item("gmu-search-arg", "Un-Read Search With Argument", "Fast Custom Un-Read Search", "unread2"),
-        item(
-            "gmu-search-unread",
-            f'Search Unread Gmail: "{q}"' if q else "Search Unread Gmail",
-            "Search all unread Gmail messages",
-            gmail_url(f"is:unread {q}".strip()),
-        ),
+        item("gmu-search-unread","Search Unread","Search Un-Read Messages",gmail_arg("is:unread")),
         item(
             "gmu-primary",
             "Primary Unread",
@@ -545,32 +550,16 @@ def gmsettings_items():
         item("gmsettings-back", "Start Over", "Return to the main menu", "back"),
     ]
 
-def gmz_items():
+# Individual Search Query Prompt and Simple Menu
+def gmz_items(query):
+    q = query.strip()
+    z = zarg_info()
     return [
-        item(
-            "gmz-search",
-            "Search Gmail",
-            "Search all Gmail messages",
-            gmail_url(""),
-        ),
-        item(
-            "gmz-unread",
-            "Un-Read Mail",
-            "Un-Read Quick Links Menu",
-            "unread",
-        ),
-        item(
-            "gmz-operators",
-            "Search Operators",
-            "Search Operators Menu",
-            "operators",
-        ),
-        item(
-            "gmz-settings",
-            "Settings",
-            "Open workflow configuration",
-            "settings",
-        ),
+        item("gmz-search",f'Title: "{q}"' if q else "Empty Title",f'Route: "{z}"' if z else "Empty Route",gmail_url2(q,z)),
+        item("gmz-unread","Un-Read Mail","Un-Read Quick Links Menu","unread"),
+        item("gmz-operators","Search Operators","Search Operators Menu","operators"),
+        item("gmz-settings","Settings","Open workflow configuration","settings"),
+        item("gmsettings-back", "Start Over", "Return to the main menu", "main"),
     ]
 
 
@@ -578,9 +567,10 @@ def main():
     parser = argparse.ArgumentParser(description="Gmail menu script filter")
     parser.add_argument(
         "--mode",
-        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gmsettings"],
+        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gmsettings", "gmz"],
         required=True,
     )
+    parser.add_argument("--route", default="")
     parser.add_argument("query", nargs="*")
     args = parser.parse_args()
 
@@ -597,6 +587,8 @@ def main():
         items = gmoo_items(query)
     elif args.mode == "gmsettings":
         items = gmsettings_items()
+    elif args.mode == "gmz":
+        items = gmz_items(query)
     else:
         items = gms_items(query)
     print(json.dumps({"items": items}, ensure_ascii=False))

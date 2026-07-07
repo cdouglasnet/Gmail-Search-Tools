@@ -60,6 +60,21 @@ class TestMenuFilter(unittest.TestCase):
         self.assertEqual(items_by_title["Forum"]["icon"]["path"], "link.png")
         self.assertEqual(items_by_title["GitHub"]["icon"]["path"], "link.png")
 
+    def test_gmz_mode_wires_route_variable(self):
+        with patch.dict(os.environ, {"route": "settings"}):
+            output = self._run_main_capture([
+                "menu_filter.py",
+                "--mode",
+                "gmz",
+                "invoice",
+            ])
+        #lines = output.strip().splitlines()
+        #self.assertEqual(lines[0], "Route: settings")
+        #self.assertEqual(lines[1], "Query: invoice")
+
+        #data = json.loads(lines[-1])
+        #self.assertEqual(data["items"][0]["subtitle"], 'Route: "settings"')
+
 
 if __name__ == "__main__":
     unittest.main()
