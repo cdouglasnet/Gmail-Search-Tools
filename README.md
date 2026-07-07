@@ -46,7 +46,7 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, and more.
 - **Trash** — 🗑️ search trash messages
 
 ### `gmu` Search Un-Read Messages Faster
-- **Un-Read All** — all Un-Read messages in main inbox
+- **Un-Read All** — all Un-Read messages in the main inbox
 - **Un-Read Primary** — Un-Read inbox messages
 - **Un-Read Updates** — Un-Read updates messages
 - **Un-Read Promotions** - Un-Read promotions messages
@@ -114,6 +114,20 @@ npm run build
 ```
 
 The built workflow file will be at `dist/alfred-gmail-search.alfredworkflow`.
+
+### IDE setup
+
+If your editor reports standard-library imports such as `argparse`, `json`, `os`,
+or `urllib` as missing, select the project virtual environment as the Python
+interpreter:
+
+```text
+.venv/bin/python3
+```
+
+The included `pyrightconfig.json` points Python language servers at that virtual
+environment and adds `src/script` to the import path for tests and workflow
+scripts.
 
 ## ⚖️ License
 

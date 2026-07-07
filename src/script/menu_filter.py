@@ -8,6 +8,7 @@ from urllib.parse import quote_plus
 GMAIL_BASE_URL = "https://mail.google.com/mail/u/{account}/#search/{query}"
 STATIC_ICONS = {
     "gms-unread-menu": "unread.png",
+    "gms-any-star": "any-star.png",
     "gms-red-bang": "red-bang.png",
     "gms-yellow-bang": "yellow-bang.png",
     "gms-purple-question": "purple-question.png",
@@ -21,6 +22,7 @@ STATIC_ICONS = {
     "gms-green-check": "green-check.png",
     "gms-green-star": "green-star.png",
     "gms-settings": "settings.png",
+    "gms-back": "back.png",
     "gmu-main": "unread.png",
     "gmu-promotions": "green-money.png",
     "gmu-purchases": "green-money.png",
@@ -49,6 +51,7 @@ STATIC_ICONS = {
     "gmo-newer": "date.png",
     "gmo-older-than": "date.png",
     "gmo-chat": "chat.png",
+    "gmo-reservations-category": "reservations.png",
     "gmo-unread": "unread.png",
     "gmo-back": "back.png",
     "gmo-settings": "settings.png",
@@ -69,7 +72,7 @@ CURRENCY_ICONS = {
 
 
 def get_currency_icon():
-    """Get the current currency icon based on environment variable"""
+    """Get the current currency icon based on Alfred environment variable"""
     currency = os.environ.get("currency", "dollar")
     return CURRENCY_ICONS.get(currency, CURRENCY_ICONS["dollar"])
 
@@ -108,8 +111,7 @@ def item(uid, title, subtitle, arg=None, valid=True):
 def gms_items(query):
     q = query.strip()
     items = [
-        item("gms-search-reference", "GMail Search Refrence", "Learn Power Searches", "search"),
-        item("gms-unread-menu", "Un-Read Mail", "Unread quick links", "unread"),
+        item("gms-search-arg", "Gmail Search With Argument", "Fast Custom Search", "main2"),
         item(
             "gms-search",
             f'Search Gmail: "{q}"' if q else "Search Gmail",
@@ -122,6 +124,7 @@ def gms_items(query):
             "Search Un-Read Gmail Messages",
             gmail_url(f"is:unread {q}".strip()),
         ),
+        item("gms-any-star", "Any Star", "Show mail with Any Star", gmail_url("is:starred")),
         item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_url("has:red-bang")),
         item(
             "gms-yellow-bang",
@@ -159,6 +162,8 @@ def gms_items(query):
             "Show mail with green-check",
             gmail_url("has:green-check"),
         ),
+        item("gms-search-reference", "Gmail Search Operators", "Learn Power Searches", "search"),
+        item("gms-unread-menu", "Un-Read Mail", "Unread quick links", "unread"),
         item("gms-settings", "Settings", "Open workflow configuration", "settings"),
     ]
     return items
@@ -167,8 +172,6 @@ def gms_items(query):
 def gmss_items(query):
     q = query.strip()
     items = [
-        item("gms-search-reference", "GMail Search Refrence", "Learn Power Searches", "search"),
-        item("gms-unread-menu", "Un-Read Mail", "Un-Read Quick Links Menu", "unread"),
         item(
             "gms-search",
             f'Search Gmail: "{q}"' if q else "Search Gmail",
@@ -218,7 +221,10 @@ def gmss_items(query):
             "Show mail with green-check",
             gmail_url("has:green-check"),
         ),
+        item("gms-search-reference", "Gmail Search Reference", "Learn Power Searches", "search"),
+        item("gms-unread-menu", "Un-Read Mail", "Un-Read Quick Links Menu", "unread"),
         item("gms-settings", "Settings", "Open workflow configuration", "settings"),
+        item("gms-back", "Start Over", "Return to the main menu", "main"),
     ]
     return items
 
@@ -226,6 +232,7 @@ def gmss_items(query):
 def gmu_items(query):
     q = query.strip()
     items = [
+        item("gmu-search-arg", "Un-Read Search With Argument", "Fast Custom Un-Read Search", "unread2"),
         item(
             "gmu-search-unread",
             f'Search Unread Gmail: "{q}"' if q else "Search Unread Gmail",
@@ -264,7 +271,7 @@ def gmu_items(query):
         ),
         item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases")),
         item("gmu-settings", "Settings", "Open workflow configuration", "settings"),
-        item("gmu-back", "Start Over", "Return to the main menu", "back"),
+        item("gmu-back", "Start Over", "Return to the main menu", "main"),
     ]
     return items
 
@@ -310,13 +317,14 @@ def gmuu_items(query):
         ),
         item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases")),
         item("gmu-settings", "Settings", "Open workflow configuration", "settings"),
-        item("gmu-back", "Start Over", "Return to the main menu", "back"),
+        item("gmu-back", "Start Over", "Return to the main menu", "main"),
     ]
     return items
 
 # Search Operators Filterable List
 def gmo_items():
     items = [
+        item("gmo-search-arg", "Gmail Operators With Argument", "Fast Operator Search", "operators2"),
         item(
             "gmo-search-options",
             "Search Options",
@@ -406,7 +414,7 @@ def gmo_items():
         item("gmo-no-user-labels", "No User Labels", "Ex. has:nouserlabels", gmail_url("has:nouserlabels")),
         item("gmo-unread", "Un-Read", "Un-Read quick link menu", "unread"),
         item("gmo-settings", "Settings", "Open workflow configuration", "settings"),
-        item("gmo-back", "Start Over", "Return to the main menu", "back"),
+        item("gmo-back", "Start Over", "Return to the main menu", "main"),
     ]
     return items
 
@@ -503,7 +511,7 @@ def gmoo_items(query):
         item("gmo-no-user-labels", f'No User Labels: "{q}"' if q else "No User Labels", "Ex. has:nouserlabels", gmail_url(f"has:nouserlabels {q}".strip())),
         item("gmo-unread", f'Un-Read: "{q}"' if q else "Un-Read", "Un-Read quick link menu", gmail_url(f"is:unread {q}".strip())),
         item("gmo-settings", "Settings", "Open workflow configuration", "settings"),
-        item("gmo-back", "Start Over", "Return to the main menu", "back"),
+        item("gmo-back", "Start Over", "Return to the main menu", "main"),
     ]
     return items
 
@@ -535,6 +543,34 @@ def gmsettings_items():
             "github",
         ),
         item("gmsettings-back", "Start Over", "Return to the main menu", "back"),
+    ]
+
+def gmz_items():
+    return [
+        item(
+            "gmz-search",
+            "Search Gmail",
+            "Search all Gmail messages",
+            gmail_url(""),
+        ),
+        item(
+            "gmz-unread",
+            "Un-Read Mail",
+            "Un-Read Quick Links Menu",
+            "unread",
+        ),
+        item(
+            "gmz-operators",
+            "Search Operators",
+            "Search Operators Menu",
+            "operators",
+        ),
+        item(
+            "gmz-settings",
+            "Settings",
+            "Open workflow configuration",
+            "settings",
+        ),
     ]
 
 
