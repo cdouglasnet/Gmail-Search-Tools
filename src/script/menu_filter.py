@@ -71,6 +71,25 @@ CURRENCY_ICONS = {
     "yen": "green-yen.png",
 }
 
+DEFAULT_MODS = {
+    "alt+shift": {
+        "valid": True,
+        "arg": "settings",
+        "subtitle": "Open Settings",
+    },
+}
+
+
+def mod(modifier, arg, subtitle):
+    return {
+        modifier: {
+            "valid": True,
+            "arg": arg,
+            "subtitle": subtitle,
+        },
+        **DEFAULT_MODS,
+    }
+
 
 def get_currency_icon():
     """Get the current currency icon based on Alfred environment variable"""
@@ -106,7 +125,7 @@ def gmail_arg(query):
 def set_zarg(query):
     return f"setvar zarg \"{quote_plus(query)}\""
 
-def item(uid, title, subtitle, arg=None, valid=True):
+def item(uid, title, subtitle, arg=None, valid=True, mods=None):
     result = {
         "title": title,
         "subtitle": subtitle,
@@ -118,6 +137,9 @@ def item(uid, title, subtitle, arg=None, valid=True):
     icon_file = get_icon_for_uid(uid)
     if icon_file:
         result["icon"] = {"path": icon_file}
+    item_mods = DEFAULT_MODS if mods is None else mods
+    if valid and item_mods:
+        result["mods"] = item_mods
     return result
 
 # Gmail Search Filterable List
@@ -130,9 +152,11 @@ def gms_items(query):
             f'Search Gmail: "{q}"' if q else "Search Gmail",
             "Search all Gmail messages",
             gmail_url(q),
+            mods=mod("cmd","CMD Pressed Arg", "CMD Pressed Subtitle"),
         ),
         item("gms-search-unread","Search Unread","Search Un-Read Gmail Messages",gmail_arg("is:unread")),
-        item("gms-any-star", "Test-Any", "Show mail with Any Star", gmail_arg("is:starred")),
+        item("gms-any-star", "Test-Any", "Show mail with Any Star", gmail_arg("is:starred"),
+             mods=mod("ctrl", gmail_url("is:starred"), "CTRL Pressed Subtitle")),
         item("gms-any-star", "Any Star", "Show mail with Any Star", gmail_arg("is:starred")),
         item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_arg("has:red-bang")),
         item(
