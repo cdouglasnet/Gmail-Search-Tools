@@ -1,0 +1,12 @@
+{
+  "include": [
+    "src/script",
+    "tests"
+  ],
+  "extraPaths": [
+    "src/script"
+  ],
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.9"
+}
