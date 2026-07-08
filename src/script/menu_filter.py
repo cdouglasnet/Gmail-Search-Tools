@@ -3,6 +3,7 @@
 import argparse
 import json
 import os
+
 from urllib.parse import quote_plus
 
 GMAIL_BASE_URL = "https://mail.google.com/mail/u/{account}/#search/{query}"
@@ -71,7 +72,6 @@ CURRENCY_ICONS = {
     "yen": "green-yen.png",
 }
 
-
 def get_currency_icon():
     """Get the current currency icon based on Alfred environment variable"""
     currency = os.environ.get("currency", "dollar")
@@ -93,6 +93,10 @@ def account_number():
 def turl_info():
     return os.environ.get("turl") or ""
 
+def ticon_info():
+    return os.environ.get("ticon") or ""
+
+
 def gmail_url(query):
     return GMAIL_BASE_URL.format(account=account_number(), query=quote_plus(query))
 
@@ -107,26 +111,40 @@ def set_turl(query):
     return f"setvar turl \"{quote_plus(query)}\""
 
 def item(uid, title, subtitle, arg=None, route: str = "", url: str = "", valid=True, order=True,  icon: str = ""):
-    result = {
-        "title": title,
-        "subtitle": subtitle,
-        "valid": valid,
-        "uid": uid,
-        "arg": arg,
-        "maintainOrder": order,
-        "variables": {"account": account_number(), "route": route if route else "", "url": url if url else ""},
-    }
+    if order:
+        result = {
+            "title": title,
+            "subtitle": subtitle,
+            "valid": valid,
+            "arg": arg,
+            "skipknowledge": True,  #Useful for keeping the order of the items uid cannot be used at the same time
+            "maintainOrder": order,
+            "icon": {"path": icon},
+            "variables": {"account": account_number(), "route": route if route else "", "url": url if url else "", "ticon": icon},
+        }
+    else:
+        result = {
+            "title": title,
+            "subtitle": subtitle,
+            "valid": valid,
+            "uid": uid, # Items will be sorted by usage in Alfred
+            "arg": arg,
+            "maintainOrder": order,
+            "icon": {"path": icon},
+            "variables": {"account": account_number(), "route": route if route else "", "url": url if url else "", "ticon": icon},
+        }
     if arg is not None:
         result["arg"] = arg
     icon_file = get_icon_for_uid(uid)
     if icon_file:
         result["icon"] = {"path": icon_file}
+        result["variables"]["ticon"] = icon_file
     return result
 
 # Gmail Search Filterable List - Keep in this order
 def gms_items():
     items = [
-        item("gms-search-unread","Search Unread","Search Un-Read Gmail Messages",gmail_arg("is:unread")),
+        item("gmo-search-options","Search Stars","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=False),
         item("gms-any-star", "Test-Any", "Show mail with Any Star", gmail_arg("is:starred")),
         item("gms-any-star", "Any Star", "Show mail with Any Star", gmail_arg("is:starred")),
         item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_arg("has:red-bang")),
@@ -140,9 +158,10 @@ def gms_items():
         item("gms-red-star", "Red Star", "Show mail with red-star", gmail_arg("has:red-star")),
         item("gms-purple-star", "Purple Star", "Show mail with purple-star", gmail_arg("has:purple-star")),
         item("gms-green-star", "Green Star", "Show mail with green-star", gmail_arg("has:green-star")),
-        item("gms-green-check","Green Checkmark","Show mail with green-check",gmail_arg("has:green-check")),
+        item("gms-green-check","Green Checkmark","Show mail with green-check",gmail_arg("has:green-check"), icon="checkmark.png"),
         # Menu Items To Other Searching Tools/Keywords
         item("gms-search-arg", "→ Gmail Search With Argument", "Fast Custom Search", "", route="main2"),
+        item("gms-search-unread","→ Search Unread","Search Un-Read Gmail Messages","", route="unread"),
         item("gms-search-reference", "→ Gmail Search Operators", "Learn Power Searches", "", route="operators"),
         item("gms-unread-menu", "→ Un-Read Mail", "Unread quick links", "", route="unread"),
         item("gms-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
@@ -153,12 +172,12 @@ def gms_items():
 def gmu_items():
     items = [
         item("gmu-search-unread","Search Unread","Search Un-Read Messages",gmail_arg("is:unread")),
-        item("gmu-primary","Primary Unread","Unread in Primary",gmail_url("category:primary label:unread")),
-        item("gmu-updates","Updates UnRead","Unread in Updates",gmail_url("category:updates label:unread")),
-        item("gmu-promotions","Promotions UnRead","Unread in Promotions",gmail_url("category:promotions label:unread")),
-        item("gmu-forums","Forums UnRead","Unread in Forums",gmail_url("category:forums label:unread")),
-        item("gmu-reservations","Reservations","Reservations category",gmail_url("category:reservations")),
-        item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases")),
+        item("gmu-primary","Primary Unread","Unread in Primary",gmail_url("category:primary label:unread"), order=False),
+        item("gmu-updates","Updates UnRead","Unread in Updates",gmail_url("category:updates label:unread"), order=False),
+        item("gmu-promotions","Promotions UnRead","Unread in Promotions",gmail_url("category:promotions label:unread"), order=False),
+        item("gmu-forums","Forums UnRead","Unread in Forums",gmail_url("category:forums label:unread"), order=False),
+        item("gmu-reservations","Reservations","Reservations category",gmail_url("category:reservations"), order=False),
+        item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases"), order=False),
         # Menu Items To Other Searching Tools/Keywords
         item("gmu-search-arg", "→ Un-Read Search With Argument", "Fast Custom Un-Read Search", "", route="unread2"),
         item("gmu-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
@@ -269,10 +288,10 @@ def gmss_items(query):
         item("gms-green-star", "Green Star", "Show mail with green-star", gmail_url("has:green-star")),
         item("gms-green-check","Green Checkmark","Show mail with green-check",gmail_url("has:green-check")),
         # Menu Items To Other Searching Tools/Keywords
-        item("gms-search-reference", "Gmail Search Reference", "Learn Power Searches", "", route="search"),
-        item("gms-unread-menu", "Un-Read Mail", "Un-Read Quick Links Menu", "", route="unread"),
-        item("gms-settings", "Settings", "Open workflow configuration", "", route="settings"),
-        item("gms-back", "Start Over", "Return to the main menu", "", route="main"),
+        item("gms-search-reference", "→ Gmail Search Reference", "Learn Power Searches", "", route="search"),
+        item("gms-unread-menu", "→ Un-Read Mail", "Un-Read Quick Links Menu", "", route="unread"),
+        item("gms-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
+        item("gms-back", "→ Start Over", "Return to the main menu", "", route="main"),
     ]
     return items
 
@@ -321,8 +340,8 @@ def gmuu_items(query):
         ),
         item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases")),
         # Menu Items To Other Searching Tools/Keywords
-        item("gmu-settings", "Settings", "Open workflow configuration", "", route="settings"),
-        item("gmu-back", "Start Over", "Return to the main menu", "", route="main"),
+        item("gmu-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
+        item("gmu-back", "→ Start Over", "Return to the main menu", "", route="main"),
     ]
     return items
 
@@ -415,33 +434,34 @@ def gmoo_items(query):
         item("gmo-no-user-labels", f'No User Labels: "{q}"' if q else "No User Labels", "Ex. has:nouserlabels", gmail_url(f"has:nouserlabels {q}".strip())),
         item("gmo-unread", f'Un-Read: "{q}"' if q else "Un-Read", "Un-Read quick link menu", gmail_url(f"is:unread {q}".strip())),
         # Menu Items To Other Searching Tools/Keywords
-        item("gmo-settings", "Settings", "Open workflow configuration", "", route="settings"),
-        item("gmo-back", "Start Over", "Return to the main menu", "", route="main"),
+        item("gmo-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
+        item("gmo-back", "→ Start Over", "Return to the main menu", "", route="main"),
     ]
     return items
 
 
 def gmsettings_items():
     return [
-        item("gmsettings-config","Config","Open workflow configuration in Alfred","", route="config"),
-        item("gmsettings-diagnostic","Diagnostic","Run workflow diagnostic","", route="diagnostic"),
-        item("gmsettings-forum","Forum","Open Alfred Forum page","", route="forum"),
-        item("gmsettings-github","GitHub","Open GitHub project page","", route="github"),
-        item("gmsettings-back", "Start Over", "Return to the main menu", "", route="back"),
+        item("gmsettings-config","Config →","Open workflow configuration in Alfred","", route="config"),
+        item("gmsettings-diagnostic","Diagnostic →","Run workflow diagnostic","", route="diagnostic"),
+        item("gmsettings-forum","Forum →","Open Alfred Forum page","", route="forum"),
+        item("gmsettings-github","GitHub →","Open GitHub project page","", route="github"),
+        item("gmsettings-back", "Start Over →", "Return to the main menu", "", route="back"),
     ]
 
 # Individual Search Query Prompt and Simple Menu
 def gmz_items(query):
     q = query.strip()
     z = turl_info()
+    i = ticon_info()
     return [
         item("gmz-search",f'Search: "{q}"' if q else "Search:",f'Route: "{z}"' if z else "Empty Route",gmail_url2(q,z),
-             route=f'Route: "{z}"' if z else "Empty Route", url=gmail_url2(q,z)),
+             route=f'Route: "{z}"' if z else "Empty Route", url=gmail_url2(q,z), icon=i),
         # Menu Items To Other Searching Tools/Keywords
-        item("gmz-unread","Un-Read Mail","Un-Read Quick Links Menu","", route="unread"),
-        item("gmz-operators","Search Operators","Search Operators Menu","", route="operators"),
-        item("gmz-settings","Settings","Open workflow configuration","", route="settings"),
-        item("gmsettings-back", "Start Over", "Return to the main menu", "", route="main"),
+        item("gmz-unread","→ Un-Read Mail","Un-Read Quick Links Menu","", route="unread"),
+        item("gmz-operators","→ Search Operators","Search Operators Menu","", route="operators"),
+        item("gmz-settings","→ Settings","Open workflow configuration","", route="settings"),
+        item("gmsettings-back", "→ Start Over", "Return to the main menu", "", route="main"),
     ]
 
 

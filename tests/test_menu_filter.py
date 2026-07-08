@@ -1,3 +1,4 @@
+import importlib.util
 import json
 import os
 import plistlib
@@ -6,13 +7,19 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src/script")))
-
-import menu_filter
+SCRIPT_DIR = Path(__file__).resolve().parents[1] / "src" / "script"
+MENU_FILTER_PATH = SCRIPT_DIR / "menu_filter.py"
+spec = importlib.util.spec_from_file_location("menu_filter", MENU_FILTER_PATH)
+assert spec is not None
+assert spec.loader is not None
+menu_filter = importlib.util.module_from_spec(spec)
+sys.modules["menu_filter"] = menu_filter
+spec.loader.exec_module(menu_filter)
 
 
 class TestMenuFilter(unittest.TestCase):
-    def _run_main_capture(self, argv):
+    @staticmethod
+    def _run_main_capture(argv):
         import io
         from contextlib import redirect_stdout
 
@@ -67,14 +74,14 @@ class TestMenuFilter(unittest.TestCase):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmsettings"])
         data = json.loads(output)
         titles = [item["title"] for item in data["items"]]
-        self.assertEqual(titles, ["Config", "Diagnostic", "Forum", "GitHub", "Start Over"])
+        self.assertEqual(titles, ["Config →", "Diagnostic →", "Forum →", "GitHub →", "Start Over →"])
 
     def test_gmsettings_links_use_link_icon(self):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmsettings"])
         data = json.loads(output)
         items_by_title = {item["title"]: item for item in data["items"]}
-        self.assertEqual(items_by_title["Forum"]["icon"]["path"], "link.png")
-        self.assertEqual(items_by_title["GitHub"]["icon"]["path"], "link.png")
+        self.assertEqual(items_by_title["Forum →"]["icon"]["path"], "link.png")
+        self.assertEqual(items_by_title["GitHub →"]["icon"]["path"], "link.png")
 
     def test_diagnostic_script_is_externalized(self):
         project_root = Path(__file__).resolve().parents[1]
@@ -104,6 +111,18 @@ class TestMenuFilter(unittest.TestCase):
 
         #data = json.loads(lines[-1])
         #self.assertEqual(data["items"][0]["subtitle"], 'Route: "settings"')
+
+    def test_gms_item_sets_transition_icon_to_display_icon(self):
+        green_check = next(item for item in menu_filter.gms_items() if item["title"] == "Green Checkmark")
+
+        self.assertEqual(green_check["icon"]["path"], "green-check.png")
+        self.assertEqual(green_check["variables"]["ticon"], "green-check.png")
+
+    def test_gmz_search_uses_transition_icon_variable(self):
+        with patch.dict(os.environ, {"ticon": "green-check.png"}):
+            item = menu_filter.gmz_items("invoice")[0]
+
+        self.assertEqual(item["icon"]["path"], "green-check.png")
 
 
 if __name__ == "__main__":
