@@ -20,59 +20,13 @@ class TestMenuFilter(unittest.TestCase):
                 menu_filter.main()
             return f.getvalue()
 
-    def test_item_includes_settings_modifier(self):
-        data = menu_filter.item("test-item", "Title", "Subtitle", "unread")
-        self.assertEqual(
-            data["mods"]["alt+shift"],
-            {
-                "valid": True,
-                "arg": "settings",
-                "subtitle": "Open Settings",
-            },
-        )
-
-    def test_item_omits_modifiers_when_invalid(self):
-        data = menu_filter.item("test-item", "Title", "Subtitle", valid=False)
-        self.assertNotIn("mods", data)
-
-    def test_mod_builds_cmd_modifier_with_default_modifiers(self):
-        data = menu_filter.mod("cmd", "Custom Arg", "Custom Subtitle")
-        self.assertEqual(
-            data["cmd"],
-            {
-                "valid": True,
-                "arg": "Custom Arg",
-                "subtitle": "Custom Subtitle",
-            },
-        )
-        self.assertEqual(data["alt+shift"]["arg"], "settings")
-
-    def test_mod_uses_passed_modifier_key(self):
-        data = menu_filter.mod("alt", "Custom Arg", "Custom Subtitle")
-        self.assertEqual(
-            data["alt"],
-            {
-                "valid": True,
-                "arg": "Custom Arg",
-                "subtitle": "Custom Subtitle",
-            },
-        )
-
-    def test_main_menu_items_include_settings_modifier(self):
-        for item in (
-            menu_filter.gms_items("")[0],
-            menu_filter.gmu_items("")[0],
-            menu_filter.gmo_items()[0],
-        ):
-            self.assertEqual(item["mods"]["alt+shift"]["arg"], "settings")
-
     def test_all_menu_items_are_json_serializable(self):
         item_sets = [
-            menu_filter.gms_items(""),
-            menu_filter.gmss_items("invoice"),
-            menu_filter.gmu_items(""),
-            menu_filter.gmuu_items("invoice"),
+            menu_filter.gms_items(),
+            menu_filter.gmu_items(),
             menu_filter.gmo_items(),
+            menu_filter.gmss_items("invoice"),
+            menu_filter.gmuu_items("invoice"),
             menu_filter.gmoo_items("invoice"),
             menu_filter.gmsettings_items(),
             menu_filter.gmz_items("invoice"),
@@ -80,22 +34,11 @@ class TestMenuFilter(unittest.TestCase):
         for items in item_sets:
             json.dumps({"items": items})
 
-    def test_gms_search_item_cmd_modifier_is_json_object(self):
-        search_item = menu_filter.gms_items("")[1]
-        self.assertEqual(
-            search_item["mods"]["cmd"],
-            {
-                "valid": True,
-                "arg": "CMD Pressed Arg",
-                "subtitle": "CMD Pressed Subtitle",
-            },
-        )
-
     def test_gmo_mode_returns_search_operators(self):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmo"])
         data = json.loads(output)
         titles = [item["title"] for item in data["items"]]
-        self.assertIn("Search Options", titles)
+        self.assertIn("Search Operators", titles)
         self.assertIn("From", titles)
         self.assertIn("Start Over", titles)
 

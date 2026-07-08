@@ -71,25 +71,6 @@ CURRENCY_ICONS = {
     "yen": "green-yen.png",
 }
 
-DEFAULT_MODS = {
-    "alt+shift": {
-        "valid": True,
-        "arg": "settings",
-        "subtitle": "Open Settings",
-    },
-}
-
-
-def mod(modifier, arg, subtitle):
-    return {
-        modifier: {
-            "valid": True,
-            "arg": arg,
-            "subtitle": subtitle,
-        },
-        **DEFAULT_MODS,
-    }
-
 
 def get_currency_icon():
     """Get the current currency icon based on Alfred environment variable"""
@@ -125,7 +106,7 @@ def gmail_arg(query):
 def set_zarg(query):
     return f"setvar zarg \"{quote_plus(query)}\""
 
-def item(uid, title, subtitle, arg=None, valid=True, mods=None):
+def item(uid, title, subtitle, arg=None, valid=True):
     result = {
         "title": title,
         "subtitle": subtitle,
@@ -137,72 +118,105 @@ def item(uid, title, subtitle, arg=None, valid=True, mods=None):
     icon_file = get_icon_for_uid(uid)
     if icon_file:
         result["icon"] = {"path": icon_file}
-    item_mods = DEFAULT_MODS if mods is None else mods
-    if valid and item_mods:
-        result["mods"] = item_mods
     return result
 
-# Gmail Search Filterable List
-def gms_items(query):
-    q = query.strip()
+# Gmail Search Filterable List - Keep in this order
+def gms_items():
     items = [
-        item("gms-search-arg", "Gmail Search With Argument", "Fast Custom Search", "main2"),
-        item(
-            "gms-search",
-            f'Search Gmail: "{q}"' if q else "Search Gmail",
-            "Search all Gmail messages",
-            gmail_url(q),
-            mods=mod("cmd","CMD Pressed Arg", "CMD Pressed Subtitle"),
-        ),
         item("gms-search-unread","Search Unread","Search Un-Read Gmail Messages",gmail_arg("is:unread")),
-        item("gms-any-star", "Test-Any", "Show mail with Any Star", gmail_arg("is:starred"),
-             mods=mod("ctrl", gmail_url("is:starred"), "CTRL Pressed Subtitle")),
+        item("gms-any-star", "Test-Any", "Show mail with Any Star", gmail_arg("is:starred")),
         item("gms-any-star", "Any Star", "Show mail with Any Star", gmail_arg("is:starred")),
         item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_arg("has:red-bang")),
-        item(
-            "gms-yellow-bang",
-            "Yellow Bang",
-            "Show mail with yellow-bang star",
-            gmail_arg("has:yellow-bang"),
-        ),
-        item(
-            "gms-purple-question",
-            "Purple Question",
-            "Show mail with purple-question star",
-            gmail_arg("has:purple-question"),
-
-        ),
-        item(
-            "gms-blue-info",
-            "Blue Info",
-            "Show mail with blue-info star",
-            gmail_arg("has:blue-info"),
-        ),
+        item("gms-yellow-bang","Yellow Bang","Show mail with yellow-bang star",gmail_arg("has:yellow-bang")),
+        item("gms-purple-question","Purple Question","Show mail with purple-question star",gmail_arg("has:purple-question")),
+        item("gms-blue-info","Blue Info","Show mail with blue-info star",gmail_arg("has:blue-info")),
         item("gms-blue-star", "Blue Star", "Show mail with blue-star", gmail_arg("has:blue-star")),
-        item(
-            "gms-orange-guillemet",
-            "Orange Guillemet",
-            "Show mail with orange-guillemet",
-            gmail_arg("has:orange-guillemet"),
-        ),
+        item("gms-orange-guillemet","Orange Guillemet","Show mail with orange-guillemet",gmail_arg("has:orange-guillemet")),
         item("gms-yellow-star", "Yellow Star", "Show mail with yellow-star", gmail_arg("has:yellow-star")),
         item("gms-orange-star", "Orange Star", "Show mail with orange-star", gmail_arg("has:orange-star")),
         item("gms-red-star", "Red Star", "Show mail with red-star", gmail_arg("has:red-star")),
         item("gms-purple-star", "Purple Star", "Show mail with purple-star", gmail_arg("has:purple-star")),
         item("gms-green-star", "Green Star", "Show mail with green-star", gmail_arg("has:green-star")),
-        item(
-            "gms-green-check",
-            "Green Checkmark",
-            "Show mail with green-check",
-            gmail_arg("has:green-check"),
-        ),
+        item("gms-green-check","Green Checkmark","Show mail with green-check",gmail_arg("has:green-check")),
+        # Menu Items To Other Searching Tools/Keywords
+        item("gms-search-arg", "Gmail Search With Argument", "Fast Custom Search", "main2"),
         item("gms-search-reference", "Gmail Search Operators", "Learn Power Searches", "search"),
         item("gms-unread-menu", "Un-Read Mail", "Unread quick links", "unread"),
         item("gms-settings", "Settings", "Open workflow configuration", "settings"),
     ]
     return items
 
-# Gmail Search with Qurey
+# Un-Read Mail Filterable List - Keep in this order
+def gmu_items():
+    items = [
+        item("gmu-search-arg", "Un-Read Search With Argument", "Fast Custom Un-Read Search", "unread2"),
+        item("gmu-search-unread","Search Unread","Search Un-Read Messages",gmail_arg("is:unread")),
+        item("gmu-primary","Primary Unread","Unread in Primary",gmail_url("category:primary label:unread")),
+        item("gmu-updates","Updates UnRead","Unread in Updates",gmail_url("category:updates label:unread")),
+        item("gmu-promotions","Promotions UnRead","Unread in Promotions",gmail_url("category:promotions label:unread")),
+        item("gmu-forums","Forums UnRead","Unread in Forums",gmail_url("category:forums label:unread")),
+        item("gmu-reservations","Reservations","Reservations category",gmail_url("category:reservations")),
+        item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases")),
+        # Menu Items To Other Searching Tools/Keywords
+        item("gmu-settings", "Settings", "Open workflow configuration", "settings"),
+        item("gmu-back", "Start Over", "Return to the main menu", "main"),
+    ]
+    return items
+
+# Search Operators Filterable List - Keep in this order
+def gmo_items():
+    items = [
+        item("gmo-search-options","Search Operators","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases | ⌘⌥ Clipboard",valid=False),
+        item("gmo-search-arg", "Gmail Operators With Argument", "Fast Operator Search", "operators2"),
+        item("gmo-from", "From", "Ex. from:bob", gmail_url("from:")),
+        item("gmo-to", "To", "Ex. to:bob", gmail_url("to:")),
+        item("gmo-cc", "CC", "Ex. cc:bob", gmail_url("cc:")),
+        item("gmo-bcc", "BCC", "Ex. bcc:bob", gmail_url("bcc:")),
+        item("gmo-subject", "Subject", "Ex. subject:what about bob", gmail_url("subject:")),
+        item("gmo-or", "OR", "Ex. from:bob OR from:bam", "OR"),
+        item("gmo-exclude", "Exclude", "Ex. bam -rock", gmail_url("-")),
+        item("gmo-around", "AROUND", "Ex. flight AROUND 10 airport", "AROUND"),
+        item("gmo-label", "Label", "Ex. label:builders", gmail_url("label:")),
+        item("gmo-attachments", "Attachments", "Ex. has:attachment", gmail_url("has:attachment")),
+        item("gmo-drive-link", "Drive Link", "Ex. has:drive", gmail_url("has:drive")),
+        item("gmo-document", "Document", "Ex. has:document", gmail_url("has:document")),
+        item("gmo-spreadsheet", "Spreadsheet", "Ex. has:spreadsheet", gmail_url("has:spreadsheet")),
+        item("gmo-presentation", "Presentation", "Ex. has:presentation", gmail_url("has:presentation")),
+        item("gmo-youtube", "YouTube", "Ex. has:youtube", gmail_url("has:youtube")),
+        item("gmo-list", "List", "Ex. list:info@example.org", gmail_url("list:")),
+        item("gmo-filename", "Filename", "Ex. filename:wishlist.txt", gmail_url("filename:")),
+        item("gmo-exact-word-or-phrase","Exact Word or Phrase",'Ex. "bob the builder"',gmail_url("\"\"")),
+        item("gmo-group-search-terms", "Group Search Terms", "Ex. (bob builder)", gmail_url("()")), # Needs Submenu
+        item("gmo-anywhere","Anywhere (include Spam & Trash)","Ex. in:anywhere",gmail_url("in:anywhere")),
+        item("gmo-important", "Important", "Ex. is:important", gmail_url("is:important")),
+        item("gmo-after", "After", "Ex. after:08/28/2024", gmail_url("after:")),
+        item("gmo-before", "Before", "Ex. before:08/28/2004", gmail_url("before:")),
+        item("gmo-older", "Older", "Ex. older:08/28/2004", gmail_url("older:")),
+        item("gmo-newer", "Newer", "Ex. newer:08/28/2004", gmail_url("newer:")),
+        item("gmo-older-than","Older Than (d=Day m=Mnth y=Yr)","Ex. older_than:2d",gmail_url("older_than:")),
+        item("gmo-chat", "Chat", "Ex. is:chat", gmail_url("is:chat")),
+        item("gmo-delivered-to","Delivered To","Ex. deliveredto:username@gmail.com",gmail_url("deliveredto:@gmail.com")),
+        item("gmo-primary-category", "Primary Category", "Ex. category:primary", gmail_url("category:primary")),
+        item("gmo-social-category", "Social Category", "Ex. category:social", gmail_url("category:social")),
+        item("gmo-promotions-category","Promotions Category","Ex. category:promotions",gmail_url("category:promotions")),
+        item("gmo-updates-category", "Updates Category", "Ex. category:updates", gmail_url("category:updates")),
+        item("gmo-forums-category", "Forums Category", "category:forums", gmail_url("category:forums")),
+        item("gmo-reservations-category","Reservations Category","Ex. category:reservations",gmail_url("category:reservations")),
+        item("gmo-purchases-category","Purchases Category","Ex. category:purchases",gmail_url("category:purchases")),
+        item("gmo-size-larger", "Size (Larger)", "Ex. size:1000000 (bytes / K / M)", gmail_url("size:")),
+        item("gmo-larger-size", "Larger Size", "Ex. larger:10M", gmail_url("larger:")),
+        item("gmo-smaller-size", "Smaller Size", "Ex. smaller:1M", gmail_url("smaller:")),
+        item("gmo-exact-word-match", "Exact Word Match", "Ex. +unicorn", gmail_url("+")),
+        item("gmo-user-label","User Label (Has Any User Label)","Ex. has:userlabels",gmail_url("has:userlabels")),
+        item("gmo-no-user-labels", "No User Labels", "Ex. has:nouserlabels", gmail_url("has:nouserlabels")),
+        # Menu Items To Other Searching Tools/Keywords
+        item("gmo-unread", "Un-Read", "Un-Read quick link menu", "unread"),
+        item("gmo-settings", "Settings", "Open workflow configuration", "settings"),
+        item("gmo-back", "Start Over", "Return to the main menu", "main"),
+    ]
+    return items
+
+# Gmail Star Search with Qurey
 def gmss_items(query):
     q = query.strip()
     items = [
@@ -249,12 +263,7 @@ def gmss_items(query):
         item("gms-red-star", "Red Star", "Show mail with red-star", gmail_url("has:red-star")),
         item("gms-purple-star", "Purple Star", "Show mail with purple-star", gmail_url("has:purple-star")),
         item("gms-green-star", "Green Star", "Show mail with green-star", gmail_url("has:green-star")),
-        item(
-            "gms-green-check",
-            "Green Checkmark",
-            "Show mail with green-check",
-            gmail_url("has:green-check"),
-        ),
+        item("gms-green-check","Green Checkmark","Show mail with green-check",gmail_url("has:green-check")),
         item("gms-search-reference", "Gmail Search Reference", "Learn Power Searches", "search"),
         item("gms-unread-menu", "Un-Read Mail", "Un-Read Quick Links Menu", "unread"),
         item("gms-settings", "Settings", "Open workflow configuration", "settings"),
@@ -262,47 +271,7 @@ def gmss_items(query):
     ]
     return items
 
-# Un-Read Mail Filterable List
-def gmu_items(query):
-    q = query.strip()
-    items = [
-        item("gmu-search-arg", "Un-Read Search With Argument", "Fast Custom Un-Read Search", "unread2"),
-        item("gmu-search-unread","Search Unread","Search Un-Read Messages",gmail_arg("is:unread")),
-        item(
-            "gmu-primary",
-            "Primary Unread",
-            "Unread in Primary",
-            gmail_url("category:primary label:unread"),
-        ),
-        item(
-            "gmu-updates",
-            "Updates UnRead",
-            "Unread in Updates",
-            gmail_url("category:updates label:unread"),
-        ),
-        item(
-            "gmu-promotions",
-            "Promotions UnRead",
-            "Unread in Promotions",
-            gmail_url("category:promotions label:unread"),
-        ),
-        item(
-            "gmu-forums",
-            "Forums UnRead",
-            "Unread in Forums",
-            gmail_url("category:forums label:unread"),
-        ),
-        item(
-            "gmu-reservations",
-            "Reservations",
-            "Reservations category",
-            gmail_url("category:reservations"),
-        ),
-        item("gmu-purchases", "Purchases", "Purchases category", gmail_url("category:purchases")),
-        item("gmu-settings", "Settings", "Open workflow configuration", "settings"),
-        item("gmu-back", "Start Over", "Return to the main menu", "main"),
-    ]
-    return items
+
 
 # Un-Read Mail Search With Query
 def gmuu_items(query):
@@ -350,102 +319,6 @@ def gmuu_items(query):
     ]
     return items
 
-# Search Operators Filterable List
-def gmo_items():
-    items = [
-        item("gmo-search-arg", "Gmail Operators With Argument", "Fast Operator Search", "operators2"),
-        item(
-            "gmo-search-options",
-            "Search Options",
-            "↵ Copy, ⌘ Auto, ⌥ Auto Clip, ⌃ Other, ⇧⌘ Back",
-            valid=False,
-        ),
-        item("gmo-from", "From", "Ex. from:bob", gmail_url("from:")),
-        item("gmo-to", "To", "Ex. to:bob", gmail_url("to:")),
-        item("gmo-cc", "CC", "Ex. cc:bob", gmail_url("cc:")),
-        item("gmo-bcc", "BCC", "Ex. bcc:bob", gmail_url("bcc:")),
-        item("gmo-subject", "Subject", "Ex. subject:what about bob", gmail_url("subject:")),
-        item("gmo-or", "OR", "Ex. from:bob OR from:bam", "OR"),
-        item("gmo-exclude", "Exclude", "Ex. bam -rock", gmail_url("-")),
-        item("gmo-around", "AROUND", "Ex. flight AROUND 10 airport", "AROUND"),
-        item("gmo-label", "Label", "Ex. label:builders", gmail_url("label:")),
-        item("gmo-attachments", "Attachments", "Ex. has:attachment", gmail_url("has:attachment")),
-        item("gmo-drive-link", "Drive Link", "Ex. has:drive", gmail_url("has:drive")),
-        item("gmo-document", "Document", "Ex. has:document", gmail_url("has:document")),
-        item("gmo-spreadsheet", "Spreadsheet", "Ex. has:spreadsheet", gmail_url("has:spreadsheet")),
-        item("gmo-presentation", "Presentation", "Ex. has:presentation", gmail_url("has:presentation")),
-        item("gmo-youtube", "YouTube", "Ex. has:youtube", gmail_url("has:youtube")),
-        item("gmo-list", "List", "Ex. list:info@example.org", gmail_url("list:")),
-        item("gmo-filename", "Filename", "Ex. filename:wishlist.txt", gmail_url("filename:")),
-        item(
-            "gmo-exact-word-or-phrase",
-            "Exact Word or Phrase",
-            'Ex. "bob the builder"',
-            gmail_url("\"\""),
-        ),
-        item("gmo-group-search-terms", "Group Search Terms", "Ex. (bob builder)", gmail_url("()")), # Needs Submenu
-        item(
-            "gmo-anywhere",
-            "Anywhere (include Spam & Trash)",
-            "Ex. in:anywhere",
-            gmail_url("in:anywhere")
-        ),
-        item("gmo-important", "Important", "Ex. is:important", gmail_url("is:important")),
-        item("gmo-after", "After", "Ex. after:08/28/2024", gmail_url("after:")),
-        item("gmo-before", "Before", "Ex. before:08/28/2004", gmail_url("before:")),
-        item("gmo-older", "Older", "Ex. older:08/28/2004", gmail_url("older:")),
-        item("gmo-newer", "Newer", "Ex. newer:08/28/2004", gmail_url("newer:")),
-        item(
-            "gmo-older-than",
-            "Older Than (d=Day m=Mnth y=Yr)",
-            "Ex. older_than:2d",
-            gmail_url("older_than:")
-        ),
-        item("gmo-chat", "Chat", "Ex. is:chat", gmail_url("is:chat")),
-        item(
-            "gmo-delivered-to",
-            "Delivered To",
-            "Ex. deliveredto:username@gmail.com",
-            gmail_url("deliveredto:@gmail.com")
-        ),
-        item("gmo-primary-category", "Primary Category", "Ex. category:primary", gmail_url("category:primary")),
-        item("gmo-social-category", "Social Category", "Ex. category:social", gmail_url("category:social")),
-        item(
-            "gmo-promotions-category",
-            "Promotions Category",
-            "Ex. category:promotions",
-            gmail_url("category:promotions")
-        ),
-        item("gmo-updates-category", "Updates Category", "Ex. category:updates", gmail_url("category:updates")),
-        item("gmo-forums-category", "Forums Category", "category:forums", gmail_url("category:forums")),
-        item(
-            "gmo-reservations-category",
-            "Reservations Category",
-            "Ex. category:reservations",
-            gmail_url("category:reservations")
-        ),
-        item(
-            "gmo-purchases-category",
-            "Purchases Category",
-            "Ex. category:purchases",
-            gmail_url("category:purchases")
-        ),
-        item("gmo-size-larger", "Size (Larger)", "Ex. size:1000000 (bytes / K / M)", gmail_url("size:")),
-        item("gmo-larger-size", "Larger Size", "Ex. larger:10M", gmail_url("larger:")),
-        item("gmo-smaller-size", "Smaller Size", "Ex. smaller:1M", gmail_url("smaller:")),
-        item("gmo-exact-word-match", "Exact Word Match", "Ex. +unicorn", gmail_url("+")),
-        item(
-            "gmo-user-label",
-            "User Label (Has Any User Label)",
-            "Ex. has:userlabels",
-            gmail_url("has:userlabels")
-        ),
-        item("gmo-no-user-labels", "No User Labels", "Ex. has:nouserlabels", gmail_url("has:nouserlabels")),
-        item("gmo-unread", "Un-Read", "Un-Read quick link menu", "unread"),
-        item("gmo-settings", "Settings", "Open workflow configuration", "settings"),
-        item("gmo-back", "Start Over", "Return to the main menu", "main"),
-    ]
-    return items
 
 # Search Operators with Argument
 def gmoo_items(query):
@@ -600,7 +473,7 @@ def main():
 
     query = " ".join(args.query).strip()
     if args.mode == "gmu":
-        items = gmu_items(query)
+        items = gmu_items()
     elif args.mode == "gmuu":
         items = gmuu_items(query)
     elif args.mode == "gmss":
@@ -614,7 +487,7 @@ def main():
     elif args.mode == "gmz":
         items = gmz_items(query)
     else:
-        items = gms_items(query)
+        items = gms_items()
     print(json.dumps({"items": items}, ensure_ascii=False))
 
 
