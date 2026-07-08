@@ -8,6 +8,19 @@
         <string>CDoug</string>
         <key>connections</key>
         <dict>
+            <key>041BE14C-3BB7-49B8-AC7E-9A8B7FDBD0D1</key>
+            <array>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>1E9EC99B-06E8-4A96-A09C-706F855EE39A</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+            </array>
             <key>06F59E2A-A7E1-462E-8FD0-14F36B7A460E</key>
             <array>
                 <dict>
@@ -438,7 +451,7 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -451,7 +464,7 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>1E9EC99B-06E8-4A96-A09C-706F855EE39A</string>
+                    <string>041BE14C-3BB7-49B8-AC7E-9A8B7FDBD0D1</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -477,7 +490,7 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -503,7 +516,7 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -516,7 +529,7 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -529,7 +542,20 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+            </array>
+            <key>6B4E8BB5-6DB0-4078-90F3-8EE3EE872579</key>
+            <array>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -603,11 +629,11 @@
                     <false/>
                 </dict>
             </array>
-            <key>84B4BFC4-C742-4D49-9E26-C5BDF24D3383</key>
+            <key>772D51E2-C89C-411A-B27B-8205D26AA070</key>
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>CE3F9955-E0C0-4151-AC71-C579B2774944</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -729,7 +755,7 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -873,6 +899,79 @@
                     <false/>
                 </dict>
             </array>
+            <key>CE3F9955-E0C0-4151-AC71-C579B2774944</key>
+            <array>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>9203B718-7A7E-4D2B-9DE4-17B012CC27FF</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>sourceoutputuid</key>
+                    <string>B595E300-132E-4F5E-B6DD-C4F5A2BEA40E</string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>9203B718-7A7E-4D2B-9DE4-17B012CC27FF</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>sourceoutputuid</key>
+                    <string>43F6B8DF-DAC0-42CF-A6EA-2F6BC019AE31</string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>95B2E77A-691C-4917-B935-9C09C10C5467</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>sourceoutputuid</key>
+                    <string>2F8E4572-2BFA-4E88-97A4-0BA76E3FE81A</string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>B3FB00FB-0839-4D14-92B3-892CA4D63C76</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>sourceoutputuid</key>
+                    <string>63D8B150-94B5-4A78-9D0D-B3D4C1C2CBB1</string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+                <dict>
+                    <key>destinationuid</key>
+                    <string>203F858E-A9CE-4548-81A7-4F81FD472CD9</string>
+                    <key>modifiers</key>
+                    <integer>0</integer>
+                    <key>modifiersubtext</key>
+                    <string></string>
+                    <key>sourceoutputuid</key>
+                    <string>82644441-613C-4E8D-A420-3F99EA23E582</string>
+                    <key>vitoclose</key>
+                    <false/>
+                </dict>
+            </array>
             <key>CF7929D3-F078-41E6-8465-DF918ECF99AB</key>
             <array>
                 <dict>
@@ -903,7 +1002,7 @@
             <array>
                 <dict>
                     <key>destinationuid</key>
-                    <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                    <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
                     <key>modifiers</key>
                     <integer>0</integer>
                     <key>modifiersubtext</key>
@@ -1019,68 +1118,6 @@
                 <key>config</key>
                 <dict>
                     <key>alfredfiltersresults</key>
-                    <false/>
-                    <key>alfredfiltersresultsmatchmode</key>
-                    <integer>3</integer>
-                    <key>argumenttreatemptyqueryasnil</key>
-                    <false/>
-                    <key>argumenttrimmode</key>
-                    <integer>0</integer>
-                    <key>argumenttype</key>
-                    <integer>1</integer>
-                    <key>escaping</key>
-                    <integer>68</integer>
-                    <key>queuedelaycustom</key>
-                    <integer>3</integer>
-                    <key>queuedelayimmediatelyinitially</key>
-                    <true/>
-                    <key>queuedelaymode</key>
-                    <integer>0</integer>
-                    <key>queuemode</key>
-                    <integer>1</integer>
-                    <key>runningsubtext</key>
-                    <string></string>
-                    <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gmz "{query}"</string>
-                    <key>scriptargtype</key>
-                    <integer>0</integer>
-                    <key>scriptfile</key>
-                    <string></string>
-                    <key>subtext</key>
-                    <string>{var:route}</string>
-                    <key>title</key>
-                    <string>Arg Entry {var:actionPrefix}</string>
-                    <key>type</key>
-                    <integer>0</integer>
-                    <key>withspace</key>
-                    <true/>
-                </dict>
-                <key>type</key>
-                <string>alfred.workflow.input.scriptfilter</string>
-                <key>uid</key>
-                <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
-                <key>version</key>
-                <integer>3</integer>
-            </dict>
-            <dict>
-                <key>config</key>
-                <dict>
-                    <key>availableviaurlhandler</key>
-                    <false/>
-                    <key>triggerid</key>
-                    <string>_argmenu</string>
-                </dict>
-                <key>type</key>
-                <string>alfred.workflow.trigger.external</string>
-                <key>uid</key>
-                <string>84B4BFC4-C742-4D49-9E26-C5BDF24D3383</string>
-                <key>version</key>
-                <integer>1</integer>
-            </dict>
-            <dict>
-                <key>config</key>
-                <dict>
-                    <key>alfredfiltersresults</key>
                     <true/>
                     <key>alfredfiltersresultsmatchmode</key>
                     <integer>3</integer>
@@ -1105,9 +1142,9 @@
                     <key>runningsubtext</key>
                     <string></string>
                     <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gms "{query}"</string>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gms "$1"</string>
                     <key>scriptargtype</key>
-                    <integer>0</integer>
+                    <integer>1</integer>
                     <key>scriptfile</key>
                     <string></string>
                     <key>subtext</key>
@@ -1144,13 +1181,101 @@
             <dict>
                 <key>config</key>
                 <dict>
+                    <key>conditions</key>
+                    <array>
+                        <dict>
+                            <key>inputstring</key>
+                            <string>{var:route}</string>
+                            <key>matchcasesensitive</key>
+                            <false/>
+                            <key>matchmode</key>
+                            <integer>0</integer>
+                            <key>matchstring</key>
+                            <string>main2</string>
+                            <key>outputlabel</key>
+                            <string>gmss</string>
+                            <key>uid</key>
+                            <string>2F8E4572-2BFA-4E88-97A4-0BA76E3FE81A</string>
+                        </dict>
+                        <dict>
+                            <key>inputstring</key>
+                            <string>{var:route}</string>
+                            <key>matchcasesensitive</key>
+                            <false/>
+                            <key>matchmode</key>
+                            <integer>0</integer>
+                            <key>matchstring</key>
+                            <string>unread</string>
+                            <key>outputlabel</key>
+                            <string>Un-Read</string>
+                            <key>uid</key>
+                            <string>B595E300-132E-4F5E-B6DD-C4F5A2BEA40E</string>
+                        </dict>
+                        <dict>
+                            <key>inputstring</key>
+                            <string>{var:route}</string>
+                            <key>matchcasesensitive</key>
+                            <false/>
+                            <key>matchmode</key>
+                            <integer>0</integer>
+                            <key>matchstring</key>
+                            <string>operators</string>
+                            <key>outputlabel</key>
+                            <string>Operators</string>
+                            <key>uid</key>
+                            <string>63D8B150-94B5-4A78-9D0D-B3D4C1C2CBB1</string>
+                        </dict>
+                        <dict>
+                            <key>inputstring</key>
+                            <string>{var:route}</string>
+                            <key>matchcasesensitive</key>
+                            <false/>
+                            <key>matchmode</key>
+                            <integer>0</integer>
+                            <key>matchstring</key>
+                            <string>settings</string>
+                            <key>outputlabel</key>
+                            <string>settings</string>
+                            <key>uid</key>
+                            <string>82644441-613C-4E8D-A420-3F99EA23E582</string>
+                        </dict>
+                        <dict>
+                            <key>inputstring</key>
+                            <string>{var:route}</string>
+                            <key>matchcasesensitive</key>
+                            <false/>
+                            <key>matchmode</key>
+                            <integer>0</integer>
+                            <key>matchstring</key>
+                            <string>back</string>
+                            <key>outputlabel</key>
+                            <string>main</string>
+                            <key>uid</key>
+                            <string>43F6B8DF-DAC0-42CF-A6EA-2F6BC019AE31</string>
+                        </dict>
+                    </array>
+                    <key>elselabel</key>
+                    <string>else</string>
+                    <key>hideelse</key>
+                    <false/>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.utility.conditional</string>
+                <key>uid</key>
+                <string>CE3F9955-E0C0-4151-AC71-C579B2774944</string>
+                <key>version</key>
+                <integer>1</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
                     <key>argument</key>
                     <string></string>
                     <key>passthroughargument</key>
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query} {var:fastphrase5}</string>
                     </dict>
                 </dict>
@@ -1170,7 +1295,7 @@
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query} {var:fastphrase6}</string>
                     </dict>
                 </dict>
@@ -1190,7 +1315,7 @@
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query} {var:fastphrase2}</string>
                     </dict>
                 </dict>
@@ -1210,7 +1335,7 @@
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query} {var:fastphrase4}</string>
                     </dict>
                 </dict>
@@ -1227,30 +1352,10 @@
                     <key>argument</key>
                     <string></string>
                     <key>passthroughargument</key>
-                    <true/>
-                    <key>variables</key>
-                    <dict>
-                        <key>route</key>
-                        <string>{query}</string>
-                    </dict>
-                </dict>
-                <key>type</key>
-                <string>alfred.workflow.utility.argument</string>
-                <key>uid</key>
-                <string>CF7929D3-F078-41E6-8465-DF918ECF99AB</string>
-                <key>version</key>
-                <integer>1</integer>
-            </dict>
-            <dict>
-                <key>config</key>
-                <dict>
-                    <key>argument</key>
-                    <string></string>
-                    <key>passthroughargument</key>
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query} {clipboard}</string>
                     </dict>
                 </dict>
@@ -1270,7 +1375,7 @@
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query} {var:fastphrase3}</string>
                     </dict>
                 </dict>
@@ -1290,7 +1395,7 @@
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query} {var:fastphrase1}</string>
                     </dict>
                 </dict>
@@ -1305,12 +1410,29 @@
                 <key>config</key>
                 <dict>
                     <key>argument</key>
+                    <string>'{query}', {variables}</string>
+                    <key>cleardebuggertext</key>
+                    <false/>
+                    <key>processoutputs</key>
+                    <true/>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.utility.debug</string>
+                <key>uid</key>
+                <string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
+                <key>version</key>
+                <integer>1</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
+                    <key>argument</key>
                     <string></string>
                     <key>passthroughargument</key>
                     <false/>
                     <key>variables</key>
                     <dict>
-                        <key>zarg</key>
+                        <key>turl</key>
                         <string>{query}</string>
                     </dict>
                 </dict>
@@ -1364,9 +1486,9 @@
                     <key>runningsubtext</key>
                     <string></string>
                     <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gmu "{query}"</string>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gmu "$1"</string>
                     <key>scriptargtype</key>
-                    <integer>0</integer>
+                    <integer>1</integer>
                     <key>scriptfile</key>
                     <string></string>
                     <key>subtext</key>
@@ -1600,9 +1722,9 @@
                     <key>runningsubtext</key>
                     <string></string>
                     <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gmo "{query}"</string>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gmo "$1"</string>
                     <key>scriptargtype</key>
-                    <integer>0</integer>
+                    <integer>1</integer>
                     <key>scriptfile</key>
                     <string></string>
                     <key>subtext</key>
@@ -1627,7 +1749,7 @@
                     <key>availableviaurlhandler</key>
                     <false/>
                     <key>triggerid</key>
-                    <string>_search</string>
+                    <string>_operators</string>
                 </dict>
                 <key>type</key>
                 <string>alfred.workflow.trigger.external</string>
@@ -1677,8 +1799,55 @@
             <dict>
                 <key>config</key>
                 <dict>
+                    <key>alfredfiltersresults</key>
+                    <false/>
+                    <key>alfredfiltersresultsmatchmode</key>
+                    <integer>3</integer>
+                    <key>argumenttreatemptyqueryasnil</key>
+                    <false/>
+                    <key>argumenttrimmode</key>
+                    <integer>0</integer>
+                    <key>argumenttype</key>
+                    <integer>1</integer>
+                    <key>escaping</key>
+                    <integer>68</integer>
+                    <key>queuedelaycustom</key>
+                    <integer>3</integer>
+                    <key>queuedelayimmediatelyinitially</key>
+                    <true/>
+                    <key>queuedelaymode</key>
+                    <integer>0</integer>
+                    <key>queuemode</key>
+                    <integer>1</integer>
+                    <key>runningsubtext</key>
+                    <string></string>
+                    <key>script</key>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gmz "$1"</string>
+                    <key>scriptargtype</key>
+                    <integer>1</integer>
+                    <key>scriptfile</key>
+                    <string></string>
+                    <key>subtext</key>
+                    <string>{var:route}</string>
+                    <key>title</key>
+                    <string>Arg Entry {var:actionPrefix}</string>
+                    <key>type</key>
+                    <integer>0</integer>
+                    <key>withspace</key>
+                    <true/>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.input.scriptfilter</string>
+                <key>uid</key>
+                <string>F7C7FCD1-326D-4D5C-960E-832399099FEC</string>
+                <key>version</key>
+                <integer>3</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
                     <key>externaltriggerid</key>
-                    <string>_search</string>
+                    <string>_operators</string>
                     <key>passinputasargument</key>
                     <false/>
                     <key>passvariables</key>
@@ -1845,8 +2014,25 @@
             <dict>
                 <key>config</key>
                 <dict>
+                    <key>argument</key>
+                    <string></string>
+                    <key>passthroughargument</key>
+                    <false/>
+                    <key>variables</key>
+                    <dict/>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.utility.argument</string>
+                <key>uid</key>
+                <string>CF7929D3-F078-41E6-8465-DF918ECF99AB</string>
+                <key>version</key>
+                <integer>1</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
                     <key>externaltriggerid</key>
-                    <string>_search2</string>
+                    <string>_operators2</string>
                     <key>passinputasargument</key>
                     <false/>
                     <key>passvariables</key>
@@ -1922,7 +2108,7 @@
                 <key>config</key>
                 <dict>
                     <key>externaltriggerid</key>
-                    <string>_search</string>
+                    <string>_operators</string>
                     <key>passinputasargument</key>
                     <false/>
                     <key>passvariables</key>
@@ -1941,7 +2127,7 @@
                 <key>config</key>
                 <dict>
                     <key>externaltriggerid</key>
-                    <string>_search</string>
+                    <string>_operators</string>
                     <key>passinputasargument</key>
                     <false/>
                     <key>passvariables</key>
@@ -1999,9 +2185,9 @@
                     <key>runningsubtext</key>
                     <string></string>
                     <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gmss "{query}"</string>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gmss "$1"</string>
                     <key>scriptargtype</key>
-                    <integer>0</integer>
+                    <integer>1</integer>
                     <key>scriptfile</key>
                     <string></string>
                     <key>subtext</key>
@@ -2046,7 +2232,7 @@
                     <key>tasksettings</key>
                     <dict>
                         <key>url</key>
-                        <string>{var:route}</string>
+                        <string>{var:url}</string>
                     </dict>
                     <key>taskuid</key>
                     <string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.current.url</string>
@@ -2062,7 +2248,7 @@
                 <key>config</key>
                 <dict>
                     <key>externaltriggerid</key>
-                    <string>_search2</string>
+                    <string>_operators2</string>
                     <key>passinputasargument</key>
                     <false/>
                     <key>passvariables</key>
@@ -2081,12 +2267,29 @@
                 <key>config</key>
                 <dict>
                     <key>argument</key>
+                    <string>'{query}', {variables}</string>
+                    <key>cleardebuggertext</key>
+                    <true/>
+                    <key>processoutputs</key>
+                    <true/>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.utility.debug</string>
+                <key>uid</key>
+                <string>041BE14C-3BB7-49B8-AC7E-9A8B7FDBD0D1</string>
+                <key>version</key>
+                <integer>1</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
+                    <key>argument</key>
                     <string></string>
                     <key>passthroughargument</key>
                     <true/>
                     <key>variables</key>
                     <dict>
-                        <key>route</key>
+                        <key>url</key>
                         <string>{query}</string>
                     </dict>
                 </dict>
@@ -2178,9 +2381,9 @@
                     <key>runningsubtext</key>
                     <string></string>
                     <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gmu "{query}"</string>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gmu "$1"</string>
                     <key>scriptargtype</key>
-                    <integer>0</integer>
+                    <integer>1</integer>
                     <key>scriptfile</key>
                     <string></string>
                     <key>subtext</key>
@@ -2225,7 +2428,7 @@
                     <key>tasksettings</key>
                     <dict>
                         <key>url</key>
-                        <string>{var:route}</string>
+                        <string>{var:url}</string>
                     </dict>
                     <key>taskuid</key>
                     <string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.current.url</string>
@@ -2236,33 +2439,6 @@
                 <string>B2C3D4E5-F6A7-8901-BCDE-F12345678901</string>
                 <key>version</key>
                 <integer>1</integer>
-            </dict>
-            <dict>
-                <key>config</key>
-                <dict>
-                    <key>concurrently</key>
-                    <false/>
-                    <key>escaping</key>
-                    <integer>68</integer>
-                    <key>script</key>
-                    <string>function run(argv) {
-                        var workflowID = 'net.cdoug.gmail-search-tools';
-                        var alfred = Application("com.runningwithcrayons.Alfred");
-                        alfred.revealWorkflow(workflowID, { configuration: true });
-                        }</string>
-                    <key>scriptargtype</key>
-                    <integer>1</integer>
-                    <key>scriptfile</key>
-                    <string></string>
-                    <key>type</key>
-                    <integer>7</integer>
-                </dict>
-                <key>type</key>
-                <string>alfred.workflow.action.script</string>
-                <key>uid</key>
-                <string>211400F9-855C-4695-AD89-44226CB55C27</string>
-                <key>version</key>
-                <integer>2</integer>
             </dict>
             <dict>
                 <key>config</key>
@@ -2292,9 +2468,9 @@
                     <key>runningsubtext</key>
                     <string></string>
                     <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gmoo "{query}"</string>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gmoo "$1"</string>
                     <key>scriptargtype</key>
-                    <integer>0</integer>
+                    <integer>1</integer>
                     <key>scriptfile</key>
                     <string></string>
                     <key>subtext</key>
@@ -2319,7 +2495,7 @@
                     <key>availableviaurlhandler</key>
                     <false/>
                     <key>triggerid</key>
-                    <string>_search2</string>
+                    <string>_operators2</string>
                 </dict>
                 <key>type</key>
                 <string>alfred.workflow.trigger.external</string>
@@ -2327,6 +2503,33 @@
                 <string>74CD7056-905D-4912-837E-486C428CF62A</string>
                 <key>version</key>
                 <integer>1</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
+                    <key>concurrently</key>
+                    <false/>
+                    <key>escaping</key>
+                    <integer>68</integer>
+                    <key>script</key>
+                    <string>function run(argv) {
+                        var workflowID = 'net.cdoug.gmail-search-tools';
+                        var alfred = Application("com.runningwithcrayons.Alfred");
+                        alfred.revealWorkflow(workflowID, { configuration: true });
+                        }</string>
+                    <key>scriptargtype</key>
+                    <integer>1</integer>
+                    <key>scriptfile</key>
+                    <string></string>
+                    <key>type</key>
+                    <integer>7</integer>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.action.script</string>
+                <key>uid</key>
+                <string>211400F9-855C-4695-AD89-44226CB55C27</string>
+                <key>version</key>
+                <integer>2</integer>
             </dict>
             <dict>
                 <key>config</key>
@@ -2438,6 +2641,29 @@
             <dict>
                 <key>config</key>
                 <dict>
+                    <key>argumenttype</key>
+                    <integer>2</integer>
+                    <key>keyword</key>
+                    <string>!gmsdiagnostic</string>
+                    <key>skipuniversalaction</key>
+                    <true/>
+                    <key>subtext</key>
+                    <string>Result will be copied to the clipboard</string>
+                    <key>text</key>
+                    <string>Diagnose Google Search Issues</string>
+                    <key>withspace</key>
+                    <false/>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.input.keyword</string>
+                <key>uid</key>
+                <string>6FAA7372-C5AF-46A4-A1CE-05EA864FCEF9</string>
+                <key>version</key>
+                <integer>1</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
                     <key>alfredfiltersresults</key>
                     <false/>
                     <key>alfredfiltersresultsmatchmode</key>
@@ -2463,9 +2689,9 @@
                     <key>runningsubtext</key>
                     <string></string>
                     <key>script</key>
-                    <string>/usr/bin/python3 script/menu_filter.py --mode gmsettings "{query}"</string>
+                    <string>/usr/bin/python3 script/menu_filter.py --mode gmsettings "$1"</string>
                     <key>scriptargtype</key>
-                    <integer>0</integer>
+                    <integer>1</integer>
                     <key>scriptfile</key>
                     <string></string>
                     <key>subtext</key>
@@ -2524,10 +2750,7 @@
                     <key>passthroughargument</key>
                     <true/>
                     <key>variables</key>
-                    <dict>
-                        <key>route</key>
-                        <string>{query}</string>
-                    </dict>
+                    <dict/>
                 </dict>
                 <key>type</key>
                 <string>alfred.workflow.utility.argument</string>
@@ -2615,121 +2838,12 @@
             <dict>
                 <key>config</key>
                 <dict>
-                    <key>argumenttype</key>
-                    <integer>2</integer>
-                    <key>keyword</key>
-                    <string>!gmsdiagnostic</string>
-                    <key>skipuniversalaction</key>
-                    <true/>
-                    <key>subtext</key>
-                    <string>Result will be copied to the clipboard</string>
-                    <key>text</key>
-                    <string>Diagnose Google Search Issues</string>
-                    <key>withspace</key>
-                    <false/>
-                </dict>
-                <key>type</key>
-                <string>alfred.workflow.input.keyword</string>
-                <key>uid</key>
-                <string>6FAA7372-C5AF-46A4-A1CE-05EA864FCEF9</string>
-                <key>version</key>
-                <integer>1</integer>
-            </dict>
-            <dict>
-                <key>config</key>
-                <dict>
                     <key>concurrently</key>
                     <false/>
                     <key>escaping</key>
                     <integer>102</integer>
                     <key>script</key>
-                    <string>echo '### Workflow version'
-                        /usr/libexec/PlistBuddy -c 'Print :version' info.plist
-
-                        echo
-                        echo '### Alfred version'
-                        /usr/bin/osascript -e 'tell application id "com.runningwithcrayons.Alfred" to return version'
-
-                        echo
-                        echo '### macOS version'
-                        /usr/bin/sw_vers -productVersion
-
-                        echo
-                        echo '### Architecture'
-                        /usr/bin/arch
-                        echo
-
-                        echo
-                        echo '### Preferences'
-
-                        if [[ -f 'prefs.plist' ]]; then
-                        /usr/libexec/PlistBuddy -c 'Print' prefs.plist
-                        else
-                        echo 'Default'
-                        fi
-
-                        echo
-                        echo '### Full Disk Access'
-
-                        if [[ "$(sqlite3 '/Library/Application Support/com.apple.TCC/TCC.db' 'SELECT EXISTS (SELECT 1 FROM access WHERE auth_value AND service = "kTCCServiceSystemPolicyAllFiles" AND client = "com.runningwithcrayons.Alfred")')" -eq 1 ]]; then
-                        echo 'Granted'
-                        else
-                        echo 'NOT granted'
-                        fi
-
-                        echo
-                        echo '### Cache dir'
-
-                        readonly cache_files="$(ls -1 "${alfred_workflow_cache}")"
-
-                        if [[ -n "${cache_files}" ]]; then
-                        echo "${cache_files}"
-                        else
-                        echo 'Files NOT present'
-                        fi
-
-                        echo
-                        echo '### Cache file'
-
-                        if [[ -f "${alfred_workflow_cache}/cache.db" ]]; then
-                        stat "${alfred_workflow_cache}/cache.db"
-                        else
-                        echo 'Does NOT exist'
-                        fi
-
-                        echo
-                        echo '### Temporary cache'
-
-                        if [[ -f "${alfred_workflow_cache}/tmp.db" ]]; then
-                        stat "${alfred_workflow_cache}/tmp.db"
-                        else
-                        echo 'Does NOT exist'
-                        fi
-
-                        echo
-                        echo '### Build progress'
-
-                        if ps A | grep --quiet '[r]uby.*Alfred.*rebuild_cache'; then
-                        echo 'Running'
-                        else
-                        echo 'NOT running'
-                        fi
-
-                        echo
-                        echo '### Launchd job'
-
-                        if launchctl list | grep -q "${alfred_workflow_bundleid}"; then
-                        echo -n 'Loaded: '
-                        launchctl list | grep "${alfred_workflow_bundleid}"
-                        else
-                        echo 'NOT loaded'
-                        fi
-
-                        if [[ -f "${HOME}/Library/LaunchAgents/${alfred_workflow_bundleid}.plist" ]]; then
-                        echo 'Installed'
-                        else
-                        echo 'NOT installed'
-                        fi</string>
+                    <string>/bin/bash script/diagnostic.sh</string>
                     <key>scriptargtype</key>
                     <integer>1</integer>
                     <key>scriptfile</key>
@@ -2743,6 +2857,21 @@
                 <string>B8E8A0EE-A706-4AB1-94B5-22C3B71DD254</string>
                 <key>version</key>
                 <integer>2</integer>
+            </dict>
+            <dict>
+                <key>config</key>
+                <dict>
+                    <key>availableviaurlhandler</key>
+                    <true/>
+                    <key>triggerid</key>
+                    <string>_diagnostic</string>
+                </dict>
+                <key>type</key>
+                <string>alfred.workflow.trigger.external</string>
+                <key>uid</key>
+                <string>909BCBCF-878B-4851-85BB-CACDDCB5ADDA</string>
+                <key>version</key>
+                <integer>1</integer>
             </dict>
             <dict>
                 <key>config</key>
@@ -2820,21 +2949,6 @@
                 <key>version</key>
                 <integer>1</integer>
             </dict>
-            <dict>
-                <key>config</key>
-                <dict>
-                    <key>availableviaurlhandler</key>
-                    <true/>
-                    <key>triggerid</key>
-                    <string>_diagnostic</string>
-                </dict>
-                <key>type</key>
-                <string>alfred.workflow.trigger.external</string>
-                <key>uid</key>
-                <string>909BCBCF-878B-4851-85BB-CACDDCB5ADDA</string>
-                <key>version</key>
-                <integer>1</integer>
-            </dict>
         </array>
         <key>readme</key>
         <string>GMail Search Cheat Sheet is designed to help you find that one message you know is hiding in your mail somewhere buried among the other 300,000 emails you have.
@@ -2842,14 +2956,21 @@
             Good Luck Finding it!</string>
         <key>uidata</key>
         <dict>
+            <key>041BE14C-3BB7-49B8-AC7E-9A8B7FDBD0D1</key>
+            <dict>
+                <key>xpos</key>
+                <real>480</real>
+                <key>ypos</key>
+                <real>385</real>
+            </dict>
             <key>06F59E2A-A7E1-462E-8FD0-14F36B7A460E</key>
             <dict>
                 <key>colorindex</key>
                 <integer>6</integer>
                 <key>xpos</key>
-                <real>560</real>
+                <real>900</real>
                 <key>ypos</key>
-                <real>640</real>
+                <real>695</real>
             </dict>
             <key>09BAD089-B5F8-40D6-AE7E-B0FE3FD56313</key>
             <dict>
@@ -2894,18 +3015,18 @@
                 <key>note</key>
                 <string>Open Configuration</string>
                 <key>xpos</key>
-                <real>1280</real>
+                <real>1620</real>
                 <key>ypos</key>
-                <real>565</real>
+                <real>620</real>
             </dict>
             <key>2139CD36-8E13-4E5F-BD3A-D33A8D4BC21F</key>
             <dict>
                 <key>colorindex</key>
                 <integer>6</integer>
                 <key>xpos</key>
-                <real>915</real>
+                <real>1255</real>
                 <key>ypos</key>
-                <real>670</real>
+                <real>725</real>
             </dict>
             <key>268F421D-6FC9-4556-9D5C-F0B02E4DA0E9</key>
             <dict>
@@ -2921,9 +3042,9 @@
                 <key>colorindex</key>
                 <integer>6</integer>
                 <key>xpos</key>
-                <real>970</real>
+                <real>1310</real>
                 <key>ypos</key>
-                <real>600</real>
+                <real>655</real>
             </dict>
             <key>2906F501-DCED-4BF4-A4BC-0884A168DF72</key>
             <dict>
@@ -2957,16 +3078,16 @@
                 <key>colorindex</key>
                 <integer>12</integer>
                 <key>xpos</key>
-                <real>1160</real>
+                <real>1500</real>
                 <key>ypos</key>
-                <real>595</real>
+                <real>650</real>
             </dict>
             <key>392749DC-00FB-4302-8205-9B28FD59B00F</key>
             <dict>
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>710</real>
+                <real>815</real>
                 <key>ypos</key>
                 <real>45</real>
             </dict>
@@ -2993,9 +3114,9 @@
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>1345</real>
+                <real>1685</real>
                 <key>ypos</key>
-                <real>685</real>
+                <real>740</real>
             </dict>
             <key>43865C52-0843-400F-96BE-CC1D7464BF83</key>
             <dict>
@@ -3029,16 +3150,16 @@
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>1170</real>
+                <real>730</real>
                 <key>ypos</key>
-                <real>845</real>
+                <real>800</real>
             </dict>
             <key>5449DFE2-FC40-44AF-A508-9C7984061DE0</key>
             <dict>
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>620</real>
+                <real>695</real>
                 <key>ypos</key>
                 <real>45</real>
             </dict>
@@ -3047,16 +3168,16 @@
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>995</real>
+                <real>645</real>
                 <key>ypos</key>
-                <real>845</real>
+                <real>800</real>
             </dict>
             <key>5AA18223-BD15-4108-A068-EB1B31673B2C</key>
             <dict>
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>440</real>
+                <real>455</real>
                 <key>ypos</key>
                 <real>45</real>
             </dict>
@@ -3065,7 +3186,7 @@
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>530</real>
+                <real>575</real>
                 <key>ypos</key>
                 <real>45</real>
             </dict>
@@ -3101,7 +3222,7 @@
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>575</real>
+                <real>635</real>
                 <key>ypos</key>
                 <real>45</real>
             </dict>
@@ -3121,16 +3242,16 @@
                 <key>xpos</key>
                 <real>30</real>
                 <key>ypos</key>
-                <real>845</real>
+                <real>695</real>
             </dict>
             <key>70DE150B-A773-4814-B54A-041251D48084</key>
             <dict>
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>1120</real>
+                <real>1460</real>
                 <key>ypos</key>
-                <real>685</real>
+                <real>740</real>
             </dict>
             <key>74CD7056-905D-4912-837E-486C428CF62A</key>
             <dict>
@@ -3146,9 +3267,16 @@
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>995</real>
+                <real>645</real>
                 <key>ypos</key>
-                <real>905</real>
+                <real>845</real>
+            </dict>
+            <key>772D51E2-C89C-411A-B27B-8205D26AA070</key>
+            <dict>
+                <key>xpos</key>
+                <real>880</real>
+                <key>ypos</key>
+                <real>45</real>
             </dict>
             <key>78AAE0D1-EF88-4D0C-A782-F3CB28AD2B21</key>
             <dict>
@@ -3159,23 +3287,14 @@
                 <key>ypos</key>
                 <real>325</real>
             </dict>
-            <key>84B4BFC4-C742-4D49-9E26-C5BDF24D3383</key>
-            <dict>
-                <key>colorindex</key>
-                <integer>8</integer>
-                <key>xpos</key>
-                <real>895</real>
-                <key>ypos</key>
-                <real>15</real>
-            </dict>
             <key>851284DB-F9F5-4C64-A934-814736D34271</key>
             <dict>
                 <key>colorindex</key>
                 <integer>6</integer>
                 <key>xpos</key>
-                <real>730</real>
+                <real>1070</real>
                 <key>ypos</key>
-                <real>640</real>
+                <real>695</real>
             </dict>
             <key>8821F92E-FC80-4006-8CF3-1708D3615139</key>
             <dict>
@@ -3200,7 +3319,7 @@
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>665</real>
+                <real>755</real>
                 <key>ypos</key>
                 <real>45</real>
             </dict>
@@ -3211,7 +3330,7 @@
                 <key>xpos</key>
                 <real>30</real>
                 <key>ypos</key>
-                <real>975</real>
+                <real>800</real>
             </dict>
             <key>9203B718-7A7E-4D2B-9DE4-17B012CC27FF</key>
             <dict>
@@ -3274,9 +3393,9 @@
                 <key>note</key>
                 <string>Diagnose Workflow</string>
                 <key>xpos</key>
-                <real>425</real>
+                <real>215</real>
                 <key>ypos</key>
-                <real>845</real>
+                <real>800</real>
             </dict>
             <key>C4B5C1D0-30AA-419B-B7AC-6238E1392D4E</key>
             <dict>
@@ -3296,6 +3415,13 @@
                 <key>ypos</key>
                 <real>225</real>
             </dict>
+            <key>CE3F9955-E0C0-4151-AC71-C579B2774944</key>
+            <dict>
+                <key>xpos</key>
+                <real>955</real>
+                <key>ypos</key>
+                <real>15</real>
+            </dict>
             <key>CF5AE334-2496-4798-973B-6770762E97C2</key>
             <dict>
                 <key>colorindex</key>
@@ -3310,9 +3436,9 @@
                 <key>colorindex</key>
                 <integer>8</integer>
                 <key>xpos</key>
-                <real>1200</real>
+                <real>1235</real>
                 <key>ypos</key>
-                <real>45</real>
+                <real>285</real>
             </dict>
             <key>D8AFCD7E-C431-485A-B50C-2CF49C2722CB</key>
             <dict>
@@ -3337,7 +3463,7 @@
                 <key>colorindex</key>
                 <integer>10</integer>
                 <key>xpos</key>
-                <real>485</real>
+                <real>515</real>
                 <key>ypos</key>
                 <real>45</real>
             </dict>
@@ -3364,27 +3490,27 @@
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>655</real>
+                <real>345</real>
                 <key>ypos</key>
-                <real>845</real>
+                <real>800</real>
             </dict>
             <key>E94597EB-2B74-40C2-9829-E617DB627391</key>
             <dict>
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>825</real>
+                <real>475</real>
                 <key>ypos</key>
-                <real>850</real>
+                <real>805</real>
             </dict>
             <key>F1796343-80C9-459A-8618-699AFEC3A167</key>
             <dict>
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>1220</real>
+                <real>1560</real>
                 <key>ypos</key>
-                <real>715</real>
+                <real>770</real>
             </dict>
             <key>F1BDAFC2-77EE-4132-896D-489BFB9F39A8</key>
             <dict>
@@ -3409,18 +3535,18 @@
                 <key>colorindex</key>
                 <integer>8</integer>
                 <key>xpos</key>
-                <real>1050</real>
+                <real>1085</real>
                 <key>ypos</key>
-                <real>15</real>
+                <real>255</real>
             </dict>
             <key>FDDC8E02-137D-42C6-B8F6-20DA423A6E55</key>
             <dict>
                 <key>colorindex</key>
                 <integer>1</integer>
                 <key>xpos</key>
-                <real>1090</real>
+                <real>1430</real>
                 <key>ypos</key>
-                <real>655</real>
+                <real>710</real>
             </dict>
         </dict>
         <key>userconfigurationconfig</key>

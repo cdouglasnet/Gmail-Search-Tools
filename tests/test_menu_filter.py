@@ -1,7 +1,9 @@
 import json
 import os
+import plistlib
 import sys
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src/script")))
@@ -40,7 +42,7 @@ class TestMenuFilter(unittest.TestCase):
         titles = [item["title"] for item in data["items"]]
         self.assertIn("Search Operators", titles)
         self.assertIn("From", titles)
-        self.assertIn("Start Over", titles)
+        self.assertIn("→ Start Over", titles)
 
     def test_gmo_mode_accepts_query_argument(self):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmo", "mail"])
@@ -51,7 +53,7 @@ class TestMenuFilter(unittest.TestCase):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmoo"])
         data = json.loads(output)
         titles = [item["title"] for item in data["items"]]
-        self.assertIn("Search Options", titles)
+        self.assertIn("Search Operators", titles)
         self.assertIn("From:", titles)
 
     def test_gmoo_mode_wires_query_into_items(self):
@@ -73,6 +75,20 @@ class TestMenuFilter(unittest.TestCase):
         items_by_title = {item["title"]: item for item in data["items"]}
         self.assertEqual(items_by_title["Forum"]["icon"]["path"], "link.png")
         self.assertEqual(items_by_title["GitHub"]["icon"]["path"], "link.png")
+
+    def test_diagnostic_script_is_externalized(self):
+        project_root = Path(__file__).resolve().parents[1]
+        diagnostic_script = project_root / "src" / "script" / "diagnostic.sh"
+        info = plistlib.loads((project_root / "src" / "info.plist").read_bytes())
+        diagnostic_actions = [
+            obj["config"]
+            for obj in info["objects"]
+            if obj.get("uid") == "B8E8A0EE-A706-4AB1-94B5-22C3B71DD254"
+        ]
+
+        self.assertTrue(diagnostic_script.is_file())
+        self.assertEqual(diagnostic_actions[0]["script"], "/bin/bash script/diagnostic.sh")
+        self.assertIn("### Workflow version", diagnostic_script.read_text())
 
     def test_gmz_mode_wires_route_variable(self):
         with patch.dict(os.environ, {"route": "settings"}):
