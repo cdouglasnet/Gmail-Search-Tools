@@ -2205,7 +2205,7 @@
 				<key>argument</key>
 				<string>'{query}', {variables}</string>
 				<key>cleardebuggertext</key>
-				<true/>
+				<false/>
 				<key>processoutputs</key>
 				<true/>
 			</dict>
@@ -2355,7 +2355,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python3 script/menu_filter.py --mode gmu "$1"</string>
+				<string>/usr/bin/python3 script/menu_filter.py --mode gmuu "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
