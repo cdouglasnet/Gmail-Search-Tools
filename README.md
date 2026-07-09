@@ -10,18 +10,20 @@
 [![counter](https://img.shields.io/github/downloads/cdouglasnet/Gmail-Search-Tools/latest/total)](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
 [![counter](https://img.shields.io/github/downloads/cdouglasnet/Gmail-Search-Tools/total)](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
 
-Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, and more.
+Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
 
-![Alt text](icon.png)
+🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
+
+![Icon](icon.png)
 
 ## 🔍 Keywords - (Customizable in Configuration)
 
 - **`gms`** — Gmail Search Messages, Stars (Filterable) 🔍
-- **`gmss`** — Gmail Search Messages with argument ⭐️
+- **`gmss`** — Gmail Search Messages, Stars + Argument ⭐️
 - **`gmu`** — Gmail Un-Read Messages (Filterable) 📬
-- **`gmuu`** — Search unread Gmail messages with argument 📩
+- **`gmuu`** — Search Un-Read Messages + Argument 📩
 - **`gmo`** — Gmail Search Operators (Filterable) 🧰
-- **`gmoo`** — Gmail Search Operators with argument ⚙️
+- **`gmoo`** — Gmail Search Operators + Argument ⚙️
 - **`gmsettings`** — Workflow settings/actions menu 🛠️
 
 ## 🚦 Usage
@@ -34,7 +36,21 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, and more.
 - `gmoo` `{query}`<kbd>↩</kbd> Search Operators + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
 - `gmsettings`<kbd>↩</kbd> Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
 
-### `gms` search options
+## 🚦 Advanced Usage
+
+- `gms`<kbd>⌘↩</kbd>||<kbd>⌥↩</kbd>||<kbd>⌃↩</kbd> ⭐️ + ⚡️Fast Phrase 1-3 ➡️ URL + has:red-bang + Fast Phrase (1-3)
+- `gms`<kbd>⌘⇧↩</kbd>||<kbd>⌥⇧↩</kbd>||<kbd>⌃⇧↩</kbd> ⭐️ + ⚡️Fast Phrase 4-6 ➡️ URL + has:red-star + Fast Phrase (4-6)
+- `gms`<kbd>⌘⌥↩</kbd> Stars ⭐️ + 📋 Clipboard ➡️ URL + has:red-star + Clipboard Text
+-
+- `gmu`<kbd>⌘↩</kbd>||<kbd>⌥↩</kbd>||<kbd>⌃↩</kbd> 📬 + ⚡️Fast Phrase 1-3 ➡️ URL + is:unread + Fast Phrase (1-3)
+- `gmu`<kbd>⌘⇧↩</kbd>||<kbd>⌥⇧↩</kbd>||<kbd>⌃⇧↩</kbd> 📬 + ⚡️Fast Phrase 4-6 ➡️ URL + is:unread + Fast Phrase (4-6)
+- `gmu`<kbd>⌘⌥↩</kbd> Un-Read 📬 + 📋 Clipboard ➡️ URL + is:unread + Clipboard Text
+-
+- `gmo`<kbd>⌘↩</kbd>||<kbd>⌥↩</kbd>||<kbd>⌃↩</kbd> 🧰 + ⚡️Fast Phrase 1-3 ➡️ URL + has:attachment + Fast Phrase (1-3)
+- `gmo`<kbd>⌘⇧↩</kbd>||<kbd>⌥⇧↩</kbd>||<kbd>⌃⇧↩</kbd> 🧰 + ⚡️Fast Phrase 4-6 ➡️ URL + has:YouTube + Fast Phrase (4-6)
+- `gmo`<kbd>⌘⌥↩</kbd> Operators 🧰 + 📋 Clipboard ➡️ URL + has:document + Clipboard Text
+
+### `gms` Search Stars Faster ⭐
 - **Search Gmail** — 🔍 Default search all messages
 - **Unread** — 📬 Jumps to `gmu` search
 - **Starred** — ⭐ yellow-star, red-star, blue-star, green-star, orange-star, purple-star,
@@ -45,7 +61,7 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, and more.
 - **Spam** — 🍗 search spam messages
 - **Trash** — 🗑️ search trash messages
 
-### `gmu` Search Un-Read Messages Faster
+### `gmu` Search Un-Read Faster 📬
 - **Un-Read All** — all Un-Read messages in the main inbox
 - **Un-Read Primary** — Un-Read inbox messages
 - **Un-Read Updates** — Un-Read updates messages
@@ -55,7 +71,7 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, and more.
 - **Un-Read Purchases** — Un-Read purchases messages
 - **Search Unread Starred** — unread starred messages
 
-### `gmo` Search Operators
+### `gmo` Search Operators 🧰
 - **To/From** - 🕵️‍♀️ To: or From:
 - **Subject** - 👀 Subject: (search within subject line)
 - **Label** - 🏷️ label: (search within a specific label) i.e. label:myLabel
@@ -81,14 +97,22 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 | `gmsettings_key` | `gmsettings` | Settings/actions menu keyword                               |
 | `userNumber`     | `0`          | Gmail account index (0 = primary, 1 = second account, etc.) |
 
-## 🔒 Security
-- No special permissions are needed - uses links sent to the browser. (Defaults to Chrome)
-- The workflow does not need Gmail credentials at all! 100% safe.
-- Just make sure your browser is signed in to your Gmail account.
+## 🔒 Security and Privacy
+- 🛟 Privacy Safe (The Workflow - Not speeking for Gmail 😉)
+- 🔗 Links sent to the browser (Defaults to Chrome)
+- 🕵️‍♀️ No special permissions needed
+- 🔐 Gmail Credentials not touched by the workflow at all! 
+- ℹ️ Browser needs to be signed in to your Gmail account.
 
 ## 📋 TODO
 
 - Update the Alfred Forum URL in `src/info.plist` to the dedicated Gmail Search Tools forum thread once it is posted.
+- Add Quck Switch support for multiple Gmail accounts in settings.
+- Add support for multiple Gmail accounts.
+- Add support for multiple Gmail labels via a label configuration dropdown setting.
+- Add support to save a custom search using an Action Modifier Key.
+- Add support for retrieving the saved custom search keyword.
+- Add an Information Page for learning about gmail-search-tools and power searches
 
 ## ⚙️ Installation
 

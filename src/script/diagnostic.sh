@@ -87,3 +87,15 @@ if [[ -f "${HOME}/Library/LaunchAgents/${alfred_workflow_bundleid}.plist" ]]; th
 else
     echo 'NOT installed'
 fi
+
+echo
+echo '### Workflow custom variables'
+
+for var_name in gms_key gmu_key gmo_key gmss_key gmuu_key gmoo_key gmsettings_key userNumber; do
+    var_value="${!var_name}"
+    if [[ -n "${var_value}" ]]; then
+        echo "${var_name}=${var_value}"
+    else
+        echo "${var_name}=<unset>"
+    fi
+done
