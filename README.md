@@ -26,6 +26,8 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmoo` — Gmail Search Operators + Argument ⚙️
 - `gmsettings` — Workflow settings/actions menu 🛠️
 
+![Demo Screen](screen.gif)
+
 ## 🚦 Usage
 
 - `gms`<kbd>↩</kbd> Filterable List ➡️ default search. i.e. URL + has:red-bang
@@ -61,6 +63,8 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - **Spam** — 🍗 search spam messages
 - **Trash** — 🗑️ search trash messages
 
+![GMS Screenshot](gms_screen.png)
+
 ### `gmu` Search Un-Read Faster 📬
 - **Un-Read All** — all Un-Read messages in the main inbox
 - **Un-Read Primary** — Un-Read inbox messages
@@ -70,6 +74,8 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - **Un-Read Reservations** - Un-Read reservations messages
 - **Un-Read Purchases** — Un-Read purchases messages
 - **Search Unread Starred** — unread starred messages
+
+![GMU Screenshot](gmu_screen.png)
 
 ### `gmo` Search Operators 🧰
 - **To/From** - 🕵️‍♀️ To: or From:
@@ -81,6 +87,10 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - **Document** - 📄 has:document (Google Docs, Word, PDF)
 - **Spreadsheet** - 📊 has:spreadsheet (Excel, Numbers, Sheets)
 - **Presentation** - 🖥️ has:presentation (PowerPoint, Keynote, Slides)
+
+![GMO Screenshot 1](gmo_screen1.png)
+![GMO Screenshot 2](gmo_screen2.png)
+![GMO Screenshot 3](gmo_screen3.png)
 
 ## ⚙️ Configuration
 
@@ -155,6 +165,7 @@ scripts.
 
 ## 🧑‍💻 Version Change Summary
 
+### v0.0.0.1
 - 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
 - 🔄 Added support for Gmail account switching.
 - 🔎 Added support for Gmail search operators, starred, and unread messages.
