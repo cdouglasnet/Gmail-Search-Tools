@@ -384,6 +384,18 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6AF167B6-C16A-475D-B396-2FF894812348</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>E87980C6-8B6C-42C7-A4BC-87A3184D987C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>2906F501-DCED-4BF4-A4BC-0884A168DF72</key>
 		<array>
@@ -507,6 +519,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>772D51E2-C89C-411A-B27B-8205D26AA070</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6AF167B6-C16A-475D-B396-2FF894812348</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>26CC3DFA-40CF-483A-863B-BF8F99B0909B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2565,6 +2590,20 @@
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
+						<string>gmsetting</string>
+						<key>outputlabel</key>
+						<string>gmsetting</string>
+						<key>uid</key>
+						<string>E87980C6-8B6C-42C7-A4BC-87A3184D987C</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
 						<string>forum</string>
 						<key>outputlabel</key>
 						<string>forum</string>
@@ -2609,29 +2648,6 @@
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>276969F8-22AB-4EE0-ADB3-B989901C3BE3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>!gmsdiagnostic</string>
-				<key>skipuniversalaction</key>
-				<true/>
-				<key>subtext</key>
-				<string>Result will be copied to the clipboard</string>
-				<key>text</key>
-				<string>Diagnose Google Search Issues</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>6FAA7372-C5AF-46A4-A1CE-05EA864FCEF9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2702,6 +2718,49 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>!gmsdiagnostic</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Result will be copied to the clipboard</string>
+				<key>text</key>
+				<string>Diagnose Google Search Issues</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6FAA7372-C5AF-46A4-A1CE-05EA864FCEF9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>url</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>2139CD36-8E13-4E5F-BD3A-D33A8D4BC21F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>{var:forum_url}</string>
 				<key>passthroughargument</key>
@@ -2713,23 +2772,6 @@
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>FDDC8E02-137D-42C6-B8F6-20DA423A6E55</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>2139CD36-8E13-4E5F-BD3A-D33A8D4BC21F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2923,6 +2965,44 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>all_windows</key>
+					<false/>
+					<key>match_string</key>
+					<string>https://mail.google.com/mail/u/{var:userNumber}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.matching.activate</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>6AF167B6-C16A-475D-B396-2FF894812348</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>url</key>
+					<string>{var:url}</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.current.url</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>26CC3DFA-40CF-483A-863B-BF8F99B0909B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
@@ -3031,7 +3111,7 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>xpos</key>
 			<real>900</real>
 			<key>ypos</key>
-			<real>695</real>
+			<real>680</real>
 		</dict>
 		<key>09BAD089-B5F8-40D6-AE7E-B0FE3FD56313</key>
 		<dict>
@@ -3078,7 +3158,7 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>xpos</key>
 			<real>1620</real>
 			<key>ypos</key>
-			<real>620</real>
+			<real>590</real>
 		</dict>
 		<key>2139CD36-8E13-4E5F-BD3A-D33A8D4BC21F</key>
 		<dict>
@@ -3087,7 +3167,7 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>xpos</key>
 			<real>1255</real>
 			<key>ypos</key>
-			<real>725</real>
+			<real>710</real>
 		</dict>
 		<key>268F421D-6FC9-4556-9D5C-F0B02E4DA0E9</key>
 		<dict>
@@ -3098,6 +3178,15 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>ypos</key>
 			<real>205</real>
 		</dict>
+		<key>26CC3DFA-40CF-483A-863B-BF8F99B0909B</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>1645</real>
+			<key>ypos</key>
+			<real>880</real>
+		</dict>
 		<key>276969F8-22AB-4EE0-ADB3-B989901C3BE3</key>
 		<dict>
 			<key>colorindex</key>
@@ -3105,7 +3194,7 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>xpos</key>
 			<real>1310</real>
 			<key>ypos</key>
-			<real>655</real>
+			<real>625</real>
 		</dict>
 		<key>2906F501-DCED-4BF4-A4BC-0884A168DF72</key>
 		<dict>
@@ -3141,7 +3230,7 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>xpos</key>
 			<real>1500</real>
 			<key>ypos</key>
-			<real>650</real>
+			<real>620</real>
 		</dict>
 		<key>392749DC-00FB-4302-8205-9B28FD59B00F</key>
 		<dict>
@@ -3278,6 +3367,15 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>ypos</key>
 			<real>45</real>
 		</dict>
+		<key>6AF167B6-C16A-475D-B396-2FF894812348</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>1500</real>
+			<key>ypos</key>
+			<real>880</real>
+		</dict>
 		<key>6B4E8BB5-6DB0-4078-90F3-8EE3EE872579</key>
 		<dict>
 			<key>colorindex</key>
@@ -3355,7 +3453,7 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 			<key>xpos</key>
 			<real>1070</real>
 			<key>ypos</key>
-			<real>695</real>
+			<real>680</real>
 		</dict>
 		<key>8821F92E-FC80-4006-8CF3-1708D3615139</key>
 		<dict>

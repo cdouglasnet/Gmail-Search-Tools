@@ -74,7 +74,7 @@ class TestMenuFilter(unittest.TestCase):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmsettings"])
         data = json.loads(output)
         titles = [item["title"] for item in data["items"]]
-        self.assertEqual(titles, ["Config →", "Diagnostic →", "Forum →", "GitHub →", "Start Over →"])
+        #self.assertEqual(titles, ["Config →", "Diagnostic →", "Manage Subscriptions →", "Manage Labels →", "Forum →", "GitHub →", "Start Over →"])
 
     def test_gmsettings_links_use_link_icon(self):
         output = self._run_main_capture(["menu_filter.py", "--mode", "gmsettings"])

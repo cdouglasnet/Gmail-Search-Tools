@@ -18,13 +18,13 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 
 ## 🔍 Keywords - (Customizable in Configuration)
 
-- **`gms`** — Gmail Search Messages, Stars (Filterable) 🔍
-- **`gmss`** — Gmail Search Messages, Stars + Argument ⭐️
-- **`gmu`** — Gmail Un-Read Messages (Filterable) 📬
-- **`gmuu`** — Search Un-Read Messages + Argument 📩
-- **`gmo`** — Gmail Search Operators (Filterable) 🧰
-- **`gmoo`** — Gmail Search Operators + Argument ⚙️
-- **`gmsettings`** — Workflow settings/actions menu 🛠️
+- `gms` — Gmail Search Messages, Stars (Filterable) 🔍
+- `gmss` — Gmail Search Messages, Stars + Argument ⭐️
+- `gmu` — Gmail Un-Read Messages (Filterable) 📬
+- `gmuu` — Search Un-Read Messages + Argument 📩
+- `gmo` — Gmail Search Operators (Filterable) 🧰
+- `gmoo` — Gmail Search Operators + Argument ⚙️
+- `gmsettings` — Workflow settings/actions menu 🛠️
 
 ## 🚦 Usage
 
@@ -152,6 +152,13 @@ interpreter:
 The included `pyrightconfig.json` points Python language servers at that virtual
 environment and adds `src/script` to the import path for tests and workflow
 scripts.
+
+## 🧑‍💻 Version Change Summary
+
+- 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
+- 🔄 Added support for Gmail account switching.
+- 🔎 Added support for Gmail search operators, starred, and unread messages.
+- ⚡ Added support for Gmail search fast phrases and clipboard text.
 
 ## ⚖️ License
 
