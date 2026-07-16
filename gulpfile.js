@@ -6,7 +6,7 @@ const { execFile } = require('child_process');
 const { resolvePythonBin } = require('./scripts/run-python');
 
 const WORKFLOW_SOURCE = process.env.npm_config_workflow_source || process.env.WORKFLOW_SOURCE || 'src';
-const DIST_NAME = process.env.npm_config_dist_name || process.env.DIST_NAME || 'alfred-gmail-search';
+const DIST_NAME = process.env.npm_config_dist_name || process.env.DIST_NAME || 'gmail-search-tools';
 const DIST_DIR = `dist/${DIST_NAME}`;
 const WORKFLOW_FILE = process.env.npm_config_workflow_file || process.env.WORKFLOW_FILE || `${DIST_NAME}.alfredworkflow`;
 const PYTHON_BIN = resolvePythonBin();

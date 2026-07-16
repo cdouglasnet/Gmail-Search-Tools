@@ -53,7 +53,7 @@ npm run dev
 
 Build output:
 
-- `dist/alfred-gmail-search.alfredworkflow`
+- `dist/gmail-search-tools.alfredworkflow`
 
 ## 🔒 Security considerations
 

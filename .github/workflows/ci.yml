@@ -107,8 +107,8 @@ jobs:
     - name: Upload workflow artifact
       uses: actions/upload-artifact@v4
       with:
-        name: alfred-gmail-search-workflow-${{ github.ref_name }}
-        path: dist/alfred-gmail-search.alfredworkflow
+        name: gmail-search-tools-workflow-${{ github.ref_name }}
+        path: dist/gmail-search-tools.alfredworkflow
         if-no-files-found: error
 
     - name: Read workflow version for stable release
@@ -150,14 +150,24 @@ jobs:
         prerelease: false
         make_latest: true
         files: |
-          dist/alfred-gmail-search.alfredworkflow
+          dist/gmail-search-tools.alfredworkflow
         body: |
           ## Gmail Search Tools - Release ${{ steps.stable_tag.outputs.tag }}
 
+          Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
+
+          🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
+
           ### Installation
-          1. Download the `alfred-gmail-search.alfredworkflow` file
+          1. Download the `gmail-search-tools.alfredworkflow` file
           2. Double-click to install in Alfred
           3. Use `gms` to search Gmail, `gmu` to search unread messages
+
+          ### Version Change Summary
+          - 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
+          - 🔄 Added support for Gmail account switching.
+          - 🔎 Added support for Gmail search operators, starred, and unread messages.
+          - ⚡ Added support for Gmail search fast phrases and clipboard text.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -171,20 +181,30 @@ jobs:
         prerelease: true
         make_latest: false
         files: |
-          dist/alfred-gmail-search.alfredworkflow
+          dist/gmail-search-tools.alfredworkflow
         body: |
           ## Gmail Search Tools - Beta ${{ steps.beta_tag.outputs.tag }}
+
+          Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
+
+          🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
 
           ⚠️ This is a **beta release** built from the development branch.
 
           ### Installation
-          1. Download the `alfred-gmail-search.alfredworkflow` file
+          1. Download the `gmail-search-tools.alfredworkflow` file
           2. Double-click to install in Alfred
           3. Use `gms` to search Gmail, `gmu` to search unread messages
 
           ### Keywords
           - `gms` — search all Gmail messages
           - `gmu` — search unread Gmail messages
+
+          ### Version Change Summary
+          - 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
+          - 🔄 Added support for Gmail account switching.
+          - 🔎 Added support for Gmail search operators, starred, and unread messages.
+          - ⚡ Added support for Gmail search fast phrases and clipboard text.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

@@ -108,11 +108,11 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 | `userNumber`     | `0`          | Gmail account index (0 = primary, 1 = second account, etc.) |
 
 ## 🔒 Security and Privacy
-- 🛟 Privacy Safe (The Workflow - Not speeking for Gmail 😉)
+- 🛟 Privacy Safe (The Workflow - Not speaking for Gmail 😉)
 - 🔗 Links sent to the browser (Defaults to Chrome)
 - 🕵️‍♀️ No special permissions needed
-- 🔐 Gmail Credentials not touched by the workflow at all! 
-- ℹ️ Browser needs to be signed in to your Gmail account.
+- 🔐 Gmail Credentials are not used within the workflow at all! 
+- ℹ️ Only Requirement – Browser needs to be signed in to your Gmail account.
 
 ## 📋 TODO
 
@@ -126,7 +126,7 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 
 ## ⚙️ Installation
 
-1. Download `alfred-gmail-search.alfredworkflow` from the [release page](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
+1. Download `gmail-search-tools.alfredworkflow` from the [release page](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
 2. Double-click to install in Alfred
 3. Use `gms`, `gmu`, `gmo` to start searching Gmail or configure keywords in workflow preferences.
 
@@ -147,7 +147,7 @@ npm test
 npm run build
 ```
 
-The built workflow file will be at `dist/alfred-gmail-search.alfredworkflow`.
+The built workflow file will be at `dist/gmail-search-tools.alfredworkflow`.
 
 ### IDE setup
 
@@ -168,7 +168,7 @@ scripts.
 ### v0.0.0.1
 - 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
 - 🔄 Added support for Gmail account switching.
-- 🔎 Added support for Gmail search operators, starred, and unread messages.
+- 🔎 Added support for Gmail search operators, starred, and Un-Read messages.
 - ⚡ Added support for Gmail search fast phrases and clipboard text.
 
 ## ⚖️ License
