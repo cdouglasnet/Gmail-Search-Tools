@@ -282,8 +282,8 @@ def gmss_items(query):
     q = query.strip()
     z = url_info()
     items = [
-        item("gmo-search-options","Gmail Search Tools","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",
-             f'"{q}"' if q else "",valid=False),
+        item("gmo-search-options",f'Search Gmail: "{q}"' if q else "Gmail Search Tools",
+             "⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",gmail_url(q),valid=True),
         item("gms-search",f'Search Gmail: "{q}"' if q else "Search Gmail","Search all Gmail messages",gmail_url(q)),
         item("gms-search-unread",f'Search Un-Read: "{q}"' if q else "Search Unread",
              "Search unread Gmail messages",gmail_url2(q,"label:unread ")),
@@ -339,8 +339,8 @@ def gmss_items(query):
 def gmuu_items(query):
     q = query.strip()
     items = [
-        item("gmo-search-options","Search Un-Read","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",
-             f'"{q}"' if q else "",valid=False),
+        item("gmo-search-options",f'Search Gmail: "{q}"' if q else "Search Un-Read",
+             "⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",gmail_url_unread(q,""),valid=True),
         item("gmu-search-unread",f'Search Un-Read Gmail: "{q}"' if q else "Search Un-Read Gmail",
              "Search all Un-Read",gmail_url_unread(q,"label:unread ")),
         item("gmu-primary",f'Primary Un-Read: "{q}"' if q else "Primary Un-Read",
@@ -368,8 +368,8 @@ def gmuu_items(query):
 def gmoo_items(query):
     q = query.strip()
     items = [
-        item("gmo-search-options","Search Operators","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",
-             f'"{q}"' if q else "",valid=False),
+        item("gmo-search-options",f'Search Gmail: "{q}"' if q else "Search Operators",
+             "⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",gmail_url(q),valid=True),
         item("gmo-from", f'From: "{q}"' if q else "From:", "Ex. from:bob", gmail_url(f"from:{q}".strip())),
         item("gmo-to", f'To: "{q}"' if q else "To:", "Ex. to:bob", gmail_url(f"to:{q}".strip())),
         item("gmo-cc", f'CC: "{q}"' if q else "CC", "Ex. cc:bob", gmail_url(f"cc:{q}".strip())),
