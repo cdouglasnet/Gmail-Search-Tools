@@ -166,7 +166,7 @@ def item(uid, title, subtitle, arg=None, route: str = "", url: str = "", valid=T
 # Gmail Search Filterable List - Keep in this order
 def gms_items():
     items = [
-        item("gmo-search-options","Search Stars Info","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=False),
+        item("gmo-search-options","Search Stars Info","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=True),
         item("gms-any-star", "Any Star", "Show mail with Any Star", gmail_arg("is:starred ")),
         item("gms-red-bang", "Red Bang", "Show mail with red-bang star", gmail_arg("has:red-bang ")),
         item("gms-yellow-bang","Yellow Bang","Show mail with yellow-bang star",gmail_arg("has:yellow-bang ")),
@@ -197,7 +197,7 @@ def gms_items():
 # Un-Read Mail Filterable List - Keep in this order
 def gmu_items():
     items = [
-        item("gmo-search-options","Search Un-Read Info","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=False),
+        item("gmo-search-options","Search Un-Read Info","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=True),
         item("gmu-search-unread","Search Un-Read","Search All Un-Read Messages",gmail_arg("is:unread ")),
         item("gmu-primary","Primary Unread","Unread in Primary",gmail_arg("category:primary label:unread ")),
         item("gmo-social", "Social Category", "Ex. category:social", gmail_arg("category:social label:unread ")),
@@ -217,7 +217,7 @@ def gmu_items():
 # Search Operators Filterable List - Keep in this order
 def gmo_items():
     items = [
-        item("gmm-operators","Search Operators Info","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=False),
+        item("gmm-operators","Search Operators Info","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=True),
         item("gmo-from", "From", "Ex. from:bob", gmail_arg("from:")),
         item("gmo-to", "To", "Ex. to:bob", gmail_arg("to:")),
         item("gmo-cc", "CC", "Ex. cc:bob", gmail_arg("cc:")),
@@ -282,7 +282,8 @@ def gmss_items(query):
     q = query.strip()
     z = url_info()
     items = [
-        item("gmo-search-options","Gmail Search Tools","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",valid=False),
+        item("gmo-search-options","Gmail Search Tools","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",
+             f'"{q}"' if q else "",valid=False),
         item("gms-search",f'Search Gmail: "{q}"' if q else "Search Gmail","Search all Gmail messages",gmail_url(q)),
         item("gms-search-unread",f'Search Un-Read: "{q}"' if q else "Search Unread",
              "Search unread Gmail messages",gmail_url2(q,"label:unread ")),
@@ -338,7 +339,8 @@ def gmss_items(query):
 def gmuu_items(query):
     q = query.strip()
     items = [
-        item("gmo-search-options","Search Un-Read","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",valid=False),
+        item("gmo-search-options","Search Un-Read","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",
+             f'"{q}"' if q else "",valid=False),
         item("gmu-search-unread",f'Search Un-Read Gmail: "{q}"' if q else "Search Un-Read Gmail",
              "Search all Un-Read",gmail_url_unread(q,"label:unread ")),
         item("gmu-primary",f'Primary Un-Read: "{q}"' if q else "Primary Un-Read",
@@ -366,7 +368,8 @@ def gmuu_items(query):
 def gmoo_items(query):
     q = query.strip()
     items = [
-        item("gmo-search-options","Search Operators","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",valid=False),
+        item("gmo-search-options","Search Operators","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",
+             f'"{q}"' if q else "",valid=False),
         item("gmo-from", f'From: "{q}"' if q else "From:", "Ex. from:bob", gmail_url(f"from:{q}".strip())),
         item("gmo-to", f'To: "{q}"' if q else "To:", "Ex. to:bob", gmail_url(f"to:{q}".strip())),
         item("gmo-cc", f'CC: "{q}"' if q else "CC", "Ex. cc:bob", gmail_url(f"cc:{q}".strip())),
