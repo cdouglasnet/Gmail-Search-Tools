@@ -171,6 +171,10 @@ scripts.
 - 🔎 Added support for Gmail search operators, starred, and Un-Read messages.
 - ⚡ Added support for Gmail search fast phrases and clipboard text.
 
+### v0.0.0.2
+- 🏷️ Support for Searching User Labels. `gml`, `gmll`
+- 🔢 Email Account Switching Support. `gmsettings2`
+
 ## ⚖️ License
 
 MIT License — see [LICENSE](LICENSE).

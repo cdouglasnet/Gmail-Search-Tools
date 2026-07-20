@@ -70,6 +70,7 @@ STATIC_ICONS = {
     "gmm-github": "link.png",
     "gmm-unread": "unread.png",
     "gmm-operators": "date.png",
+    "gmm-labels": "labels.png",
     "gmm-back": "back.png",
     "gmm-settings": "settings.png",
 }
@@ -99,6 +100,26 @@ def get_icon_for_uid(uid):
 # Gmail can have multiple accounts logged in at a time. The account number is used to differentiate the accounts.
 def account_number():
     return os.environ.get("userNumber") or os.environ.get("gmail_account") or "0"
+
+def current_account_email():
+    return os.environ.get(f"email_{account_number()}") or ""
+
+def user_labels():
+    # Get user labels from Alfred environment variable
+    labels = os.environ.get("labels") or ""
+    # Split labels by comma and remove any leading or trailing spaces
+    labels = [label.strip() for label in labels.split(",")]
+    return labels
+
+def user_accounts():
+    accounts = []
+    # Gather all account variables email_0 - email_9.
+    for i in range(10):
+        email = os.environ.get(f"email_{i}") or ""
+        if email and email not in accounts:
+            accounts.append(email)
+
+    return accounts
 
 def turl_info():
     return os.environ.get("turl") or ""
@@ -190,6 +211,7 @@ def gms_items():
         item("gms-search-arg", "→ Gmail Search With Argument (gmss)", "Fast Custom Search", "", route="main2"),
         item("gmm-unread","→ Gmail Search Unread (gmu)","Search Un-Read Gmail Messages","", route="unread"),
         item("gmm-operators", "→ Gmail Search Operators (gmo)", "Learn Power Searches", "", route="operators"),
+        item("gmm-labels", "→ Gmail Search Labels (gml)", "Label Searches", "", route="labels"),
         item("gmm-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
     ]
     return items
@@ -209,6 +231,7 @@ def gmu_items():
         # Menu Items To Other Searching Tools/Keywords
         item("gmm-unread-arg", "→ Un-Read Search With Argument (gmuu)", "Fast Custom Un-Read Search", "", route="unread2"),
         item("gmm-operators", "→ Gmail Search Operators (gmo)", "Learn Power Searches", "", route="operators"),
+        item("gmm-labels", "→ Gmail Search Labels (gml)", "Label Searches", "", route="labels"),
         item("gmm-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
         item("gmm-back", "→ Start Over", "Return to the main menu", "", route="main"),
     ]
@@ -272,15 +295,28 @@ def gmo_items():
         # Menu Items To Other Searching Tools/Keywords
         item("gmm-operators-arg", "Gmail Operators With Argument (gmoo)", "Fast Operator Search", "", route="operators2"),
         item("gmm-unread", "→ Gmail Un-Read Mail (gmu)", "Un-Read quick link menu", "", route="unread"),
+        item("gmm-labels", "→ Gmail Search Labels (gml)", "Label Searches", "", route="labels"),
         item("gmm-settings", "→ Settings", "Open workflow configuration", "", route="settings"),
         item("gmm-back", "→ Start Over", "Return to the main menu", "", route="main"),
     ]
     return items
 
+# Search Labels Filterable List - Keep in this order
+def gml_items(query):
+    q = query.strip()
+    # take "labels" Config variable using user_labels() and create a list of items for each label. 1 item per label (comma-separated list)
+    labels = user_labels()
+    items = [
+        item("gmo-search-options","Search Labels","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=True),
+    ]
+    # add a menu item for each label
+    for label in labels:
+        items.append(item("gmo-label-"+label,"Label: "+label,"Messages with label: "+label,gmail_arg(f"label:{label} {q} "),valid=True))
+    return items
+
 # Gmail Star Search with Qurey
 def gmss_items(query):
     q = query.strip()
-    z = url_info()
     items = [
         item("gmo-search-options",f'Search Gmail: "{q}"' if q else "Gmail Search Tools",
              "⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard",gmail_url(q),valid=True),
@@ -472,7 +508,20 @@ def gmoo_items(query):
     ]
     return items
 
+# Search by Labels with Argument
+def gmll_items(query):
+    q = query.strip()
+    # take "labels" Config variable using user_labels() and create a list of items for each label. 1 item per label (comma-separated list)
+    labels = user_labels()
+    items = [
+        item("gmo-search-options","Search Labels","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=True),
+    ]
+    # add a menu item for each label
+    for label in labels:
+        items.append(item("gmo-label-"+label,f'{label} "{q}"' if q else label,"Messages with label: "+label,gmail_url(f"label:{label} {q} "),valid=True))
+    return items
 
+# Settings Menu
 def gmsettings_items():
     return [
         item("gmm-config","Config →","Open workflow configuration in Alfred","", route="config"),
@@ -480,10 +529,35 @@ def gmsettings_items():
         item("gmm-subscriptions","Manage Subscriptions →","Manage Your Subscriptions on Gmail",gmail_url_settings("#sub"), route="gmsetting"),
         item("gmo-label","Manage Labels →","Manage Your Labels on Gmail",gmail_url_settings("#settings/labels"), route="gmsetting"),
         item("gms-any-star","Manage Stars →","Enable Various Stars on Gmail",gmail_url_settings("#settings/general"), route="gmsetting"),
+        # TODO - Add User Switch Sub-Menu where user can quickly switch between multiple Gmail accounts.
         item("gmm-forum","Forum →","Open Alfred Forum page","", route="forum"),
         item("gmm-github","GitHub →","Open GitHub project page","", route="github"),
         item("gmm-back", "Start Over →", "Return to the main menu", "", route="back"),
     ]
+
+# User Switching Menu
+def gmsettings2_items():
+    accounts = user_accounts()
+    current = current_account_email()
+    items = [
+        item("gmo-search-options","Search Labels","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=True),
+        item("gmo-search-options","Current Account "+current,"Current User Account","",valid=False),
+    ]
+    # Add a menu item for each account.
+    i = 0
+    for account in accounts:
+        items.append(
+            item(
+                "gmo-label-" + account,
+                account,
+                "Switch/search using account: " + account,
+                i,
+                valid=True,
+            )
+        )
+        i = i + 1
+    return items
+
 
 # Individual Search Query Prompt and Simple Menu
 def gmz_items(query):
@@ -507,7 +581,7 @@ def main():
     parser = argparse.ArgumentParser(description="Gmail menu script filter")
     parser.add_argument(
         "--mode",
-        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gmsettings", "gmz"],
+        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gml", "gmll", "gmsettings", "gmsettings2", "gmz"],
         required=True,
     )
     parser.add_argument("--route", default="")
@@ -525,8 +599,14 @@ def main():
         items = gmo_items()
     elif args.mode == "gmoo":
         items = gmoo_items(query)
+    elif args.mode == "gml":
+        items = gml_items(query)
+    elif args.mode == "gmll":
+        items = gmll_items(query)
     elif args.mode == "gmsettings":
         items = gmsettings_items()
+    elif args.mode == "gmsettings2":
+        items = gmsettings2_items()
     elif args.mode == "gmz":
         items = gmz_items(query)
     else:
