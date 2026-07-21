@@ -168,6 +168,10 @@ jobs:
           - 🔄 Added support for Gmail account switching.
           - 🔎 Added support for Gmail search operators, starred, and unread messages.
           - ⚡ Added support for Gmail search fast phrases and clipboard text.
+          
+          ### v0.0.0.2
+          - 🏷️ Support for Searching User Labels. `gml`, `gmll`
+          - 🔢 Email Account Switching Support. `gmuser`
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -205,6 +209,10 @@ jobs:
           - 🔄 Added support for Gmail account switching.
           - 🔎 Added support for Gmail search operators, starred, and unread messages.
           - ⚡ Added support for Gmail search fast phrases and clipboard text.
+          
+          ### v0.0.0.2
+          - 🏷️ Support for Searching User Labels. `gml`, `gmll`
+          - 🔢 Email Account Switching Support. `gmuser`
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
