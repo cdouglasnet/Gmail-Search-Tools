@@ -10,7 +10,7 @@
 [![counter](https://img.shields.io/github/downloads/cdouglasnet/Gmail-Search-Tools/latest/total)](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
 [![counter](https://img.shields.io/github/downloads/cdouglasnet/Gmail-Search-Tools/total)](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
 
-Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
+Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, Labels, and more.
 
 🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
 
@@ -24,6 +24,8 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmuu` — Search Un-Read Messages + Argument 📩
 - `gmo` — Gmail Search Operators (Filterable) 🧰
 - `gmoo` — Gmail Search Operators + Argument ⚙️
+- `gml` — Gmail Search Labels (Filterable) 🏷️
+- `gmll` — Gmail Search Labels + Argument 🏷️
 - `gmsettings` — Workflow settings/actions menu 🛠️
 - `gmuser` — Fast User Switching 📌
 
@@ -37,6 +39,8 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmuu` `{query}`<kbd>↩</kbd> Un-Read + query ➡️ i.e. URL + is:unread + mySearchTerm(s)
 - `gmo`<kbd>↩</kbd> Filterable List Search Operators ➡️ i.e. URL + has:attachment
 - `gmoo` `{query}`<kbd>↩</kbd> Search Operators + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
+- `gml`<kbd>↩</kbd> Filterable List User Labels ➡️ i.e. URL + label:myLabel
+- `gmll` `{query}`<kbd>↩</kbd> User Labels + query ➡️ i.e. URL + label:myLabel + mySearchTerm(s)
 - `gmsettings`<kbd>↩</kbd> Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
 - `gmuser`<kbd>↩</kbd> Quick Access to User Switching ➡️ (Switch between Gmail accounts).
 
@@ -53,6 +57,10 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmo`<kbd>⌘↩</kbd>||<kbd>⌥↩</kbd>||<kbd>⌃↩</kbd> 🧰 + ⚡️Fast Phrase 1-3 ➡️ URL + has:attachment + Fast Phrase (1-3)
 - `gmo`<kbd>⌘⇧↩</kbd>||<kbd>⌥⇧↩</kbd>||<kbd>⌃⇧↩</kbd> 🧰 + ⚡️Fast Phrase 4-6 ➡️ URL + has:YouTube + Fast Phrase (4-6)
 - `gmo`<kbd>⌘⌥↩</kbd> Operators 🧰 + 📋 Clipboard ➡️ URL + has:document + Clipboard Text
+-
+- `gml`<kbd>⌘↩</kbd>||<kbd>⌥↩</kbd>||<kbd>⌃↩</kbd> 🧰 + ⚡️Fast Phrase 1-3 ➡️ URL + label:myLabel + Fast Phrase (1-3)
+- `gml`<kbd>⌘⇧↩</kbd>||<kbd>⌥⇧↩</kbd>||<kbd>⌃⇧↩</kbd> 🧰 + ⚡️Fast Phrase 4-6 ➡️ URL + label:myLabel + Fast Phrase (4-6)
+- `gml`<kbd>⌘⌥↩</kbd> Operators 🧰 + 📋 Clipboard ➡️ URL + label:myLabel + Clipboard Text
 
 ### `gms` Search Stars Faster ⭐
 - **Search Gmail** — 🔍 Default search all messages
@@ -94,34 +102,61 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 ![GMO Screenshot 2](gmo_screen2.png)
 ![GMO Screenshot 3](gmo_screen3.png)
 
+### `gml` Search Labels 🏷️
+- Requires user-defined labels in Configuration. (you can export labels via extension... See Below)
+- **User Labels** — 🏷️ Search within user-defined labels
+- **User Labels + Query** — 🏷️ Search within user-defined labels with a specific query
+
 ## ⚙️ Configuration
 
 Customize keywords and Gmail account in Alfred's workflow preferences:
 
 | Variable         | Default      | Description                                                 |
 |------------------|--------------|-------------------------------------------------------------|
+| `userNumber`     | `0`          | Gmail account index (0 = primary, 1 = second account, etc.) |
 | `gms_key`        | `gms`        | Main Gmail search keyword                                   |
 | `gmu_key`        | `gmu`        | Unread Gmail search keyword                                 |
 | `gmo_key`        | `gmo`        | Gmail Search Operators keyword                              |
 | `gmss_key`       | `gmss`       | Search Keyword (With Argument)                              |
 | `gmuu_key`       | `gmuu`       | Un-Read keyword (With Argument)                             |
 | `gmoo_key`       | `gmoo`       | Gmail Operators (With Argument)                             |
+| `gml_key`        | `gml`        | User Labels keyword                                         |
+| `gmll_key`       | `gmll`       | User Labels + Query keyword                                 |
+| `gmuser_key`     | `gmuser`     | Quick Access to User Switching keyword                      |
 | `gmsettings_key` | `gmsettings` | Settings/actions menu keyword                               |
-| `userNumber`     | `0`          | Gmail account index (0 = primary, 1 = second account, etc.) |
+| `email_0`        | `acct0@...`  | Primary Gmail account email address (for fast Switching)    |
+| `email_1-9`      | `acct1@...`  | Additional Gmail account email addresses (Fast Switching)   |
 
 ## 🔒 Security and Privacy
 - 🛟 Privacy Safe (The Workflow - Not speaking for Gmail 😉)
 - 🔗 Links sent to the browser (Defaults to Chrome)
 - 🕵️‍♀️ No special permissions needed
 - 🔐 Gmail Credentials are not used within the workflow at all! 
-- ℹ️ Only Requirement – Browser needs to be signed in to your Gmail account.
+- ℹ️ Only Requirement – Browser needs to be signed in to your Gmail account(s).
+
+## 🏷️ Exporting Labels
+
+- Details on Extension (Not Required for Workflow) https://www.goldyarora.com/guides/labels-manager
+- Open Google Sheets and create a new Sheet.
+- Extensions > Add-Ons > Get Add-Ons
+- Search for "Labels Manager for Gmail" and install the extension.
+- Grant Permissions
+- Close Extension Manager
+- Extensions > Labels Manager for Gmail > Setup Wizard > Create Label Sheets
+- Goto tab "3. Export Labels"
+- Extensions > Labels Manager for Gmail > 3. Export Labels > Export Labels (light)
+- Select labels starting after "UNREAD" in first column only. <Copy>
+- open Gmail-Search-Tools config use `gmsettings` > Config
+- Paste labels into "Comma Seperated Labels" Field
+- Add comma between each entry
+- Save Configuration at bottom right
+-
+- **Use `gml` and `gmll` keywords** to search within user-defined labels.
 
 ## 📋 TODO
 
 - Update the Alfred Forum URL in `src/info.plist` to the dedicated Gmail Search Tools forum thread once it is posted.
-- Add Quck Switch support for multiple Gmail accounts in settings.
 - Add support for multiple Gmail accounts.
-- Add support for multiple Gmail labels via a label configuration dropdown setting.
 - Add support to save a custom search using an Action Modifier Key.
 - Add support for retrieving the saved custom search keyword.
 - Add an Information Page for learning about gmail-search-tools and power searches
