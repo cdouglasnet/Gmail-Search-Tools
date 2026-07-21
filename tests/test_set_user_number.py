@@ -1,7 +1,7 @@
 import os
 import sys
 import unittest
-from unittest.mock import patch
+from unittest.mock import call, patch
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src/script")))
 
@@ -25,8 +25,41 @@ class TestSetUserNumber(unittest.TestCase):
 
     def test_main_sets_usernumber(self):
         with patch("sys.argv", ["set_user_number.py", "3"]):
-            with patch("builtins.print") as mock_print:
-                set_user_number.main()
+            with patch("set_user_number.subprocess.run") as mock_run:
+                with patch("builtins.print") as mock_print:
+                    with patch.dict(os.environ, {}, clear=True):
+                        set_user_number.main()
 
-        self.assertEqual(os.environ.get("userNumber"), "3")
+                        self.assertEqual(os.environ.get("userNumber"), "3")
+                        self.assertEqual(os.environ.get("gmail_account"), "3")
+
+        mock_run.assert_has_calls(
+            [
+                call(
+                    [
+                        "/usr/bin/osascript",
+                        "-e",
+                        (
+                            'tell application id "com.runningwithcrayons.Alfred" '
+                            'to set configuration "userNumber" to value "3" '
+                            'in workflow "net.cdoug.gmail-search-tools"'
+                        ),
+                    ],
+                    check=True,
+                ),
+                call(
+                    [
+                        "/usr/bin/osascript",
+                        "-e",
+                        (
+                            'tell application id "com.runningwithcrayons.Alfred" '
+                            'to set configuration "gmail_account" to value "3" '
+                            'in workflow "net.cdoug.gmail-search-tools"'
+                        ),
+                    ],
+                    check=True,
+                ),
+            ]
+        )
+        self.assertEqual(mock_run.call_count, 2)
         mock_print.assert_called_once_with("userNumber=3")

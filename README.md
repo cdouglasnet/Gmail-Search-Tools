@@ -25,6 +25,7 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmo` — Gmail Search Operators (Filterable) 🧰
 - `gmoo` — Gmail Search Operators + Argument ⚙️
 - `gmsettings` — Workflow settings/actions menu 🛠️
+- `gmuser` — Fast User Switching 📌
 
 ![Demo Screen](screen.gif)
 
@@ -37,6 +38,7 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmo`<kbd>↩</kbd> Filterable List Search Operators ➡️ i.e. URL + has:attachment
 - `gmoo` `{query}`<kbd>↩</kbd> Search Operators + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
 - `gmsettings`<kbd>↩</kbd> Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
+- `gmuser`<kbd>↩</kbd> Quick Access to User Switching ➡️ (Switch between Gmail accounts).
 
 ## 🚦 Advanced Usage
 
@@ -173,7 +175,7 @@ scripts.
 
 ### v0.0.0.2
 - 🏷️ Support for Searching User Labels. `gml`, `gmll`
-- 🔢 Email Account Switching Support. `gmsettings2`
+- 🔢 Email Account Switching Support. `gmuser`
 
 ## ⚖️ License
 

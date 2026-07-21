@@ -71,6 +71,8 @@ STATIC_ICONS = {
     "gmm-unread": "unread.png",
     "gmm-operators": "date.png",
     "gmm-labels": "labels.png",
+    "gmm-user": "next.png",
+    "gmm-account": "account.png",
     "gmm-back": "back.png",
     "gmm-settings": "settings.png",
 }
@@ -529,33 +531,34 @@ def gmsettings_items():
         item("gmm-subscriptions","Manage Subscriptions →","Manage Your Subscriptions on Gmail",gmail_url_settings("#sub"), route="gmsetting"),
         item("gmo-label","Manage Labels →","Manage Your Labels on Gmail",gmail_url_settings("#settings/labels"), route="gmsetting"),
         item("gms-any-star","Manage Stars →","Enable Various Stars on Gmail",gmail_url_settings("#settings/general"), route="gmsetting"),
-        # TODO - Add User Switch Sub-Menu where user can quickly switch between multiple Gmail accounts.
+        item("gmm-user","Switch Account →","Quickly Switch Account","", route="user"),
         item("gmm-forum","Forum →","Open Alfred Forum page","", route="forum"),
         item("gmm-github","GitHub →","Open GitHub project page","", route="github"),
         item("gmm-back", "Start Over →", "Return to the main menu", "", route="back"),
     ]
 
 # User Switching Menu
-def gmsettings2_items():
+def gmuser_items():
     accounts = user_accounts()
     current = current_account_email()
     items = [
-        item("gmo-search-options","Search Labels","⌘|⌥|⌃|⌘⇧|⌥⇧|⌃⇧ FastPhrases -- ⌘⌥ Clipboard","",valid=True),
-        item("gmo-search-options","Current Account "+current,"Current User Account","",valid=False),
+        item("gmo-search-options","Keep Current Account "+current,"Current User Account","", route="settings"),
     ]
     # Add a menu item for each account.
     i = 0
     for account in accounts:
         items.append(
             item(
-                "gmo-label-" + account,
-                account,
-                "Switch/search using account: " + account,
-                i,
-                valid=True,
+                "gmm-account",account,
+                f'Switch to: {i} : {account}' if account else "Search:",i,valid=True,
             )
         )
         i = i + 1
+
+    # Settings Menu Link
+    items.append(
+        item("gmm-settings","→ Settings","Open workflow configuration","", route="settings")
+    )
     return items
 
 
@@ -581,7 +584,7 @@ def main():
     parser = argparse.ArgumentParser(description="Gmail menu script filter")
     parser.add_argument(
         "--mode",
-        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gml", "gmll", "gmsettings", "gmsettings2", "gmz"],
+        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gml", "gmll", "gmsettings", "gmuser", "gmz"],
         required=True,
     )
     parser.add_argument("--route", default="")
@@ -605,8 +608,8 @@ def main():
         items = gmll_items(query)
     elif args.mode == "gmsettings":
         items = gmsettings_items()
-    elif args.mode == "gmsettings2":
-        items = gmsettings2_items()
+    elif args.mode == "gmuser":
+        items = gmuser_items()
     elif args.mode == "gmz":
         items = gmz_items(query)
     else:

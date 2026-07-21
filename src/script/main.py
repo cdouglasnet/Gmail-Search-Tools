@@ -42,7 +42,7 @@ UNREAD_SEARCH_TYPES = [
 
 def get_account():
     """Get the Gmail account index from environment variable"""
-    return os.environ.get("gmail_account", "0")
+    return os.environ.get("userNumber") or os.environ.get("gmail_account", "0")
 
 
 def build_gmail_url(query, prefix=""):
