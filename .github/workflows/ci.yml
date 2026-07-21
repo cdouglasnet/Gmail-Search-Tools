@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, dev ]
+    branches: [ main, beta ]
   pull_request:
     branches: [ main ]
 
@@ -63,7 +63,7 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta'
 
     steps:
     - uses: actions/checkout@v4
@@ -132,7 +132,7 @@ jobs:
         echo "Generated stable tag: ${TAG}"
 
     - name: Generate unique tag for beta release
-      if: github.ref == 'refs/heads/dev'
+      if: github.ref == 'refs/heads/beta'
       id: beta_tag
       run: |
         TIMESTAMP=$(date +%Y%m%d-%H%M%S)
@@ -171,8 +171,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Create beta release (dev branch)
-      if: github.ref == 'refs/heads/dev'
+    - name: Create beta release (beta branch)
+      if: github.ref == 'refs/heads/beta'
       uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ steps.beta_tag.outputs.tag }}
@@ -189,7 +189,7 @@ jobs:
 
           🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
 
-          ⚠️ This is a **beta release** built from the development branch.
+          ⚠️ This is a **beta release** built from the beta branch.
 
           ### Installation
           1. Download the `gmail-search-tools.alfredworkflow` file

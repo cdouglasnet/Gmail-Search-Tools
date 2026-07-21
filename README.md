@@ -1,7 +1,7 @@
 # Gmail Search Tools
 
 [![Production Release](https://img.shields.io/github/actions/workflow/status/cdouglasnet/Gmail-Search-Tools/ci.yml?branch=main&label=Production%20Release)](https://github.com/cdouglasnet/Gmail-Search-Tools/actions/workflows/ci.yml?query=branch%3Amain)
-[![Beta Release](https://img.shields.io/github/actions/workflow/status/cdouglasnet/Gmail-Search-Tools/ci.yml?branch=dev&label=Beta%20Release)](https://github.com/cdouglasnet/Gmail-Search-Tools/actions/workflows/ci.yml?query=branch%3Adev)
+[![Beta Release](https://img.shields.io/github/actions/workflow/status/cdouglasnet/Gmail-Search-Tools/ci.yml?branch=beta&label=Beta%20Release)](https://github.com/cdouglasnet/Gmail-Search-Tools/actions/workflows/ci.yml?query=branch%3Abeta)
 [![Version](https://img.shields.io/github/v/release/cdouglasnet/Gmail-Search-Tools?label=Version)](https://github.com/cdouglasnet/Gmail-Search-Tools/releases)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](requirements.txt)
 [![Alfred](https://img.shields.io/badge/Alfred-5%2B-5C1F87)](https://www.alfredapp.com/)
@@ -25,6 +25,7 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmo` — Gmail Search Operators (Filterable) 🧰
 - `gmoo` — Gmail Search Operators + Argument ⚙️
 - `gmsettings` — Workflow settings/actions menu 🛠️
+- `gmuser` — Fast User Switching 📌
 
 ![Demo Screen](screen.gif)
 
@@ -37,6 +38,7 @@ Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators
 - `gmo`<kbd>↩</kbd> Filterable List Search Operators ➡️ i.e. URL + has:attachment
 - `gmoo` `{query}`<kbd>↩</kbd> Search Operators + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
 - `gmsettings`<kbd>↩</kbd> Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
+- `gmuser`<kbd>↩</kbd> Quick Access to User Switching ➡️ (Switch between Gmail accounts).
 
 ## 🚦 Advanced Usage
 
@@ -170,6 +172,10 @@ scripts.
 - 🔄 Added support for Gmail account switching.
 - 🔎 Added support for Gmail search operators, starred, and Un-Read messages.
 - ⚡ Added support for Gmail search fast phrases and clipboard text.
+
+### v0.0.0.2
+- 🏷️ Support for Searching User Labels. `gml`, `gmll`
+- 🔢 Email Account Switching Support. `gmuser`
 
 ## ⚖️ License
 
