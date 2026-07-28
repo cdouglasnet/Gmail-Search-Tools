@@ -33,7 +33,7 @@ import plistlib
 import sys
 
 excluded = {
-    "labels",
+    *{f"labels_{i}" for i in range(10)},
     *{f"fastphrase{i}" for i in range(1, 7)},
     *{f"email_{i}" for i in range(10)},
 }
