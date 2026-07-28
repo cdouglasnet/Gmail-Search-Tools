@@ -206,7 +206,7 @@ This is a simple guide to export your Gmail labels for use in the workflow so th
 - Extension will populate sheet with labels...
 - Select labels starting after **"UNREAD"** in first column only. **<Copy>** 📋
 - open **Gmail-Search-Tools** config use Alfred: gmsettings > **Config**
-- Paste labels into **"Comma Separated Labels"** Field
+- Paste labels into **"Labels_0"** Field
 - ![labels_config.png](labels_config.png)
 - Add comma between each entry
 - Save Configuration at bottom right
