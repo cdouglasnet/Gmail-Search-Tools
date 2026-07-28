@@ -4374,96 +4374,196 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
+	<string># Gmail Search Tools
+Quick access to Gmail Searching, Starred, Un-Read, Labels, Operators, and more.
 
-Power Search Gmail within the browser (Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge)
+## Power Search Gmail within the browser
+(Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge)
 
 ![Icon](icon.png)
 
 ## 🔍 Keywords - (Customizable in Configuration)
 
 - `gms` — Gmail Search Messages, Stars (Filterable) 🔍
-- `gmss` — Gmail Search Messages, Stars + Argument ⭐️
 - `gmu` — Gmail Un-Read Messages (Filterable) 📬
-- `gmuu` — Search Un-Read Messages + Argument 📩
 - `gmo` — Gmail Search Operators (Filterable) 🧰
-- `gmoo` — Gmail Search Operators + Argument ⚙️
+- `gml` — Gmail Search Labels (Filterable) 🏷️
 - `gmsettings` — Workflow settings/actions menu 🛠️
+- `gmuser` — Fast User Switching 📌
+- `gmbrowser` — Select Target Browser 🌐
 
 ## 🚦 Usage
 
-- `gms`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List ➡️ default search. i.e. URL + has:red-bang
-- `gmss` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Search + query ➡️ i.e. URL + has:red-bang + mySearchTerm(s)
-- `gmu`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List ➡️ default search Un-Read Messages. i.e. URL + is:unread
-- `gmuu` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Un-Read + query ➡️ i.e. URL + is:unread + mySearchTerm(s)
-- `gmo`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List Search Operators ➡️ i.e. URL + has:attachment
-- `gmoo` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Search Operators + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
-- `gmsettings`&lt;kbd&gt;↩&lt;/kbd&gt; Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
+- `gms`- Star Search - Filter List and select the wanted option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- SubMenu has option to add a {Query} &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Star search run in the browser - i.e. URL + has:red-bang + {Query}
+- `gmu` - Un-Read - Filter List and select the wanted option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- SubMenu has option to add a {Query} &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Un-Read search run in the browser - i.e. URL + is:unread
+- `gmo` - Search Operators - Filter List and select the wanted option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- SubMenu has option to add a {Query} &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Operator search run in the browser - i.e. URL + has:attachment
+- `gml` - Labels - Filter List and select the wanted option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- SubMenu has option to add a {Query} &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Label search run in the browser - i.e. URL + label:myLabel
+- `gmsettings` - Open settings menu option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- (Config, Diagnostic, Browser, Labels, Forum, GitHub, etc).
+- `gmuser` - select which User account to switch to &lt;kbd&gt;↩&lt;/kbd&gt;
+	- userNumber is updated. (don't have to open config)
+- `gmbrowser` - Select Target Browser &lt;kbd&gt;↩&lt;/kbd&gt;
+	- target_browser is updated. (don't have to open config).
 
 ## 🚦 Advanced Usage
 
-- `gms`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; ⭐️ + ⚡️Fast Phrase 1-3 ➡️ URL + has:red-bang + Fast Phrase (1-3)
-- `gms`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; ⭐️ + ⚡️Fast Phrase 4-6 ➡️ URL + has:red-star + Fast Phrase (4-6)
-- `gms`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Stars ⭐️ + 📋 Clipboard ➡️ URL + has:red-star + Clipboard Text
--
-- `gmu`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; 📬 + ⚡️Fast Phrase 1-3 ➡️ URL + is:unread + Fast Phrase (1-3)
-- `gmu`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; 📬 + ⚡️Fast Phrase 4-6 ➡️ URL + is:unread + Fast Phrase (4-6)
-- `gmu`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Un-Read 📬 + 📋 Clipboard ➡️ URL + is:unread + Clipboard Text
--
-- `gmo`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; 🧰 + ⚡️Fast Phrase 1-3 ➡️ URL + has:attachment + Fast Phrase (1-3)
-- `gmo`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; 🧰 + ⚡️Fast Phrase 4-6 ➡️ URL + has:YouTube + Fast Phrase (4-6)
-- `gmo`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Operators 🧰 + 📋 Clipboard ➡️ URL + has:document + Clipboard Text
+You can use fast phrases and clipboard like this:
 
-### `gms` Search Stars Faster ⭐
-- **Search Gmail** — 🔍 Default search all messages
-- **Unread** — 📬 Jumps to `gmu` search
+- `gms` &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; -or- &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; -or- &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;  ⭐️ + ⚡️Fast Phrase 1-3
+	- URL + has:red-bang + Fast Phrase (1-3)
+
+
+- `gms` &lt;kbd&gt;⌘⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; -or- &lt;kbd&gt;⌥⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; -or- &lt;kbd&gt;⌃⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;  ⭐️ + ⚡️Fast Phrase 4-6
+	- URL + has:red-star + Fast Phrase (4-6)
+
+
+- `gms` &lt;kbd&gt;⌘⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;  ⭐️ + 📋 Clipboard
+	- URL + has:red-star + Clipboard Text
+
+### ⚡️ Fast Phrases
+- Customize - Fast Phrases in workflow configuration - For when you search for the same thing all the time
+- Up to 6 fast phrases (Displays text for fast Phrases when modifier key(s) pressed)
+
+### 📋 Clipboard Inject
+- Use a main keyword gms, gmu, gmo, gml + &lt;kbd&gt;⌘⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;
+- Clipboard will be added to search (preview search on 2nd menu)
+
+## Trigger as Universal Action ➡️
+With selected text you can use the main functions via **Universal Action** as follows
+
+- `gmss` — Gmail Search Messages, Stars + Argument ⭐️
+- `gmuu` — Search Un-Read Messages + Argument 📩
+- `gmoo` — Gmail Search Operators + Argument ⚙️
+- `gmll` — Gmail Search Labels + Argument 🏷️
+
+### Universal Action Usage ➡️
+- `gmss` `{query}` Select Star Option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Search + query ➡️ i.e. URL + has:red-bang + mySearchTerm(s)
+- `gmuu` `{query}` Select Un-Read Option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Search + query ➡️ i.e. URL + is:unread + mySearchTerm(s)
+- `gmoo` `{query}` Select Operator Option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Search + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
+- `gmll` `{query}` Select Label Option &lt;kbd&gt;↩&lt;/kbd&gt;
+	- Search + query ➡️ i.e. URL + label:myLabel + mySearchTerm(s)
+
+### `gms` Gmail Stars Search ⭐
+- **Search Gmail** — Search any term(s) you like fast (1st menu item) 🔍
+- **Unread** — search Un-Read after selecting star or location 📬
 - **Starred** — ⭐ yellow-star, red-star, blue-star, green-star, orange-star, purple-star,
 ❗️red-bang, yellow-bang, purple-question, blue-info, orange-guillemet, ✅ green-checkmark
-- **Sent** — 📨 search sent messages
-- **Drafts** — 📄 search draft messages
-- **Important** — 🛟 search important messages
-- **Spam** — 🍗 search spam messages
-- **Trash** — 🗑️ search trash messages
+- **Sent, Drafts, Important, Spam, Trash** and more...
+![GMS Screenshot](gms_screen.png)
 
-### `gmu` Search Un-Read Faster 📬
+## `gmu` - Gmail Un-Read Search 📬
 - **Un-Read All** — all Un-Read messages in the main inbox
-- **Un-Read Primary** — Un-Read inbox messages
-- **Un-Read Updates** — Un-Read updates messages
-- **Un-Read Promotions** - Un-Read promotions messages
-- **Un-Read Forums** — Un-Read forums messages
-- **Un-Read Reservations** - Un-Read reservations messages
-- **Un-Read Purchases** — Un-Read purchases messages
-- **Search Unread Starred** — unread starred messages
+- **Un-Read in Primary, Updates, Promotions, Forums, Reservations, Purchases**
 
-### `gmo` Search Operators 🧰
-- **To/From** - 🕵️‍♀️ To: or From:
-- **Subject** - 👀 Subject: (search within subject line)
-- **Label** - 🏷️ label: (search within a specific label) i.e. label:myLabel
-- **Attachment** - 💾 has:attachment (any file attachment)
-- **Drive Links** - ☁️ has:drive (Google Drive links)
-- **Video** - ▶️ has:YouTube (YouTube video links)
-- **Document** - 📄 has:document (Google Docs, Word, PDF)
-- **Spreadsheet** - 📊 has:spreadsheet (Excel, Numbers, Sheets)
-- **Presentation** - 🖥️ has:presentation (PowerPoint, Keynote, Slides)
+![GMU Screenshot](gmu_screen.png)
+
+## `gmo` - Gmail Search Operators 🧰
+- **To/From** - To: or From: 🕵️‍♀️
+- **Subject** - Subject: (search within subject line) 👀
+- **Label** - label: (search within a specific label) i.e. label:myLabel 🏷️
+- **Attachment** - has:attachment (any file attachment) 💾
+- **Drive Links** - has:drive (Google Drive links) ☁️
+- **Video** - has:YouTube (YouTube video links) ▶️
+- **Document** - has:document (Google Docs, Word, PDF) 📄
+- **Spreadsheet** - has:spreadsheet (Excel, Numbers, Sheets) 📊
+- **Presentation** - has:presentation (PowerPoint, Keynote, Slides) 🖥️
+- And More...
+
+![GMO Screenshot 1](gmo_screen1.png)
+![GMO Screenshot 2](gmo_screen2.png)
+![GMO Screenshot 3](gmo_screen3.png)
+
+## `gml` - Gmail Labels Search 🏷️
+- **Requires user-defined labels in Configuration.** (you can export labels via extension... See Below)
+- **User Labels** — Search within user-defined labels 🏷️
+
+![GML Screenshot](gml_screen.png)
+
+## `gmuser` - Fast User Switching ⚡️
+- **User Switch** - Switch quickly between up to 10 gmail/email accounts ( I use multiple accounts - Jumps to the tab with the right account )
+- **Manually change via slider in configuration**
+- **Default User is 0** - No need to change if you only have one address
+
+![GMUser Screenshot](gmuser_screen.png)
+
+## `gmsettings` - Quick Access Settings ⚙️
+- **Config** - Quickly open the workflow configuration within Alfred ⚙️
+- **Diagnostic** - Run Diagnostics for help in troubleshooting 🛟 ( @vitor Thanks for example)
+- **Manage Subscriptions** - Manage your subscriptions on Gmail 🔗
+- **Manage Labels** - Manage your Labels on Gmail 🏷️
+- **Manage Stars** - To take full advantage of star searches enable all stars. (you can reorder them how you use them) ⭐️
+- ![Manage Stars Screenshot](manage_stars_screen.png)
+- **Switch Account** - Jump to Fast User Switcher
+- **Forum** - Open this Alfred Forum page 🔗
+- **Github** - Open the Gmail Search Tools Github Page 🔗
+
+![GMSettings Screenshot](gmsettings_screen.png)
+
+## `gmbrowser` - Browser Selection 🌐
+- **Browser Selection** - Choose the browser to open Gmail links 🌐
+
+![GMBrowser Screenshot](gmbrowser_screen.png)
+
+## 📌 Requirements
+- Gmail or Google Workspace Account 📧
+- Browser needs to be signed in to your Gmail account(s) 🌐
+- Alfred 5+ with Power Pack 🔋
+- A Supported Browser: Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge
+
+## 🧑‍💻 Version Change Summary
+
+### v0.0.0.1
+- 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
+- 🔄 Added support for Gmail account switching.
+- 🔎 Added support for Gmail search operators, starred, and Un-Read messages.
+- ⚡ Added support for Gmail search fast phrases and clipboard text.
+
+### v0.0.0.2
+- 🏷️ Support for Searching User Labels. `gml`, `gmll`
+- 🔢 Email Account Switching Support. `gmuser`
+
+### v0.0.0.3
+- 🌐 Browser Selection Support. `target_browser` Under Configure Workflow.
+- 🧑‍💻 Support for Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge
+- ⚡ Quick change browser via `gmbrowser` keyword
+- 🔗 Link to change browser from `gmsettings` menu
+- 🐛 Improved Debugging to not include emails, labels, and fast phrases
+- 📖 Improved Documentation within Workflow for Readability
 
 ## ⚙️ Configuration
 
-Customize keywords and Gmail account in Alfred's workflow preferences:
-- `gms_key`        - Main Gmail search keyword
-- `gmu_key`        - Unread Gmail search keyword
-- `gmo_key`        - Gmail Search Operators keyword
-- `gmss_key`       - Search Keyword (With Argument)
-- `gmuu_key`       - Un-Read keyword (With Argument)
-- `gmoo_key`       - Gmail Operators (With Argument)
-- `gmsettings_key` - Settings/actions menu keyword
-- `userNumber`     - Gmail account index (0 = primary, 1 = second account, etc.)
+Customize keywords and Gmail account(s) in Alfred's workflow preferences:
+- `userNumber` - Gmail account index (0 = primary, 1 = second account, etc.)
+- `target_browser` - Browser to open Gmail links
+- `fastphrase1-6` - Fast Phrases for quick searches you use all the time
+- `gms_key`, `gmu_key`, `gmo_key`, `gml_key` - Primary Gmail Search Keywords
+- `gmss_key`, `gmuu_key`, `gmoo_key`, `gmll_key` - Universal Action Keywords
+- `gmuser_key`, `gmsettings_key`, `gmbrowser_key` - Settings/actions menu Keywords
+- `labels_0` - User Labels
+- `email_0-9` - Gmail account labels - email addresses (Fast Switching)
 
 ## 🔒 Security and Privacy
 - 🛟 Privacy Safe (The Workflow - Not speeking for Gmail 😉)
 - 🔗 Links sent to the browser (Defaults to Chrome)
 - 🕵️‍♀️ No special permissions needed
 - 🔐 Gmail Credentials not touched by the workflow at all!
-- ℹ️ Browser needs to be signed in to your Gmail account.</string>
+- ℹ️ Browser needs to be signed in to your Gmail account.
+
+#### ⚖️ MIT License
+
+Enjoy!
+#### [CDoug](https://github.com/cdouglasnet)</string>
 	<key>uidata</key>
 	<dict>
 		<key>03682E7C-564A-4077-AC71-89E8EB4907BF</key>
@@ -5367,7 +5467,7 @@ in Target Browser</string>
 			<key>description</key>
 			<string>The Default Inbox To Search (change names to your actual @gmail accounts in config builder) look for the number in the url: https://mail.google.com/mail/u/1/#inbox -&gt; #1 | https://mail.google.com/mail/u/2/#inbox -&gt; #2</string>
 			<key>label</key>
-			<string>Default Account</string>
+			<string>userNumber Account</string>
 			<key>type</key>
 			<string>slider</string>
 			<key>variable</key>
@@ -5578,27 +5678,6 @@ in Target Browser</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>gmss</string>
-				<key>placeholder</key>
-				<string></string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Search with Args - Not Filterable</string>
-			<key>label</key>
-			<string>Gmail Search with Arg</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>gmss_key</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
 				<string>gmu</string>
 				<key>placeholder</key>
 				<string></string>
@@ -5615,27 +5694,6 @@ in Target Browser</string>
 			<string>textfield</string>
 			<key>variable</key>
 			<string>gmu_key</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>gmuu</string>
-				<key>placeholder</key>
-				<string></string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Search with Args - Not Filterable</string>
-			<key>label</key>
-			<string>Gmail UnRead Search with Arg</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>gmuu_key</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -5662,27 +5720,6 @@ in Target Browser</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>gmoo</string>
-				<key>placeholder</key>
-				<string></string>
-				<key>required</key>
-				<true/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>Search with Args - Not Filterable</string>
-			<key>label</key>
-			<string>Gmail Search Refrence with Arg</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>gmoo_key</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
 				<string>gml</string>
 				<key>placeholder</key>
 				<string></string>
@@ -5704,6 +5741,69 @@ in Target Browser</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>gmss</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Universal Action - Search with Args</string>
+			<key>label</key>
+			<string>Gmail Search with Arg</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmss_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gmuu</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Universal Action - Search with Args</string>
+			<key>label</key>
+			<string>Gmail UnRead Search with Arg</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmuu_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>gmoo</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Universal Action - Search with Args</string>
+			<key>label</key>
+			<string>Gmail Search Refrence with Arg</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmoo_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>gmll</string>
 				<key>placeholder</key>
 				<string></string>
@@ -5713,7 +5813,7 @@ in Target Browser</string>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Search with Args - Not Filterable</string>
+			<string>Universal Action - Search with Args</string>
 			<key>label</key>
 			<string>Gmail Label Search with Arg</string>
 			<key>type</key>
@@ -5755,9 +5855,9 @@ in Target Browser</string>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Quick Access to Settings Menu</string>
+			<string>Keyword for Settings Menu and links</string>
 			<key>label</key>
-			<string>Gmail Search Tool Settings Keyword</string>
+			<string>Gmail Search Tools Settings Keyword</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -5776,9 +5876,9 @@ in Target Browser</string>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Quick Access to Browser Menu</string>
+			<string>Keyword to Browser Switch Menu</string>
 			<key>label</key>
-			<string>Gmail Search Tool Browser Keyword</string>
+			<string>Browser Switch Menu Keyword</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -5831,9 +5931,9 @@ in Target Browser</string>
 				<integer>9</integer>
 			</dict>
 			<key>description</key>
-			<string>Enter Your labels seperated by comma's</string>
+			<string>Enter Your labels one per line or separated by commas. If you exported them you can just paste them in.</string>
 			<key>label</key>
-			<string>Comma Seperated Labels</string>
+			<string>Labels_0</string>
 			<key>type</key>
 			<string>textarea</string>
 			<key>variable</key>

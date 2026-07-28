@@ -13,6 +13,7 @@
 Alfred Workflow for fast access to Gmail Power Searching, Starred, Un-Read, Operators, Labels, and more.
 
 ## 🔍 Power Search Gmail within the browser
+(Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge)
 
 ![Icon](icon.png)
 
@@ -141,6 +142,7 @@ With selected text you can use the main functions via **Universal Action** as fo
 - **Manage Subscriptions** - Manage your subscriptions on Gmail 🔗
 - **Manage Labels** - Manage your Labels on Gmail 🏷️
 - **Manage Stars** - To take full advantage of star searches enable all stars. (you can reorder them how you use them) ⭐️
+- ![Manage Stars Screenshot](manage_stars_screen.png)
 - **Switch Account** - Jump to Fast User Switcher
 - **Forum** - Open this Alfred Forum page 🔗
 - **Github** - Open the Gmail Search Tools Github Page 🔗
@@ -173,7 +175,8 @@ Customize keywords and Gmail account in Alfred's workflow preferences:
 | `gmuu_key`       | `gmuu`          | Un-Read keyword (With Argument)                             |
 | `gmoo_key`       | `gmoo`          | Gmail Operators (With Argument)                             |
 | `gml_key`        | `gml`           | User Labels keyword                                         |
-| `gmll_key`       | `gmll`          | User Labels + Query keyword                                 |
+| `gmll_key`       | `gmll`          | User Labels Query keyword                                   |
+| `labels_0`       |                 | User Labels                                                 |
 | `gmuser_key`     | `gmuser`        | Quick Access to User Switching keyword                      |
 | `gmsettings_key` | `gmsettings`    | Settings/actions menu keyword                               |
 | `gmbrowser_key`  | `gmbrowser`     | Browser selection keyword                                   |
@@ -207,10 +210,6 @@ This is a simple guide to export your Gmail labels for use in the workflow so th
 - ![labels_config.png](labels_config.png)
 - Add comma between each entry
 - Save Configuration at bottom right
-
-Use gml and gmll keywords to search within user-defined labels 😎
--
-- **Use `gml` and `gmll` keywords** to search within user-defined labels.
 
 ## 📋 TODO
 
