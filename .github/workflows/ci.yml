@@ -135,9 +135,21 @@ jobs:
       if: github.ref == 'refs/heads/beta'
       id: beta_tag
       run: |
+        VERSION=$(python - <<'PY'
+        import plistlib
+        with open('src/info.plist', 'rb') as f:
+            data = plistlib.load(f)
+        print(data.get('version', '').strip())
+        PY
+        )
+        if [ -z "$VERSION" ]; then
+          echo "Could not read version from src/info.plist"
+          exit 1
+        fi
         TIMESTAMP=$(date +%Y%m%d-%H%M%S)
-        TAG="v${{ github.run_number }}-beta-${TIMESTAMP}"
+        TAG="v${VERSION}_${TIMESTAMP}"
         echo "tag=${TAG}" >> $GITHUB_OUTPUT
+        echo "version=${VERSION}" >> $GITHUB_OUTPUT
         echo "Generated beta tag: ${TAG}"
 
     - name: Create stable release (main branch)

@@ -4515,6 +4515,27 @@ With selected text you can use the main functions via **Universal Action** as fo
 
 ![GMBrowser Screenshot](gmbrowser_screen.png)
 
+## 🏷️ Exporting Labels (Not Required)
+
+This is a simple guide to export your Gmail labels for use in the workflow so that you don't have to type them. (😀 Emoji are supported)
+- Details on External Extension **Labels Manager For Gmail** (Not Required for Workflow) https://www.goldyarora.com/guides/labels-manager
+- Follow these steps to install the extension, Export Labels, and
+- Open **Google Sheets** and create a **new Sheet**
+- **Extensions > Add-Ons > Get Add-Ons**
+- Search for **"Labels Manager for Gmail"** and install the extension.
+- **Grant Permissions 🔐 (required for extension to work)**
+- Close Extension Manager ❎
+- **Extensions > Labels Manager for Gmail > Setup Wizard > Create Label Sheets**
+- Goto tab **"3. Export Labels"** ⤵️
+- **Extensions > Labels Manager for Gmail > 3. Export Labels > Export Labels (light)**
+- Extension will populate sheet with labels...
+- Select labels starting after **"UNREAD"** in first column only. **Copy** 📋
+- open **Gmail-Search-Tools** config use Alfred: gmsettings > **Config**
+- Paste labels into **"Comma Separated Labels"** Field
+- ![labels_config.png](labels_config.png)
+- Add comma between each entry
+- Save Configuration at bottom right
+
 ## 📌 Requirements
 - Gmail or Google Workspace Account 📧
 - Browser needs to be signed in to your Gmail account(s) 🌐
