@@ -437,6 +437,18 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>B61DDBAC-4D99-4727-AAA1-43D2F68A268D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>44100735-F4F7-4A8A-8A1F-9D9388D55AFC</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>F1796343-80C9-459A-8618-699AFEC3A167</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -515,6 +527,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>4F711CB5-0E03-4175-8208-AA767DAC74D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3BC88585-BA24-4D90-BE4F-F014FDD03ABB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0E20C0ED-7A8E-4130-9997-236FAE509536</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1719,6 +1744,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>FCDD8492-9932-426C-BEF4-846D5482BF7E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3BC88585-BA24-4D90-BE4F-F014FDD03ABB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>FDDC8E02-137D-42C6-B8F6-20DA423A6E55</key>
 		<array>
 			<dict>
@@ -1834,7 +1872,7 @@
 			<key>config</key>
 			<dict>
 				<key>availableviaurlhandler</key>
-				<false/>
+				<true/>
 				<key>triggerid</key>
 				<string>_menu</string>
 			</dict>
@@ -2908,8 +2946,12 @@
 				<dict>
 					<key>all_windows</key>
 					<false/>
+					<key>custom_browser</key>
+					<string>{var:target_browser}</string>
 					<key>match_string</key>
 					<string>https://mail.google.com/mail/u/{var:userNumber}</string>
+					<key>popup_browser</key>
+					<string>custom</string>
 				</dict>
 				<key>taskuid</key>
 				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.matching.activate</string>
@@ -2926,6 +2968,10 @@
 			<dict>
 				<key>tasksettings</key>
 				<dict>
+					<key>custom_browser</key>
+					<string>{var:target_browser}</string>
+					<key>popup_browser</key>
+					<string>custom</string>
 					<key>url</key>
 					<string>{var:url}</string>
 				</dict>
@@ -3356,8 +3402,12 @@
 				<dict>
 					<key>all_windows</key>
 					<false/>
+					<key>custom_browser</key>
+					<string>{var:target_browser}</string>
 					<key>match_string</key>
 					<string>https://mail.google.com/mail/u/{var:userNumber}</string>
+					<key>popup_browser</key>
+					<string>custom</string>
 				</dict>
 				<key>taskuid</key>
 				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.matching.activate</string>
@@ -3374,6 +3424,10 @@
 			<dict>
 				<key>tasksettings</key>
 				<dict>
+					<key>custom_browser</key>
+					<string>{var:target_browser}</string>
+					<key>popup_browser</key>
+					<string>custom</string>
 					<key>url</key>
 					<string>{var:url}</string>
 				</dict>
@@ -3599,6 +3653,20 @@
 						<string>user</string>
 						<key>uid</key>
 						<string>3D760500-6B32-4F71-B778-882FE23058E5</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:route}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>browser</string>
+						<key>outputlabel</key>
+						<string>browser</string>
+						<key>uid</key>
+						<string>44100735-F4F7-4A8A-8A1F-9D9388D55AFC</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
@@ -3999,6 +4067,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>_browser</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>B61DDBAC-4D99-4727-AAA1-43D2F68A268D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>skipqueryencode</key>
@@ -4014,6 +4101,95 @@
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>F1796343-80C9-459A-8618-699AFEC3A167</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+/usr/bin/python3 script/set_browser.py $query</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0E20C0ED-7A8E-4130-9997-236FAE509536</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>{var:gmbrowser_key}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/usr/bin/python3 script/menu_filter.py --mode gmbrowser "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:name}</string>
+				<key>title</key>
+				<string>Gmail Search Tools Target Browser {var:actionPrefix} {var:gmbrowser_key}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3BC88585-BA24-4D90-BE4F-F014FDD03ABB</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>_browser</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>FCDD8492-9932-426C-BEF4-846D5482BF7E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -4140,8 +4316,12 @@
 				<dict>
 					<key>all_windows</key>
 					<false/>
+					<key>custom_browser</key>
+					<string>{var:target_browser}</string>
 					<key>match_string</key>
 					<string>https://mail.google.com/mail/u/{var:userNumber}</string>
+					<key>popup_browser</key>
+					<string>custom</string>
 				</dict>
 				<key>taskuid</key>
 				<string>com.alfredapp.automation.extras/web-browsers/chromium-browsers/chromium.tabs.matching.activate</string>
@@ -4158,6 +4338,10 @@
 			<dict>
 				<key>tasksettings</key>
 				<dict>
+					<key>custom_browser</key>
+					<string>{var:target_browser}</string>
+					<key>popup_browser</key>
+					<string>custom</string>
 					<key>url</key>
 					<string>{var:url}</string>
 				</dict>
@@ -4192,94 +4376,94 @@
 	<key>readme</key>
 	<string>Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
 
-			🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
+Power Search Gmail within the browser (Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge)
 
-			![Icon](icon.png)
+![Icon](icon.png)
 
-			## 🔍 Keywords - (Customizable in Configuration)
+## 🔍 Keywords - (Customizable in Configuration)
 
-			- `gms` — Gmail Search Messages, Stars (Filterable) 🔍
-			- `gmss` — Gmail Search Messages, Stars + Argument ⭐️
-			- `gmu` — Gmail Un-Read Messages (Filterable) 📬
-			- `gmuu` — Search Un-Read Messages + Argument 📩
-			- `gmo` — Gmail Search Operators (Filterable) 🧰
-			- `gmoo` — Gmail Search Operators + Argument ⚙️
-			- `gmsettings` — Workflow settings/actions menu 🛠️
+- `gms` — Gmail Search Messages, Stars (Filterable) 🔍
+- `gmss` — Gmail Search Messages, Stars + Argument ⭐️
+- `gmu` — Gmail Un-Read Messages (Filterable) 📬
+- `gmuu` — Search Un-Read Messages + Argument 📩
+- `gmo` — Gmail Search Operators (Filterable) 🧰
+- `gmoo` — Gmail Search Operators + Argument ⚙️
+- `gmsettings` — Workflow settings/actions menu 🛠️
 
-			## 🚦 Usage
+## 🚦 Usage
 
-			- `gms`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List ➡️ default search. i.e. URL + has:red-bang
-			- `gmss` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Search + query ➡️ i.e. URL + has:red-bang + mySearchTerm(s)
-			- `gmu`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List ➡️ default search Un-Read Messages. i.e. URL + is:unread
-			- `gmuu` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Un-Read + query ➡️ i.e. URL + is:unread + mySearchTerm(s)
-			- `gmo`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List Search Operators ➡️ i.e. URL + has:attachment
-			- `gmoo` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Search Operators + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
-			- `gmsettings`&lt;kbd&gt;↩&lt;/kbd&gt; Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
+- `gms`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List ➡️ default search. i.e. URL + has:red-bang
+- `gmss` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Search + query ➡️ i.e. URL + has:red-bang + mySearchTerm(s)
+- `gmu`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List ➡️ default search Un-Read Messages. i.e. URL + is:unread
+- `gmuu` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Un-Read + query ➡️ i.e. URL + is:unread + mySearchTerm(s)
+- `gmo`&lt;kbd&gt;↩&lt;/kbd&gt; Filterable List Search Operators ➡️ i.e. URL + has:attachment
+- `gmoo` `{query}`&lt;kbd&gt;↩&lt;/kbd&gt; Search Operators + query ➡️ i.e. URL + has:attachment + mySearchTerm(s)
+- `gmsettings`&lt;kbd&gt;↩&lt;/kbd&gt; Open settings menu ➡️ (Config, Diagnostic, Forum, GitHub).
 
-			## 🚦 Advanced Usage
+## 🚦 Advanced Usage
 
-			- `gms`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; ⭐️ + ⚡️Fast Phrase 1-3 ➡️ URL + has:red-bang + Fast Phrase (1-3)
-			- `gms`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; ⭐️ + ⚡️Fast Phrase 4-6 ➡️ URL + has:red-star + Fast Phrase (4-6)
-			- `gms`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Stars ⭐️ + 📋 Clipboard ➡️ URL + has:red-star + Clipboard Text
-			-
-			- `gmu`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; 📬 + ⚡️Fast Phrase 1-3 ➡️ URL + is:unread + Fast Phrase (1-3)
-			- `gmu`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; 📬 + ⚡️Fast Phrase 4-6 ➡️ URL + is:unread + Fast Phrase (4-6)
-			- `gmu`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Un-Read 📬 + 📋 Clipboard ➡️ URL + is:unread + Clipboard Text
-			-
-			- `gmo`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; 🧰 + ⚡️Fast Phrase 1-3 ➡️ URL + has:attachment + Fast Phrase (1-3)
-			- `gmo`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; 🧰 + ⚡️Fast Phrase 4-6 ➡️ URL + has:YouTube + Fast Phrase (4-6)
-			- `gmo`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Operators 🧰 + 📋 Clipboard ➡️ URL + has:document + Clipboard Text
+- `gms`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; ⭐️ + ⚡️Fast Phrase 1-3 ➡️ URL + has:red-bang + Fast Phrase (1-3)
+- `gms`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; ⭐️ + ⚡️Fast Phrase 4-6 ➡️ URL + has:red-star + Fast Phrase (4-6)
+- `gms`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Stars ⭐️ + 📋 Clipboard ➡️ URL + has:red-star + Clipboard Text
+-
+- `gmu`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; 📬 + ⚡️Fast Phrase 1-3 ➡️ URL + is:unread + Fast Phrase (1-3)
+- `gmu`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; 📬 + ⚡️Fast Phrase 4-6 ➡️ URL + is:unread + Fast Phrase (4-6)
+- `gmu`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Un-Read 📬 + 📋 Clipboard ➡️ URL + is:unread + Clipboard Text
+-
+- `gmo`&lt;kbd&gt;⌘↩&lt;/kbd&gt;||&lt;kbd&gt;⌥↩&lt;/kbd&gt;||&lt;kbd&gt;⌃↩&lt;/kbd&gt; 🧰 + ⚡️Fast Phrase 1-3 ➡️ URL + has:attachment + Fast Phrase (1-3)
+- `gmo`&lt;kbd&gt;⌘⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌥⇧↩&lt;/kbd&gt;||&lt;kbd&gt;⌃⇧↩&lt;/kbd&gt; 🧰 + ⚡️Fast Phrase 4-6 ➡️ URL + has:YouTube + Fast Phrase (4-6)
+- `gmo`&lt;kbd&gt;⌘⌥↩&lt;/kbd&gt; Operators 🧰 + 📋 Clipboard ➡️ URL + has:document + Clipboard Text
 
-			### `gms` Search Stars Faster ⭐
-			- **Search Gmail** — 🔍 Default search all messages
-			- **Unread** — 📬 Jumps to `gmu` search
-			- **Starred** — ⭐ yellow-star, red-star, blue-star, green-star, orange-star, purple-star,
-			❗️red-bang, yellow-bang, purple-question, blue-info, orange-guillemet, ✅ green-checkmark
-			- **Sent** — 📨 search sent messages
-			- **Drafts** — 📄 search draft messages
-			- **Important** — 🛟 search important messages
-			- **Spam** — 🍗 search spam messages
-			- **Trash** — 🗑️ search trash messages
+### `gms` Search Stars Faster ⭐
+- **Search Gmail** — 🔍 Default search all messages
+- **Unread** — 📬 Jumps to `gmu` search
+- **Starred** — ⭐ yellow-star, red-star, blue-star, green-star, orange-star, purple-star,
+❗️red-bang, yellow-bang, purple-question, blue-info, orange-guillemet, ✅ green-checkmark
+- **Sent** — 📨 search sent messages
+- **Drafts** — 📄 search draft messages
+- **Important** — 🛟 search important messages
+- **Spam** — 🍗 search spam messages
+- **Trash** — 🗑️ search trash messages
 
-			### `gmu` Search Un-Read Faster 📬
-			- **Un-Read All** — all Un-Read messages in the main inbox
-			- **Un-Read Primary** — Un-Read inbox messages
-			- **Un-Read Updates** — Un-Read updates messages
-			- **Un-Read Promotions** - Un-Read promotions messages
-			- **Un-Read Forums** — Un-Read forums messages
-			- **Un-Read Reservations** - Un-Read reservations messages
-			- **Un-Read Purchases** — Un-Read purchases messages
-			- **Search Unread Starred** — unread starred messages
+### `gmu` Search Un-Read Faster 📬
+- **Un-Read All** — all Un-Read messages in the main inbox
+- **Un-Read Primary** — Un-Read inbox messages
+- **Un-Read Updates** — Un-Read updates messages
+- **Un-Read Promotions** - Un-Read promotions messages
+- **Un-Read Forums** — Un-Read forums messages
+- **Un-Read Reservations** - Un-Read reservations messages
+- **Un-Read Purchases** — Un-Read purchases messages
+- **Search Unread Starred** — unread starred messages
 
-			### `gmo` Search Operators 🧰
-			- **To/From** - 🕵️‍♀️ To: or From:
-			- **Subject** - 👀 Subject: (search within subject line)
-			- **Label** - 🏷️ label: (search within a specific label) i.e. label:myLabel
-			- **Attachment** - 💾 has:attachment (any file attachment)
-			- **Drive Links** - ☁️ has:drive (Google Drive links)
-			- **Video** - ▶️ has:YouTube (YouTube video links)
-			- **Document** - 📄 has:document (Google Docs, Word, PDF)
-			- **Spreadsheet** - 📊 has:spreadsheet (Excel, Numbers, Sheets)
-			- **Presentation** - 🖥️ has:presentation (PowerPoint, Keynote, Slides)
+### `gmo` Search Operators 🧰
+- **To/From** - 🕵️‍♀️ To: or From:
+- **Subject** - 👀 Subject: (search within subject line)
+- **Label** - 🏷️ label: (search within a specific label) i.e. label:myLabel
+- **Attachment** - 💾 has:attachment (any file attachment)
+- **Drive Links** - ☁️ has:drive (Google Drive links)
+- **Video** - ▶️ has:YouTube (YouTube video links)
+- **Document** - 📄 has:document (Google Docs, Word, PDF)
+- **Spreadsheet** - 📊 has:spreadsheet (Excel, Numbers, Sheets)
+- **Presentation** - 🖥️ has:presentation (PowerPoint, Keynote, Slides)
 
-			## ⚙️ Configuration
+## ⚙️ Configuration
 
-			Customize keywords and Gmail account in Alfred's workflow preferences:
-			- `gms_key`        - Main Gmail search keyword
-			- `gmu_key`        - Unread Gmail search keyword
-			- `gmo_key`        - Gmail Search Operators keyword
-			- `gmss_key`       - Search Keyword (With Argument)
-			- `gmuu_key`       - Un-Read keyword (With Argument)
-			- `gmoo_key`       - Gmail Operators (With Argument)
-			- `gmsettings_key` - Settings/actions menu keyword
-			- `userNumber`     - Gmail account index (0 = primary, 1 = second account, etc.)
+Customize keywords and Gmail account in Alfred's workflow preferences:
+- `gms_key`        - Main Gmail search keyword
+- `gmu_key`        - Unread Gmail search keyword
+- `gmo_key`        - Gmail Search Operators keyword
+- `gmss_key`       - Search Keyword (With Argument)
+- `gmuu_key`       - Un-Read keyword (With Argument)
+- `gmoo_key`       - Gmail Operators (With Argument)
+- `gmsettings_key` - Settings/actions menu keyword
+- `userNumber`     - Gmail account index (0 = primary, 1 = second account, etc.)
 
-			## 🔒 Security and Privacy
-			- 🛟 Privacy Safe (The Workflow - Not speeking for Gmail 😉)
-			- 🔗 Links sent to the browser (Defaults to Chrome)
-			- 🕵️‍♀️ No special permissions needed
-			- 🔐 Gmail Credentials not touched by the workflow at all!
-			- ℹ️ Browser needs to be signed in to your Gmail account.</string>
+## 🔒 Security and Privacy
+- 🛟 Privacy Safe (The Workflow - Not speeking for Gmail 😉)
+- 🔗 Links sent to the browser (Defaults to Chrome)
+- 🕵️‍♀️ No special permissions needed
+- 🔐 Gmail Credentials not touched by the workflow at all!
+- ℹ️ Browser needs to be signed in to your Gmail account.</string>
 	<key>uidata</key>
 	<dict>
 		<key>03682E7C-564A-4077-AC71-89E8EB4907BF</key>
@@ -4326,6 +4510,15 @@
 			<real>185</real>
 			<key>ypos</key>
 			<real>15</real>
+		</dict>
+		<key>0E20C0ED-7A8E-4130-9997-236FAE509536</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
+			<key>xpos</key>
+			<real>1180</real>
+			<key>ypos</key>
+			<real>990</real>
 		</dict>
 		<key>19226762-0362-4EC6-AFEF-CE7D0F229251</key>
 		<dict>
@@ -4491,6 +4684,15 @@
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
+		<key>3BC88585-BA24-4D90-BE4F-F014FDD03ABB</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
+			<key>xpos</key>
+			<real>1045</real>
+			<key>ypos</key>
+			<real>990</real>
+		</dict>
 		<key>428220BB-482C-475B-9CD3-2B74A3D9E0F2</key>
 		<dict>
 			<key>colorindex</key>
@@ -4505,7 +4707,7 @@
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>xpos</key>
-			<real>1650</real>
+			<real>1680</real>
 			<key>ypos</key>
 			<real>850</real>
 		</dict>
@@ -4842,6 +5044,15 @@
 			<key>ypos</key>
 			<real>235</real>
 		</dict>
+		<key>B61DDBAC-4D99-4727-AAA1-43D2F68A268D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
+			<key>xpos</key>
+			<real>1610</real>
+			<key>ypos</key>
+			<real>910</real>
+		</dict>
 		<key>B8E8A0EE-A706-4AB1-94B5-22C3B71DD254</key>
 		<dict>
 			<key>colorindex</key>
@@ -5029,9 +5240,9 @@
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>1570</real>
+			<real>1540</real>
 			<key>ypos</key>
-			<real>910</real>
+			<real>970</real>
 		</dict>
 		<key>F1BDAFC2-77EE-4132-896D-489BFB9F39A8</key>
 		<dict>
@@ -5065,7 +5276,7 @@
 			<key>colorindex</key>
 			<integer>11</integer>
 			<key>xpos</key>
-			<real>1610</real>
+			<real>1640</real>
 			<key>ypos</key>
 			<real>880</real>
 		</dict>
@@ -5077,6 +5288,15 @@
 			<real>345</real>
 			<key>ypos</key>
 			<real>850</real>
+		</dict>
+		<key>FCDD8492-9932-426C-BEF4-846D5482BF7E</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>4</integer>
+			<key>xpos</key>
+			<real>910</real>
+			<key>ypos</key>
+			<real>990</real>
 		</dict>
 		<key>FDDC8E02-137D-42C6-B8F6-20DA423A6E55</key>
 		<dict>
@@ -5114,6 +5334,60 @@
 			<string>slider</string>
 			<key>variable</key>
 			<string>userNumber</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Google Chrome</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Chrome</string>
+						<string>Google Chrome</string>
+					</array>
+					<array>
+						<string>Brave</string>
+						<string>Brave Browser</string>
+					</array>
+					<array>
+						<string>Edge</string>
+						<string>Microsoft Edge</string>
+					</array>
+					<array>
+						<string>Vivaldi</string>
+						<string>Vivaldi</string>
+					</array>
+					<array>
+						<string>Opera</string>
+						<string>Opera</string>
+					</array>
+					<array>
+						<string>Chromium</string>
+						<string>Chromium</string>
+					</array>
+					<array>
+						<string>Orion</string>
+						<string>Orion</string>
+					</array>
+					<array>
+						<string>Webkit</string>
+						<string>Webkit</string>
+					</array>
+					<array>
+						<string>Safari</string>
+						<string>Safari</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge</string>
+			<key>label</key>
+			<string>Target Browser</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>target_browser</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -5455,6 +5729,27 @@
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>gmbrowser</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Quick Access to Browser Menu</string>
+			<key>label</key>
+			<string>Gmail Search Tool Browser Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>gmbrowser_key</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>dollar</string>
 				<key>pairs</key>
 				<array>
@@ -5765,7 +6060,7 @@
 		<string>gmail_account</string>
 	</array>
 	<key>version</key>
-	<string>0.0.0.2</string>
+	<string>0.0.0.3</string>
 	<key>webaddress</key>
 	<string>https://cdoug.design</string>
 </dict>

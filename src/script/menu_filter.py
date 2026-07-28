@@ -90,6 +90,10 @@ def get_currency_icon():
     currency = os.environ.get("currency", "dollar")
     return CURRENCY_ICONS.get(currency, CURRENCY_ICONS["dollar"])
 
+# Get Current Browser var:target_browser
+def get_current_browser():
+    return os.environ.get("target_browser") or "Google Chrome"
+
 
 def get_icon_for_uid(uid):
     """Get icon file for an uid, including currency-based icons"""
@@ -313,7 +317,7 @@ def gml_items(query):
     ]
     # add a menu item for each label
     for label in labels:
-        items.append(item("gmo-label-"+label,"Label: "+label,"Messages with label: "+label,gmail_arg(f"label:{label} {q} "),valid=True))
+        items.append(item("gmo-label-"+label,label,"Messages with label: "+label,gmail_arg(f"label:{label} {q} "),valid=True))
     return items
 
 # Gmail Star Search with Qurey
@@ -528,6 +532,7 @@ def gmsettings_items():
     return [
         item("gmm-config","Config →","Open workflow configuration in Alfred","", route="config"),
         item("gmm-diagnostic","Diagnostic →","Run workflow diagnostic","", route="diagnostic"),
+        item("gmm-Browser","Browser → "+get_current_browser(),"Switch Target Browser","", route="browser"),
         item("gmm-subscriptions","Manage Subscriptions →","Manage Your Subscriptions on Gmail",gmail_url_settings("#sub"), route="gmsetting"),
         item("gmo-label","Manage Labels →","Manage Your Labels on Gmail",gmail_url_settings("#settings/labels"), route="gmsetting"),
         item("gms-any-star","Manage Stars →","Enable Various Stars on Gmail",gmail_url_settings("#settings/general"), route="gmsetting"),
@@ -561,6 +566,24 @@ def gmuser_items():
     )
     return items
 
+# Browser Switching Menu (Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge)
+def gmbrowser_items():
+    browser = get_current_browser()
+    items = [
+        item("gmm-Browser","Current Browser → "+get_current_browser(),"Switch Target Browser","", valid=False),
+        item("gmm-chrome", "Google Chrome", "Google Chrome", "Google Chrome", route="setbrowser"),
+        item("gmm-brave", "Brave Browser", "Brave Browser", "Brave Browser", route="setbrowser"),
+        item("gmm-edge", "Microsoft Edge", "Microsoft Edge", "Microsoft Edge", route="setbrowser"),
+        item("gmm-vivaldi", "Vivaldi", "Vivaldi", "Vivaldi", route="setbrowser"),
+        item("gmm-opera", "Opera", "Opera", "Opera", route="setbrowser"),
+        item("gmm-chromium", "Chromium", "Chromium", "Chromium", route="setbrowser"),
+        item("gmm-orion", "Orion", "Orion", "Orion", route="setbrowser"),
+        item("gmm-webkit", "Webkit", "Webkit", "Webkit", route="setbrowser"),
+        item("gmm-safari", "Safari", "Safari", "Safari", route="setbrowser"),
+    ]
+    return items
+
+
 
 # Individual Search Query Prompt and Simple Menu
 def gmz_items(query):
@@ -584,7 +607,7 @@ def main():
     parser = argparse.ArgumentParser(description="Gmail menu script filter")
     parser.add_argument(
         "--mode",
-        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gml", "gmll", "gmsettings", "gmuser", "gmz"],
+        choices=["gms", "gmss", "gmu", "gmuu", "gmo", "gmoo", "gml", "gmll", "gmsettings", "gmuser", "gmbrowser", "gmz"],
         required=True,
     )
     parser.add_argument("--route", default="")
@@ -610,6 +633,8 @@ def main():
         items = gmsettings_items()
     elif args.mode == "gmuser":
         items = gmuser_items()
+    elif args.mode == "gmbrowser":
+        items = gmbrowser_items()
     elif args.mode == "gmz":
         items = gmz_items(query)
     else:
