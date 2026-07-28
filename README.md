@@ -91,32 +91,22 @@ With selected text you can use the main functions via **Universal Action** as fo
   - Search + query ➡️ i.e. URL + label:myLabel + mySearchTerm(s)
 
 
-### `gms` Search Stars Faster ⭐
-- **Search Gmail** — Default search all messages 🔍
-- **Unread** — Jumps to `gmu` search 📬
+## `gms` - Gmail Stars Search ⭐
+- **Search Gmail** — Search any term(s) you like fast (1st menu item) 🔍
+- **Unread** — search Un-Read after selecting star or location 📬
 - **Starred** — ⭐ yellow-star, red-star, blue-star, green-star, orange-star, purple-star,
   ❗️red-bang, yellow-bang, purple-question, blue-info, orange-guillemet, ✅ green-checkmark
-- **Sent** — search sent messages 📨
-- **Drafts** — search draft messages 📄
-- **Important** — search important messages 🛟
-- **Spam** — search spam messages 🍗
-- **Trash** — search trash messages 🗑️
+- **Sent, Drafts, Important, Spam, Trash** and more...
 
 ![GMS Screenshot](gms_screen.png)
 
-### `gmu` Search Un-Read Faster 📬
+## `gmu` - Gmail Un-Read Search 📬
 - **Un-Read All** — all Un-Read messages in the main inbox
-- **Un-Read Primary** — Un-Read inbox messages
-- **Un-Read Updates** — Un-Read updates messages
-- **Un-Read Promotions** - Un-Read promotions messages
-- **Un-Read Forums** — Un-Read forums messages
-- **Un-Read Reservations** - Un-Read reservations messages
-- **Un-Read Purchases** — Un-Read purchases messages
-- **Search Unread Starred** — unread starred messages
+- **Un-Read in Primary, Updates, Promotions, Forums, Reservations, Purchases**
 
 ![GMU Screenshot](gmu_screen.png)
 
-### `gmo` Search Operators 🧰
+## `gmo` - Gmail Search Operators 🧰
 - **To/From** - To: or From: 🕵️‍♀️
 - **Subject** - Subject: (search within subject line) 👀
 - **Label** - label: (search within a specific label) i.e. label:myLabel 🏷️
@@ -126,15 +116,41 @@ With selected text you can use the main functions via **Universal Action** as fo
 - **Document** - has:document (Google Docs, Word, PDF) 📄
 - **Spreadsheet** - has:spreadsheet (Excel, Numbers, Sheets) 📊
 - **Presentation** - has:presentation (PowerPoint, Keynote, Slides) 🖥️
+- And More...
 
 ![GMO Screenshot 1](gmo_screen1.png)
 ![GMO Screenshot 2](gmo_screen2.png)
 ![GMO Screenshot 3](gmo_screen3.png)
 
-### `gml` Search Labels 🏷️
-- Requires user-defined labels in Configuration. (you can export labels via extension... See Below)
-- **User Labels** — 🏷️ Search within user-defined labels
-- **User Labels + Query** — 🏷️ Search within user-defined labels with a specific query
+## `gml` - Gmail Labels Search 🏷️
+- **Requires user-defined labels in Configuration.** (you can export labels via extension... See Below)
+- **User Labels** — Search within user-defined labels 🏷️
+
+![GML Screenshot](gml_screen.png)
+
+## `gmuser` - Fast User Switching ⚡️
+- **User Switch** - Switch quickly between up to 10 gmail/email accounts ( I use multiple accounts - Jumps to the tab with the right account )
+- **Manually change via slider in configuration**
+- **Default User is 0** - No need to change if you only have one address
+
+![GMUser Screenshot](gmuser_screen.png)
+
+## `gmsettings` - Quick Access Settings ⚙️
+- **Config** - Quickly open the workflow configuration within Alfred ⚙️
+- **Diagnostic** - Run Diagnostics for help in troubleshooting 🛟 ( @vitor Thanks for example)
+- **Manage Subscriptions** - Manage your subscriptions on Gmail 🔗
+- **Manage Labels** - Manage your Labels on Gmail 🏷️
+- **Manage Stars** - To take full advantage of star searches enable all stars. (you can reorder them how you use them) ⭐️
+- **Switch Account** - Jump to Fast User Switcher
+- **Forum** - Open this Alfred Forum page 🔗
+- **Github** - Open the Gmail Search Tools Github Page 🔗
+
+![GMSettings Screenshot](gmsettings_screen.png)
+
+## `gmbrowser` - Browser Selection 🌐
+- **Browser Selection** - Choose the browser to open Gmail links 🌐
+
+![GMBrowser Screenshot](gmbrowser_screen.png)
 
 ## 📌 Requirements
 - Gmail or Google Workspace Account 📧
@@ -188,7 +204,7 @@ This is a simple guide to export your Gmail labels for use in the workflow so th
 - Select labels starting after **"UNREAD"** in first column only. **<Copy>** 📋
 - open **Gmail-Search-Tools** config use Alfred: gmsettings > **Config**
 - Paste labels into **"Comma Separated Labels"** Field
-- Labels_Config.png
+- ![labels_config.png](labels_config.png)
 - Add comma between each entry
 - Save Configuration at bottom right
 
@@ -198,10 +214,9 @@ Use gml and gmll keywords to search within user-defined labels 😎
 
 ## 📋 TODO
 
-- Update the Alfred Forum URL in `src/info.plist` to the dedicated Gmail Search Tools forum thread once it is posted.
-- Add support for multiple Gmail accounts.
 - Add support to save a custom search using an Action Modifier Key.
 - Add support for retrieving the saved custom search keyword.
+- Add ability to have a label set for each email account.
 - Add an Information Page for learning about gmail-search-tools and power searches
 
 ## ⚙️ Installation
@@ -260,6 +275,8 @@ scripts.
 - 🧑‍💻 Support for Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge
 - ⚡ Quick change browser via `gmbrowser` keyword
 - 🔗 Link to change browser from `gmsettings` menu
+- 🐛 Improved Debugging to not include emails, labels, and fast phrases
+- 📖 Improved Documentation within Workflow for Readability
 
 ## ⚖️ License
 

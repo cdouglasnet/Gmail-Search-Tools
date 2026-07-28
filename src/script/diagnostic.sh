@@ -19,8 +19,39 @@ echo
 echo
 echo '### Preferences'
 
+excluded_vars=(labels)
+for i in {1..6}; do
+    excluded_vars+=("fastphrase${i}")
+done
+for i in {0..9}; do
+    excluded_vars+=("email_${i}")
+done
+
 if [[ -f 'prefs.plist' ]]; then
-    /usr/libexec/PlistBuddy -c 'Print' prefs.plist
+    /usr/bin/python3 - <<'PY'
+import plistlib
+import sys
+
+excluded = {
+    "labels",
+    *{f"fastphrase{i}" for i in range(1, 7)},
+    *{f"email_{i}" for i in range(10)},
+}
+
+
+def redact(value):
+    if isinstance(value, dict):
+        return {key: redact(item) for key, item in value.items() if key not in excluded}
+    if isinstance(value, list):
+        return [redact(item) for item in value]
+    return value
+
+
+with open("prefs.plist", "rb") as fh:
+    prefs = plistlib.load(fh)
+
+plistlib.dump(redact(prefs), sys.stdout.buffer, fmt=plistlib.FMT_XML, sort_keys=False)
+PY
 else
     echo 'Default'
 fi
@@ -91,7 +122,24 @@ fi
 echo
 echo '### Workflow custom variables'
 
-for var_name in gms_key gmu_key gmo_key gmss_key gmuu_key gmoo_key gmsettings_key userNumber; do
+excluded_vars=(labels)
+for i in {0..9}; do
+    excluded_vars+=("email_${i}")
+done
+
+for var_name in gms_key gmu_key gmo_key gmss_key gmuu_key gmoo_key gmsettings_key userNumber labels email_0 email_1 email_2 email_3 email_4 email_5 email_6 email_7 email_8 email_9; do
+    skip_var=false
+    for excluded_var in "${excluded_vars[@]}"; do
+        if [[ "${var_name}" == "${excluded_var}" ]]; then
+            skip_var=true
+            break
+        fi
+    done
+
+    if [[ "${skip_var}" == true ]]; then
+        continue
+    fi
+
     var_value="${!var_name}"
     if [[ -n "${var_value}" ]]; then
         echo "${var_name}=${var_value}"

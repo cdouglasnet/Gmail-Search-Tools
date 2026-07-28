@@ -75,6 +75,28 @@ STATIC_ICONS = {
     "gmm-account": "account.png",
     "gmm-back": "back.png",
     "gmm-settings": "settings.png",
+
+    # Browser Menu Icons
+    "gmm-browser": "link.png",
+    "gmm-chrome": "chrome.png",
+    "gmm-brave": "brave.png",
+    "gmm-edge": "edge.png",
+    "gmm-vivaldi": "vivaldi.png",
+    "gmm-opera": "opera.png",
+    "gmm-chromium": "chromium.png",
+    "gmm-orion": "orion.png",
+    "gmm-webkit": "webkit.png",
+    "gmm-safari": "safari.png",
+
+    "gmm-browser Google Chrome": "chrome.png",
+    "gmm-browser Brave": "brave.png",
+    "gmm-browser Microsoft Edge": "edge.png",
+    "gmm-browser Vivaldi": "vivaldi.png",
+    "gmm-browser Opera": "opera.png",
+    "gmm-browser Chromium": "chromium.png",
+    "gmm-browser Orion": "orion.png",
+    "gmm-browser WebKit": "webkit.png",
+    "gmm-browser Safari": "safari.png",
 }
 
 # Currency icon mapping
@@ -112,9 +134,9 @@ def current_account_email():
 
 def user_labels():
     # Get user labels from Alfred environment variable
-    labels = os.environ.get("labels") or ""
-    # Split labels by comma and remove any leading or trailing spaces
-    labels = [label.strip() for label in labels.split(",")]
+    labels = os.environ.get("labels_0") or ""
+    # Split labels by comma or new line and remove any leading or trailing spaces Exclude empty labels
+    labels = [label.strip() for label in labels.replace("\n", ",").split(",") if label.strip()]
     return labels
 
 def user_accounts():
@@ -532,7 +554,7 @@ def gmsettings_items():
     return [
         item("gmm-config","Config →","Open workflow configuration in Alfred","", route="config"),
         item("gmm-diagnostic","Diagnostic →","Run workflow diagnostic","", route="diagnostic"),
-        item("gmm-Browser","Browser → "+get_current_browser(),"Switch Target Browser","", route="browser"),
+        item("gmm-browser "+get_current_browser(),"Browser → "+get_current_browser(),"Switch Target Browser","", route="browser"),
         item("gmm-subscriptions","Manage Subscriptions →","Manage Your Subscriptions on Gmail",gmail_url_settings("#sub"), route="gmsetting"),
         item("gmo-label","Manage Labels →","Manage Your Labels on Gmail",gmail_url_settings("#settings/labels"), route="gmsetting"),
         item("gms-any-star","Manage Stars →","Enable Various Stars on Gmail",gmail_url_settings("#settings/general"), route="gmsetting"),
@@ -570,7 +592,7 @@ def gmuser_items():
 def gmbrowser_items():
     browser = get_current_browser()
     items = [
-        item("gmm-Browser","Current Browser → "+get_current_browser(),"Switch Target Browser","", valid=False),
+        item("gmm-browser "+browser,"Current Browser → "+browser,"Switch Target Browser - Choose Below ↓ or ⎋ Escape","", valid=False),
         item("gmm-chrome", "Google Chrome", "Google Chrome", "Google Chrome", route="setbrowser"),
         item("gmm-brave", "Brave Browser", "Brave Browser", "Brave Browser", route="setbrowser"),
         item("gmm-edge", "Microsoft Edge", "Microsoft Edge", "Microsoft Edge", route="setbrowser"),
@@ -578,8 +600,8 @@ def gmbrowser_items():
         item("gmm-opera", "Opera", "Opera", "Opera", route="setbrowser"),
         item("gmm-chromium", "Chromium", "Chromium", "Chromium", route="setbrowser"),
         item("gmm-orion", "Orion", "Orion", "Orion", route="setbrowser"),
-        item("gmm-webkit", "Webkit", "Webkit", "Webkit", route="setbrowser"),
         item("gmm-safari", "Safari", "Safari", "Safari", route="setbrowser"),
+        item("gmm-webkit", "Webkit", "Webkit", "Webkit", route="setbrowser"),
     ]
     return items
 
@@ -591,10 +613,10 @@ def gmz_items(query):
     z = turl_info()
     i = ticon_info()
     return [
-        item("gmz-search",f'Search: "{q}"' if q else "Search:",f'Route: "{z}"' if z else "Empty Route",gmail_url2(q,z),
-             route=f'Route: "{z}"' if z else "Empty Route", url=gmail_url2(q,z), icon=i),
-        item("gmz-search2",f'Un-Read + Search: "{q}"' if q else "Un-Read + Search:",f'Un-Read + Route: "{z}"' if z else "Empty Route",gmail_url2(q,z),
-             route=f'Route: "{z}"' if z else "Empty Route", url=gmail_url_unread(q,z), icon=i),
+        item("gmz-search",f'Search: "{q}"' if q else "Search:",f'Route: "{z}"' if z else "Enter What You Want To Search For:",gmail_url2(q,z),
+             route=f'Route: "{z}"' if z else "", url=gmail_url2(q,z), icon=i),
+        item("gmz-search2",f'Un-Read + Search: "{q}"' if q else "Un-Read + Search:",f'Un-Read + Route: "{z}"' if z else "Enter What You Want To Search For:",gmail_url2(q,z),
+             route=f'Route: "{z}"' if z else "", url=gmail_url_unread(q,z), icon=i),
         # Menu Items To Other Searching Tools/Keywords
         item("gmm-unread","→ Un-Read Mail (gmu)","Un-Read Quick Links Menu","", route="unread"),
         item("gmm-operators", "→ Gmail Search Operators (gmo)", "Learn Power Searches", "", route="operators"),
@@ -615,30 +637,36 @@ def main():
     args = parser.parse_args()
 
     query = " ".join(args.query).strip()
-    if args.mode == "gmu":
+    # Primary Search Menus
+    if args.mode == "gms":
+        items = gms_items()
+    elif args.mode == "gmu":
         items = gmu_items()
-    elif args.mode == "gmuu":
-        items = gmuu_items(query)
-    elif args.mode == "gmss":
-        items = gmss_items(query)
     elif args.mode == "gmo":
         items = gmo_items()
-    elif args.mode == "gmoo":
-        items = gmoo_items(query)
     elif args.mode == "gml":
         items = gml_items(query)
+    # Universal Action Queries
+    elif args.mode == "gmss":
+        items = gmss_items(query)
+    elif args.mode == "gmuu":
+        items = gmuu_items(query)
+    elif args.mode == "gmoo":
+        items = gmoo_items(query)
     elif args.mode == "gmll":
         items = gmll_items(query)
+    # Settings, User Switching, and Target Browser
     elif args.mode == "gmsettings":
         items = gmsettings_items()
     elif args.mode == "gmuser":
         items = gmuser_items()
     elif args.mode == "gmbrowser":
         items = gmbrowser_items()
+    # Sub-Menu
     elif args.mode == "gmz":
         items = gmz_items(query)
     else:
-        items = gms_items()
+        items = gmsettings_items()
     print(json.dumps({"items": items}, ensure_ascii=False))
 
 
