@@ -154,24 +154,45 @@ jobs:
         body: |
           ## Gmail Search Tools - Release ${{ steps.stable_tag.outputs.tag }}
 
-          Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
+          Quick access to Gmail Searching, Starred, Un-Read, Labels, Operators, and more.
 
-          🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
+          ## Power Search Gmail within the browser
+          (Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge)
 
+          ## 🔍 Keywords - (Customizable in Configuration)
+        
+          - `gms` — Gmail Search Messages, Stars (Filterable) 🔍
+          - `gmu` — Gmail Un-Read Messages (Filterable) 📬
+          - `gmo` — Gmail Search Operators (Filterable) 🧰
+          - `gml` — Gmail Search Labels (Filterable) 🏷️
+          - `gmsettings` — Workflow settings/actions menu 🛠️
+          - `gmuser` — Fast User Switching 📌
+          - `gmbrowser` — Select Target Browser 🌐
+    
           ### Installation
           1. Download the `gmail-search-tools.alfredworkflow` file
           2. Double-click to install in Alfred
-          3. Use `gms` to search Gmail, `gmu` to search unread messages
+          3. Use `gms` to search Gmail, `gmu` to search Un-Read messages, etc.
 
-          ### Version Change Summary
+          ## 🧑‍💻 Version Change Summary
+  
+          ### v0.0.0.1
           - 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
           - 🔄 Added support for Gmail account switching.
-          - 🔎 Added support for Gmail search operators, starred, and unread messages.
+          - 🔎 Added support for Gmail search operators, starred, and Un-Read messages.
           - ⚡ Added support for Gmail search fast phrases and clipboard text.
           
           ### v0.0.0.2
           - 🏷️ Support for Searching User Labels. `gml`, `gmll`
           - 🔢 Email Account Switching Support. `gmuser`
+          
+          ### v0.0.0.3
+          - 🌐 Browser Selection Support. `target_browser` Under Configure Workflow.
+          - 🧑‍💻 Support for Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge
+          - ⚡ Quick change browser via `gmbrowser` keyword
+          - 🔗 Link to change browser from `gmsettings` menu
+          - 🐛 Improved Debugging to not include emails, labels, and fast phrases
+          - 📖 Improved Documentation within Workflow for Readability
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -189,30 +210,48 @@ jobs:
         body: |
           ## Gmail Search Tools - Beta ${{ steps.beta_tag.outputs.tag }}
 
-          Alfred Workflow for quick access to Gmail Searching, Starred, Un-Read, Operators, and more.
+          Quick access to Gmail Searching, Starred, Un-Read, Labels, Operators, and more.
 
-          🔍 Gmail-Search-Tools is designed to help you find that 🪡 one message you know is hiding in your mail somewhere buried among the other 🌎 300,000+ emails you have.
+          ## Power Search Gmail within the browser
+          (Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge)
 
           ⚠️ This is a **beta release** built from the beta branch.
 
           ### Installation
           1. Download the `gmail-search-tools.alfredworkflow` file
           2. Double-click to install in Alfred
-          3. Use `gms` to search Gmail, `gmu` to search unread messages
+          3. Use `gms` to search Gmail, `gmu` to search Un-Read messages, etc.
 
-          ### Keywords
-          - `gms` — search all Gmail messages
-          - `gmu` — search unread Gmail messages
+          ## 🔍 Keywords - (Customizable in Configuration)
+
+          - `gms` — Gmail Search Messages, Stars (Filterable) 🔍
+          - `gmu` — Gmail Un-Read Messages (Filterable) 📬
+          - `gmo` — Gmail Search Operators (Filterable) 🧰
+          - `gml` — Gmail Search Labels (Filterable) 🏷️
+          - `gmsettings` — Workflow settings/actions menu 🛠️
+          - `gmuser` — Fast User Switching 📌
+          - `gmbrowser` — Select Target Browser 🌐
 
           ### Version Change Summary
+          ## 🧑‍💻 Version Change Summary
+  
+          ### v0.0.0.1
           - 🚀 Initial release with `gms`, `gmu`, `gmo`, `gmss`, `gmuu`, `gmoo`, and `gmsettings` keywords.
           - 🔄 Added support for Gmail account switching.
-          - 🔎 Added support for Gmail search operators, starred, and unread messages.
+          - 🔎 Added support for Gmail search operators, starred, and Un-Read messages.
           - ⚡ Added support for Gmail search fast phrases and clipboard text.
           
           ### v0.0.0.2
           - 🏷️ Support for Searching User Labels. `gml`, `gmll`
           - 🔢 Email Account Switching Support. `gmuser`
+          
+          ### v0.0.0.3
+          - 🌐 Browser Selection Support. `target_browser` Under Configure Workflow.
+          - 🧑‍💻 Support for Safari, Webkit, Orion, Google Chrome, Chromium, Opera, Vivaldi, Brave Browser, Microsoft Edge
+          - ⚡ Quick change browser via `gmbrowser` keyword
+          - 🔗 Link to change browser from `gmsettings` menu
+          - 🐛 Improved Debugging to not include emails, labels, and fast phrases
+          - 📖 Improved Documentation within Workflow for Readability
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
